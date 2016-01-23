@@ -47,7 +47,7 @@ for pmmo_result in tree.iter('PMMOResult'):
             #             print "-------------------"
             if i.text == 'FLEXINS-123456/MCC-262/MNC-1/TA-1':
                 dn = 1
-            #                 print i.text
+            # print i.text
             if dn == 1:
                 #                 yield i
                 print i.text, i.tag

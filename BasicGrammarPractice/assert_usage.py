@@ -21,4 +21,4 @@ def assert_usage2():
 
 
 # assert_usage()
-assert_usage2
+assert_usage2()
