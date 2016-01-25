@@ -1,8 +1,8 @@
-'''
+"""
 Created on 2013-12-11
 
 @author: yannpxia
-'''
+"""
 name = (1, 2, 3)
 
 # This is the old way to print the string
@@ -13,7 +13,9 @@ print "this is number serise:%s" % format(name)
 
 '''
 format(value[, format_spec])
-    Convert a value to a formatted representation, as controlled by format_spec. The interpretation of format_spec will depend on the type of the value argument, however there is a standard formatting syntax that is used by most built-in types: Format Specification Mini-Language.
+    Convert a value to a formatted representation, as controlled by format_spec. The interpretation of format_spec will
+     depend on the type of the value argument, however there is a standard formatting syntax that is used by most
+     built-in types: Format Specification Mini-Language.
     Note
     format(value, format_spec) merely calls value.__format__(format_spec).
 '''
