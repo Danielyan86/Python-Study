@@ -5,9 +5,7 @@ base_position = 0
 
 
 def switch_number(number1, number2):
-    temp = number_list[number1]
-    number_list[number1] = number_list[number2]
-    number_list[number2] = temp
+    number_list[number1], number_list[number2] = number_list[number2], number_list[number1]
 
 
 def quciksort(left_num, right_num):
@@ -34,8 +32,17 @@ def quciksort(left_num, right_num):
     quciksort(left_soldier + 1, right_num)
 
 
+# more elegant solution
+def qsort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        return qsort([x for x in arr[1:] if x < pivot]) + [pivot] + qsort([x for x in arr[1:] if x >= pivot])
+
+
 if __name__ == "__main__":
-    #This is is used for producing test data
+    # This is is used for producing test data
     for time in range(20):
         number_list.append(randrange(1, 100))
     print "original list:", number_list
