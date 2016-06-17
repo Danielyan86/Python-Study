@@ -1,7 +1,7 @@
 import random
 
 
-#produce the random number list
+# produce the random number list
 def produce_random_number(num):
     number_list = []
     for i in range(0, num):
@@ -10,20 +10,16 @@ def produce_random_number(num):
 
 
 def bucket_sort(original_num):
-    buckets = {}
-    sorted_num = []
-    for i in range(0, 101):
-        buckets[i] = 0
-    print "original number list:", original_num
+    bucket_numbers = max(original_num)
+    new_list = []
+    bucket_dic = {x: x * 0 for x in range(0, bucket_numbers + 1)}
     for num in original_num:
-        buckets[num] += 1
-
-    for i in range(0, 101):
-        if buckets[i] != 0:
-            for j in range(0, buckets[i]):
-                sorted_num.append(i)
-
-    return sorted_num
+        bucket_dic[num] = bucket_dic[num] + 1
+    for num in range(0, bucket_numbers + 1):
+        if bucket_dic[num] != 0:
+            for j in range(0, bucket_dic[num]):
+                new_list.append(num)
+    return new_list
 
 if __name__ == '__main__':
     numbers = produce_random_number(20)
