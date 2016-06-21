@@ -23,6 +23,7 @@ def Fibonacci(num):
     return fib_list
 
 
+# refactor code
 def fib(max):
     n, a, b = 0, 0, 1
     while n < max:
@@ -31,6 +32,16 @@ def fib(max):
         n = n + 1
 
 
+# refactor again
+def fib2():
+    a, b = 0, 1
+    while True:
+        a, b = b, a + b
+        yield b
+
+
 if __name__ == '__main__':
     f = fib(1000)
-    print f.next()
+    import itertools
+
+    print list(itertools.islice(fib2(), 10))
