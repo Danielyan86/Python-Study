@@ -1,14 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def reverse(s):
-	return s[::-1]
 
+class Reverse(object):
 
-def main():
-	s = 'ABCDE'
-	print reverse(s)
+	def run(self):
+		while True:
+			string = raw_input("enter string:")
+			if len(string) < 1 :
+				print "string can't be null"
+			else:
+				print string[::-1]
+				exit()
+
 
 if __name__ == '__main__':
-	main()
+	r = Reverse()
+	r.run()
 

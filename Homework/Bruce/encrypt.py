@@ -1,14 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def encrypt(s):
-	return "".join(map(lambda x:chr(ord(x)+3), list(s)))
+class Encrypt(object):
+
+	def encrypt(self, string):
+		return "".join(map(lambda x:chr(ord(x)+3), list(string)))
 
 
-def main():
-	s = 'ABC'
-	print encrypt(s)
+	def run(self):
+		while True:
+			string = raw_input('Enter a string for encrypting:')
+			if len(string) < 1 :
+				print "string can't be null"
+			else:
+				print self.encrypt(string)
+				exit()
 
 if __name__ == '__main__':
-	main()
+	e = Encrypt()
+	e.run()
 
