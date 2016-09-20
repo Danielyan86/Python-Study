@@ -1,10 +1,24 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-def F(n):
-    if n == 0: return 0
-    elif n == 1: return 1
-    else: return F(n-1)+F(n-2)
+class Fibonacci(object):
+    def fibonacci(self, n):
+        if n == 0 or n == 1:
+            return n
+        else:
+            return self.fibonacci(n - 1) + self.fibonacci(n - 2)
 
-print "Print Fibonacci for 20"
-for i in range(20):
-    print F(i)
+    def run(self):
+        while True:
+            number = raw_input('Enter a number:')
+            if len(number) < 1:
+                print "number can't be empty"
+            else:
+                fibonacci_list = [self.fibonacci(x) for x in range(int(number))]
+                print fibonacci_list
+                exit()
+
+
+if __name__ == '__main__':
+    f = Fibonacci()
+    f.run()
