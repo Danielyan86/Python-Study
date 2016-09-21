@@ -1,23 +1,20 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-def encrypt(a):
-    return chr(ord(a)+3)
+class Encrypt(object):
+    def encrypt(self, string):
+        return "".join(map(lambda x: chr(ord(x) + 3), list(string)))
+
+    def run(self):
+        while True:
+            string = raw_input('Enter a string for encrypting:')
+            if len(string) < 1:
+                print "string can't be empty"
+            else:
+                print self.encrypt(string)
+                exit()
 
 
-def encryptA(a):
-    b=list(a)
-    c=list()
-    for i in b:
-        c.append(encrypt(i))
-    return "".join(c)
-
-def encryptB(a):
-    b=""
-    for i in a:
-        b+=encrypt(i)
-    return b
-
-a="ABC"
-print "Input :"+a
-print "Solution A: Ouput:"+encryptA(a)
-print "Solution B: Ouput:"+encryptB(a)
+if __name__ == '__main__':
+    e = Encrypt()
+    e.run()
