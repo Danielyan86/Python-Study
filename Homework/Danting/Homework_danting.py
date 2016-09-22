@@ -1,4 +1,6 @@
-tring):
+#!/usr/bin/env python
+
+def reverse1(string):
     return string[::-1]
 
 def reverse2(string):
@@ -28,11 +30,11 @@ def Fibon(n):
 def Multiple_table():
     for i in range(1, 10) :
         for j in range(1, i+1) :
-            print(j, '*', i, '=', j*i)
+            print("{0}*{1}={2} ".format(i,j,j*i))
         print()
 
 string="abcdef"
-print(reverse2(string))
-print(encrypt(string))
-print(Fibon(12))
+#print(reverse2(string))
+#print(encrypt(string))
+#print(Fibon(12))
 Multiple_table()
