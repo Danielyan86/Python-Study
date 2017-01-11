@@ -1,7 +1,7 @@
 """
 Created on 2013-12-11
 
-@author: yannpxia
+@author: xiaodong yan
 """
 name = (1, 2, 3)
 

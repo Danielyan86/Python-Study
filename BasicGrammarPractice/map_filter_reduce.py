@@ -17,6 +17,9 @@ print map(lambda x: x * x, range(1, 20))
 
 print [x * x for x in range(1, 20)]
 
+# multiple parameters in map
+print map(lambda x, y: x * x, range(1, 20), range(1, 20))
+
 # filter
 print "{0}filter{1}".format("=" * 80, "=" * 80)
 a = []
@@ -38,9 +41,11 @@ print a
 print [x * x for x in range(1, 20) if x % 2 == 0]
 
 print "{0}reduce{1}".format("=" * 80, "=" * 80)
-print reduce((lambda x, y: x * y), [1, 2, 3, 4],0)
+print reduce((lambda x, y: x * y), [1, 2, 3, 4], 0)
 
 # Goal: turn [1, 2, 3, 4, 5, 6, 7, 8] into 12345678.
 
 
-print reduce(lambda a, d: 10 * a + d, [1],2)
+print reduce(lambda a, d: 10 * a + d, [1], 2)
+
+
