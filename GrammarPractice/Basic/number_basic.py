@@ -11,11 +11,11 @@ print("8 % 5 = {0}".format(8 % 5))
 print("5 ** 2 = {0}".format(5 ** 2))
 
 # Bitwise Operations on Integer Types¶
-print(2 | 1)
+print("2 | 1 = {0}".format(2 | 1))
 
-print(2 & 1)
+print("2 & 1 = {0}".format(2 & 1))
 
-print(3 >> 1)
+print("2 & 1 = {0}".format(3 >> 1))
 
 print(1 << 2)
 # convert the float to int
