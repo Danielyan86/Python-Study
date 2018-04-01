@@ -12,3 +12,4 @@ for item in [a, b, c, d, e]:
 a['one'] = 0
 a['four'] = 4
 del a['four']
+print(a)
