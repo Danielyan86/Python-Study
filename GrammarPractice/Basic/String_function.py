@@ -8,7 +8,7 @@ print("".join([a, b]))
 
 print(",".join([a, b]))
 
-# enumerate
+# 对于一个可迭代的（iterable）/可遍历的对象（如列表、字符串），enumerate将其组成一个索引序列，利用它可以同时获得索引和值
 print("=" * 20)
 a = "string"
 for i, j in enumerate(a):
