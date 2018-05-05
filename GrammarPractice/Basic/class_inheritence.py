@@ -16,6 +16,7 @@ class Car:
         print("this is a car")
 
 
+# inheritence
 class ElectricCar(Car):
     def __init__(self, model, color, speed, battery_type):
         # super(ElectricCar, self).__init__(model, color, speed)
@@ -23,6 +24,7 @@ class ElectricCar(Car):
         self.battery_type = battery_type
 
 
+# multiple inheritence
 class MixedCar(ElectricCar, Car):
     # 广度优先搜索
     def __init__(self, model, color, speed, battery_type):

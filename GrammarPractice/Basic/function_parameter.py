@@ -33,3 +33,13 @@ def dictVarArgs(arg1, arg2=2, **theRest):
 
 
 dictVarArgs(1, 2, key=3, key4=4)
+
+
+# copy issue
+def parmeter_copy(a={}):
+    a['key2'] = 'new'
+
+
+b_dic = {"key1": 1}
+parmeter_copy(b_dic)
+print(b_dic)
