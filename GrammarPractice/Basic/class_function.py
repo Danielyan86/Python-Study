@@ -1,4 +1,5 @@
 class MyClass:
+    # 类属性
     myVersion = "1.0"
 
     # 构造器方法
@@ -17,3 +18,8 @@ if __name__ == '__main__':
     my_instance.show_version()
     print(my_instance.classvar)
     print(dir(my_instance))
+
+    my_instance2 = MyClass()
+    MyClass.myVersion = 3.0  # 修改类属性
+    print(my_instance.myVersion)
+    print(my_instance2.myVersion)

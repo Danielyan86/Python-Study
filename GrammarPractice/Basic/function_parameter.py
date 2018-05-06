@@ -35,7 +35,7 @@ def dictVarArgs(arg1, arg2=2, **theRest):
 dictVarArgs(1, 2, key=3, key4=4)
 
 
-# copy issue
+# 参数拷贝问题
 def parmeter_copy(a={}):
     a['key2'] = 'new'
 
