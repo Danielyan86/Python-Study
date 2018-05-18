@@ -48,6 +48,16 @@ def foo():
 
 
 foo()
+
+
 # 如上所示，有了 @ ，我们就可以省去foo = use_logging(foo)这一句了，直接调用 foo() 即可得到想要的结果。foo()
 # 函数不需要做任何修改，只需在定义的地方加上装饰器，调用的时候还是和以前一样，如果我们有其他的类似函数，我们可以继续调用装饰器来修饰函数，
 # 而不用重复修改函数或者增加新的封装。这样，我们就提高了程序的可重复利用性，并增加了程序的可读性。
+
+class example:
+    @staticmethod
+    def print_fun():
+        print("this is a static method")
+
+
+example.print_fun()
