@@ -7,9 +7,11 @@ def generator_function():
     print('hello 3')
 
 
-g = generator_function()
+g = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器。
+g.__next__()              # 此处开始正真执行，打印第一个hell0
 g.__next__()
-g.__next__()
+for item in g:
+    print(item)
 
 
 def fib():
