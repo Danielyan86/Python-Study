@@ -2,7 +2,7 @@ from selenium import webdriver
 import logging
 import time
 
-DOCKER = False
+DOCKER = True
 current_time = time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime())
 logging.basicConfig(filename="./log/selenium_deb_log_{0}".format(current_time), level=logging.DEBUG)
 
@@ -17,7 +17,4 @@ else:
 d.get(url)
 d.find_element_by_xpath(text_box_xpath).send_keys("test\n")
 time.sleep(6)
-# d.find_element_by_xpath(search_button_xpath).click()
-# time.sleep(6)
-#
-# d.close()
+d.close()
