@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  web-app:
+    image: web-app
+    ports:
+      - "4000:80"
+    command: python app.py
+
+  automationtest:
+    image: automationtest
+    ports:
+      - "5904:25900"
+    volumes:
+      - .:/home/seluser/automation
+    links:
+      - web-app
+    depends_on:
+      -
+
+#networks:
+#  vpcbr:
+#    driver: bridge
+#    ipam:
+#     config:
+#       - subnet: 10.5.0.0/16
+#         gateway: 10.5.0.1
