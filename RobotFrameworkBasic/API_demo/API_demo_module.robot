@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    This is a api test demo
-Library  /Users/xyan/Documents/Training/robot_demo/API_demo/ApiKeywordModule
+Library  ./ApiKeywordModule/
 
 *** Test Cases ***
 Valid login api

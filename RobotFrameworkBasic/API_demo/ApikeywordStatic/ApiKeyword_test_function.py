@@ -32,8 +32,8 @@ def user_login(username=None, password=None):
 
 
 def hello(para):
-    print para
+    print(para)
 
 
 if __name__ == '__main__':
-    print user_login()
+    print(user_login())

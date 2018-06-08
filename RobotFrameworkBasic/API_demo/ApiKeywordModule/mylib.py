@@ -36,7 +36,7 @@ class mylib(object):
             return False
 
     def hello(self):
-        print 'hello'
+        print('hello')
 
     def log_out(self):
         log_out_url = "http://127.0.0.1:8086/en-gb/accounts/logout/"
@@ -45,4 +45,4 @@ class mylib(object):
 
 if __name__ == '__main__':
     mylib_obj = mylib()
-    print mylib_obj.login("test@163.com", "thisisatest1234")
+    print(mylib_obj.login("test@163.com", "thisisatest1234"))
