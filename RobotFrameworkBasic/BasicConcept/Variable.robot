@@ -20,7 +20,7 @@ My Test
     log  ${MESSAGE2}
 
     ${MESSAGE3}  set variable    ${MESSAGE2}, world!
-    My Keyword    /Users/xyan/pycharm_project/robot_demo
+    My Keyword   /Users/xyan/pycharm_project/
 
     log  ${true}
 
