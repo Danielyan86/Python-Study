@@ -3,8 +3,8 @@ import collections
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
 beer_card = Card('7', 'diamonds')
-print type(beer_card)
-print beer_card
+print(type(beer_card))
+print(beer_card)
 
 
 class FrenchDeck:

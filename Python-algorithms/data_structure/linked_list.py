@@ -13,14 +13,13 @@ class create_one_way_linked_list:
         if len(values_list) > 1:
             self.create_list(self.head_node, values_list)
 
-    def create_list(self, node, value_list):
+    def create_list(self, node, value_list):  # 通过递归方式创建单项链表
         value_list = value_list[1:]
         node._nextnode = Node(value_list[0])
         if len(value_list) > 1:
             self.create_list(node._nextnode, value_list)
         else:
             return
-        # self.head_node.__nextnode =
 
     def travers_link_list(self, node):
         print(node)
