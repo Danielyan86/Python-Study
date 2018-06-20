@@ -16,7 +16,7 @@ pip install --upgrade robotframework-selenium2library
 - 安装Chrome webdriver（已经安装好的跳过）：
  http://npm.taobao.org/mirrors/chromedriver/
  https://sites.google.com/a/chromium.org/chromedriver/home
- 复制驱动到本机可执行路径下面
+ 下载chrome驱动程序并复制到系统默认路径下，比如Linux系统复制到/usr/local/bin
  
 ## 练习
 ### 基础
