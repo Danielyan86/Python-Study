@@ -8,12 +8,21 @@ class tree_node:
 
 
 class b_tree:
-    def create_b_tree(self):
-        root_node = tree_node(0)
-        root_node.left, root_node.right = tree_node(1), tree_node(2)
-        root_node.left.left, root_node.left.right = tree_node(3), tree_node(4)
-        root_node.right.left, root_node.right.right = tree_node(5), tree_node(6)
-        self.root = root_node
+    def __init__(self):
+        self.number = 0
+
+    def create_b_tree(self, node, level=None):
+        '''采用递归思想生成二叉树'''
+        if level == 0:
+            return
+        else:
+            self.number = self.number + 1
+            node.left = tree_node(self.number)
+            self.create_b_tree(node.left, level - 1)
+            self.number = self.number + 1
+            node.right = tree_node(self.number)
+            self.create_b_tree(node.right, level - 1)
+        self.root = node
 
     def breadth_first_search(self):
         ''' 深度搜索没法像广度搜索用递归方法直接便利，采取分层存储的方法，比如第一层的值存在key为1的list，第二层存在key为2的list，最后统一打印'''
@@ -22,6 +31,7 @@ class b_tree:
         print(self.data)
 
     def print_node_value(self, node, level=0):
+        '''打印一个节点的值'''
         level = level + 1
         if isinstance(node, tree_node):
             if "{0}".format(level) not in self.data:
@@ -36,7 +46,8 @@ class b_tree:
 
 
 if __name__ == '__main__':
+    root_node = tree_node(0)
     b_tree_obj = b_tree()
-    b_tree_obj.create_b_tree()
+    b_tree_obj.create_b_tree(root_node, 4)
     b_tree_obj.breadth_first_search()
     print(b_tree_obj)
