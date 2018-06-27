@@ -1,3 +1,4 @@
+# 二分法查找，采用递归思想实现
 def dichotomization(number_list, number):
     length = len(number_list)
     if length == 1:

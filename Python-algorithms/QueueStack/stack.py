@@ -41,5 +41,4 @@ if __name__ == '__main__':
     print(stack_obj.Judge_plalindrome(string))
 
     string = "123454321"
-    print()
-    stack_obj.Judge_plalindrome(string))
+    print(stack_obj.Judge_plalindrome(string))
