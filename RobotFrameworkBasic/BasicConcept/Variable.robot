@@ -10,8 +10,8 @@ ${integer}   ${3}              #定义一个整数
 
 *** Test Cases ***
 My Test
-    Log    ${MESSAGE}
-    log    ${integer}
+    Log    ${MESSAGE}    #打印一个字符串
+    log    ${integer}    #打印一个整数
 
     &{dict}    Create Dictionary    first=1    second=${2}    ${3}=third  #定义一个字典
     log   ${dict.first}                                                   #打印字典第一个元素
