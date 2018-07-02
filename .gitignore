@@ -176,4 +176,5 @@ output.xml
 report.html
 selenium-screenshot*.png
 
-.vscode
+*.xml
+*.html
