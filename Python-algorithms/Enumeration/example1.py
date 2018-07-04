@@ -55,7 +55,15 @@ def permutations_fun():
     print('Running time: %s Seconds' % (end - start))
 
 
+def multiple():
+    for i in range(1, 10):
+        if int("{0}3".format(i)) * 6528 == int("3{0}".format(i)) * 8256:
+            print(i, int("{0}3".format(i)) * 6528)
+    print([i for i in range(1, 10) if int("{0}3".format(i)) * 6528 == int("3{0}".format(i)) * 8256])
+
+
 if __name__ == '__main__':
     # violent_enumeration()
     # optmized_enumeration()
     permutations_fun()
+    multiple()
