@@ -18,6 +18,10 @@ pip install --upgrade robotframework-selenium2library
  https://sites.google.com/a/chromium.org/chromedriver/home
  下载chrome驱动程序并复制到系统默认路径下，比如Linux系统复制到/usr/local/bin
  
+## RF相关文档
+- 官方网站 http://robotframework.org/
+- 用户手册 http://robotframework.org/robotframework/#user-guide
+ 
 ## 练习
 ### 基础
 - 运行Demo中的RF测试用例，理解测试用例和测试套件概念
