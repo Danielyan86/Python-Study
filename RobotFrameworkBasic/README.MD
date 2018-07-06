@@ -13,6 +13,7 @@ pip install --upgrade robotframework-selenium2library
 
 ## 安装被测试环境
 - 本机通过docker安装并启动被测试产品：docker run -p 8001:8000 -p 8086:8080 oscarcommerce/django-oscar-sandbox
+- 被测代码仓库  https://github.com/django-oscar/django-oscar
 - 安装Chrome webdriver（已经安装好的跳过）：
  http://npm.taobao.org/mirrors/chromedriver/
  https://sites.google.com/a/chromium.org/chromedriver/home
@@ -21,6 +22,9 @@ pip install --upgrade robotframework-selenium2library
 ## RF相关文档
 - 官方网站 http://robotframework.org/
 - 用户手册 http://robotframework.org/robotframework/#user-guide
+
+## 示例代码
+- https://github.com/PlayPython/Python-Study/tree/master/RobotFrameworkBasic
  
 ## 练习
 ### 基础
