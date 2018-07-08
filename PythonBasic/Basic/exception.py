@@ -24,7 +24,7 @@ def safe_float(obj):
 # 捕获所有异常
 def catch_all_exceptions():
     try:
-        f = open("blala", 'r')
+        open("blala", 'r')
     except Exception as e:
         print(e)
         print("could not open the file")

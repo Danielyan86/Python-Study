@@ -169,3 +169,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.vscode
+
+log.html
+output.xml
+report.html
+selenium-screenshot*.png
+
+*.xml
+*.html

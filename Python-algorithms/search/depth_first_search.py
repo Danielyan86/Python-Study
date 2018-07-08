@@ -22,52 +22,52 @@ def dfs(a_list, step):
             else:
                 dfs(left_element_list, step + 1)
     else:
-        print box
+        print(box)
         return
 
 
-#迷宫最短路径算法
+# 迷宫最短路径算法
 class Maze(object):
-
     path = [(0, 0)]
     maze = ((0, 0, 0, 1),
             (1, 0, 0, 0),
             (0, 0, 1, 2),
             (1, 0, 0, 0),)
-    columns = len(maze)-1
-    rows = len(maze[0])-1
-    print rows
+    columns = len(maze) - 1
+    rows = len(maze[0]) - 1
+    print(rows)
 
     def dfs(self, x, y):
         if self.maze[x][y] != 2:
-            if (y+1 <= self.rows) and (self.maze[x][y+1] != 1):
-                if (x, y+1) not in self.path:
-                    self.path.append((x, y+1))
-                    self.dfs(x, y+1)
+            if (y + 1 <= self.rows) and (self.maze[x][y + 1] != 1):
+                if (x, y + 1) not in self.path:
+                    self.path.append((x, y + 1))
+                    self.dfs(x, y + 1)
                     self.path.pop()
-            if (0 <= x-1) and (self.maze[x-1][y] != 1):
-                if (x-1, y) not in self.path:
-                    self.path.append((x-1, y))
-                    self.dfs(x-1, y)
+            if (0 <= x - 1) and (self.maze[x - 1][y] != 1):
+                if (x - 1, y) not in self.path:
+                    self.path.append((x - 1, y))
+                    self.dfs(x - 1, y)
                     self.path.pop()
-            if (0 <= y-1) and (self.maze[x][y-1] != 1):
-                if (x, y-1) not in self.path:
-                    self.path.append((x, y-1))
-                    self.dfs(x, y-1)
+            if (0 <= y - 1) and (self.maze[x][y - 1] != 1):
+                if (x, y - 1) not in self.path:
+                    self.path.append((x, y - 1))
+                    self.dfs(x, y - 1)
                     self.path.pop()
-            if (x+1 <= self.columns) and (self.maze[x+1][y] != 1):
-                if (x+1, y) not in self.path:
-                    self.path.append((x+1, y))
-                    self.dfs(x+1, y)
+            if (x + 1 <= self.columns) and (self.maze[x + 1][y] != 1):
+                if (x + 1, y) not in self.path:
+                    self.path.append((x + 1, y))
+                    self.dfs(x + 1, y)
                     self.path.pop()
             return
         else:
-            print self.path
+            print(self.path)
             # self.path = [(0, 0)]
             return
+
 
 if __name__ == '__main__':
     # a = [1, 2, 3]
     # dfs(a, 0)
     maze_obj = Maze()
-    maze_obj.dfs(0,0)
+    maze_obj.dfs(0, 0)

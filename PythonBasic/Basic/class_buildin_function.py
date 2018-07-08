@@ -1,4 +1,4 @@
-from GrammarPractice.Basic import class_inheritence as cl
+from PythonBasic.Basic import class_inheritence as cl
 
 # 判断一个类是否是另一个类的子类
 print(issubclass(cl.ElectricCar, cl.Car))

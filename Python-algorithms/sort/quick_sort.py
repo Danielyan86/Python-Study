@@ -1,3 +1,4 @@
+# 快速排序，采取递归方法实现
 from random import randrange
 
 number_list = []
@@ -45,8 +46,8 @@ if __name__ == "__main__":
     # This is is used for producing test data
     for time in range(10):
         number_list.append(randrange(1, 10000))
-    print "original list:", number_list
-    print "sorted list:", qsort(number_list)
+    print("original list:", number_list)
+    print("sorted list:", qsort(number_list))
     # quciksort(0, len(number_list) - 1)
 
     # print "new list after quicksort:", number_list
