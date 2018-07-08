@@ -3,26 +3,26 @@ import logging
 
 
 def foo():
-    print("foo")
+	print("foo")
 
 
 def bar(func):
-    func()
+	func()
 
 
 bar(foo)
 
 
 def use_logging(func):
-    def wrapper():
-        logging.warning("%s is running" % func.__name__)
-        return func()  # 把 foo 当做参数传递进来时，执行func()就相当于执行foo()
-
-    return wrapper
+	def wrapper():
+		logging.warning("%s is running" % func.__name__)
+		return func()  # 把 foo 当做参数传递进来时，执行func()就相当于执行foo()
+	
+	return wrapper
 
 
 def foo():
-    print('i am foo')
+	print('i am foo')
 
 
 foo = use_logging(foo)  # 因为装饰器 use_logging(foo) 返回的时函数对象 wrapper，这条语句相当于  foo = wrapper
@@ -35,16 +35,16 @@ foo()  # 执行foo()就相当于执行 wrapper()
 # @语法糖
 
 def use_logging(func):
-    def wrapper():
-        logging.warning("%s is running" % func.__name__)
-        return func()
-
-    return wrapper
+	def wrapper():
+		logging.warning("%s is running" % func.__name__)
+		return func()
+	
+	return wrapper
 
 
 @use_logging
 def foo():
-    print("i am foo")
+	print("i am foo")
 
 
 foo()
@@ -55,9 +55,9 @@ foo()
 # 而不用重复修改函数或者增加新的封装。这样，我们就提高了程序的可重复利用性，并增加了程序的可读性。
 
 class example:
-    @staticmethod
-    def print_fun():
-        print("this is a static method")
+	@staticmethod
+	def print_fun():
+		print("this is a static method")
 
 
 example.print_fun()
