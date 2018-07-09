@@ -9,7 +9,8 @@ This project is used for robot framework study
 ## install RF
 pip install robotframework
 ## install selenium2library lib
-pip install --upgrade robotframework-selenium2library
+- pip install --upgrade robotframework-selenium2library
+- 无法用pip安装robot的，直接下载源码安装包到本地安装 https://github.com/robotframework/robotframework/releases
 
 ## 安装被测试环境
 - 本机通过docker安装并启动被测试产品：docker run -p 8001:8000 -p 8086:8080 oscarcommerce/django-oscar-sandbox
@@ -18,6 +19,7 @@ pip install --upgrade robotframework-selenium2library
  http://npm.taobao.org/mirrors/chromedriver/
  https://sites.google.com/a/chromium.org/chromedriver/home
  下载chrome驱动程序并复制到系统默认路径下，比如Linux系统复制到/usr/local/bin
+
  
 ## RF相关文档
 - 官方网站 http://robotframework.org/
