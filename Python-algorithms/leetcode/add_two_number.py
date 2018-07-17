@@ -13,16 +13,20 @@ class Solution(object):
         :rtype: ListNode
         """
         l1_list, l2_list = [], []
-        if isinstance(l1, ListNode):
-            l1_list.append(l1.val)
-            next_node = l1.next
+        # if isinstance(l1, ListNode):
+
+        l1_list.append(l1.val)
+        next_node = l1.next
+        if next_node:
             while next_node.next:
                 l1_list.append(next_node.val)
                 next_node = next_node.next
             l1_list.append(next_node.val)
-        if isinstance(l2, ListNode):
-            l2_list.append(l2.val)
-            next_node = l2.next
+            # if isinstance(l2, ListNode):
+
+        l2_list.append(l2.val)
+        next_node = l2.next
+        if next_node:
             while next_node.next:
                 l2_list.append(next_node.val)
                 next_node = next_node.next
@@ -36,7 +40,7 @@ class Solution(object):
             l2_str = l2_str + str(i)
         res = str(int(l1_str) + int(l2_str))
 
-        node_list = [ListNode(int(i)) for i in res]
+        node_list = [ListNode(int(i)) for i in res[::-1]]
         for i in range(0, len(node_list) - 1):
             node_list[i].next = node_list[i + 1]
         return node_list[0]
@@ -54,4 +58,4 @@ if __name__ == '__main__':
     l2 = ListNode(5)
     l2.next = middle_node
     s_obj = Solution()
-    print(s_obj.addTwoNumbers(l1, l2))
+    print(s_obj.addTwoNumbers(ListNode(0), ListNode(0)))
