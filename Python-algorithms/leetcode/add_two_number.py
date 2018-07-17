@@ -12,26 +12,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        l1_list, l2_list = [], []
-        # if isinstance(l1, ListNode):
-
-        l1_list.append(l1.val)
-        next_node = l1.next
-        if next_node:
-            while next_node.next:
-                l1_list.append(next_node.val)
-                next_node = next_node.next
-            l1_list.append(next_node.val)
-            # if isinstance(l2, ListNode):
-
-        l2_list.append(l2.val)
-        next_node = l2.next
-        if next_node:
-            while next_node.next:
-                l2_list.append(next_node.val)
-                next_node = next_node.next
-            l2_list.append(next_node.val)
-        print(l1_list, l2_list)
+        l1_list, l2_list = self.convert_node_into_list(l1), self.convert_node_into_list(l2)
         l1_str = ""
         for i in l1_list[::-1]:
             l1_str = l1_str + str(i)
@@ -45,12 +26,20 @@ class Solution(object):
             node_list[i].next = node_list[i + 1]
         return node_list[0]
 
+    def convert_node_into_list(self, node_p):
+        converted_list = [node_p.val]
+        next_node = node_p.next
+        while next_node:
+            converted_list.append(next_node.val)
+            next_node = next_node.next
+        return converted_list
+
 
 if __name__ == '__main__':
-    last_node = ListNode(3)
-    middle_node = ListNode(4)
-    middle_node.next = last_node
-    l1 = ListNode(2)
+    # last_node = ListNode(3)
+    middle_node = ListNode(8)
+    # middle_node.next = last_node
+    l1 = ListNode(1)
     l1.next = middle_node
     last_node = ListNode(4)
     middle_node = ListNode(6)
@@ -58,4 +47,4 @@ if __name__ == '__main__':
     l2 = ListNode(5)
     l2.next = middle_node
     s_obj = Solution()
-    print(s_obj.addTwoNumbers(ListNode(0), ListNode(0)))
+    print(s_obj.addTwoNumbers(l1, ListNode(0)))

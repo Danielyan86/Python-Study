@@ -15,7 +15,7 @@ def assert_usage():
 def assert_usage2():
     expression = False
     if __debug__:
-        print "enter"
+        print("enter")
         if expression: raise AssertionError("the satatement is false")
 
 
