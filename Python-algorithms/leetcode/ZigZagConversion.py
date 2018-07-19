@@ -54,21 +54,18 @@ class Solution:
         if numRows > 1:
             res_s = ""
             str_len = len(s)
-
             for i in range(0, numRows):
                 start_p = i  # 每一行第一个字符输出位置
                 position = 0
-                print(res_s)
                 while True:
                     if i == 0 or i == numRows - 1:  # 第一行或者最后一行每个字母间隔相等
-                        print(start_p)
-                        res_s = res_s + s[start_p]
+                        res_s = "".join((res_s, s[start_p]))
                         start_p = start_p + numRows * 2 - 2
                         if start_p >= str_len:
                             break
                     else:
-                        res_s = res_s + s[start_p]
-                        if position % 2 == 0:  # 偶数位和奇数位不一样
+                        res_s = "".join((res_s, s[start_p]))
+                        if position % 2 == 0:  # 偶数位和奇数位置的间隔数不一样
                             start_p = start_p + (numRows - (i + 1)) * 2
                         else:
                             start_p = start_p + 2 * i
@@ -80,5 +77,5 @@ class Solution:
 
 if __name__ == '__main__':
     s_obj = Solution()
-    res = s_obj.convert("ABCDEF", 5)
+    res = s_obj.convert("PAYPALISHIRING", 4)
     print(res)
