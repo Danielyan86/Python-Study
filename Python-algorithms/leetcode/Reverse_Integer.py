@@ -19,7 +19,7 @@ class Solution:
         :rtype: int
         """
         str_num = str(x)
-        over_nubmer = pow(2, 31)  # 优先计算出over_number, 大大提升执行料率
+        over_nubmer = pow(2, 31)  # 优先计算出over_number的值, 大大提升执行料率
         if "-" in str_num:
             str_num = str_num[1:]
             res_int = int("".join(reversed(str_num)))
