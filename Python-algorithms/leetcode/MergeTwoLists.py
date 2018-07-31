@@ -11,18 +11,31 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        new_list = ListNode()
-        while l1.next or l2.next:
-            if l1.next and l2.next:
-                temp_node = ListNode()
-                temp_node.val = l1.val if l1.val <= l2.val else l2.val
-                new_list.next = temp_node
-            elif l1.next:
+        if l1 and l2:
+            l1_list, l2_list = self.convert_node_into_list(l1), self.convert_node_into_list(l2)
+            new_list = sorted(l1_list + l2_list)
+        elif l1:
+            return l1
+        elif l2:
+            return l2
+        else:
+            return None
 
-            elif l2.next
+        return self.convert_list_into_node(new_list)
 
-    def traverse_node(self, l_node):
-        return l_node.value, l_node.next
+    def convert_list_into_node(self, list_p):
+        node_list = [ListNode(i) for i in list_p]
+        for i in range(len(node_list) - 1):
+            node_list[i].next = node_list[i + 1]
+        return node_list[0]
+
+    def convert_node_into_list(self, node_p):
+        converted_list = [node_p.val]
+        next_node = node_p.next
+        while next_node:
+            converted_list.append(next_node.val)
+            next_node = next_node.next
+        return converted_list
 
 
 if __name__ == '__main__':
@@ -35,4 +48,5 @@ if __name__ == '__main__':
     l2.next = l2_2
 
     s_obj = Solution()
-    s_obj.mergeTwoLists(l1, l2)
+    res = s_obj.mergeTwoLists([], [])
+    print(res)
