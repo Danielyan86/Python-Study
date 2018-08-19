@@ -1,7 +1,7 @@
 #用例配置部分
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
-Library           Selenium2Library
+Library           SeleniumLibrary
 Suite Setup      Open Browser To Login Page
 Suite Teardown   Close All Browsers
 
@@ -16,7 +16,7 @@ Valid Login negative case one
     Input Text  login-username   test@163.com
     Input Password       login-password  thisisatest
     Click Button         login_submit
-    Page Should Not Contain  Welcome!
+    Page Should Contain  Welcome!
     Sleep  3
 
 Valid Login negative case two
