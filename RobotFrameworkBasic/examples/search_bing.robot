@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation     测试必应搜索功能   #注释和说明部分
 Library           SeleniumLibrary                        #调用第三方测试库Selenium2Library
-# Test Teardown     Close All Browsers                      #测试结束之后执行关键字
+Test Teardown     Close All Browsers                      #测试结束之后执行关键字
 
 #变量定义部分
 *** Variables ***
@@ -15,4 +15,5 @@ ${BROWSER}        Chrome
   Open Browser  ${BING URL}  ${BROWSER}
   Input Text    sb_form_q  极客时间
   Submit Form    sb_form   #提交表单内容
-  sleep  5
+  sleep  5s
+  Element Should Contain  //ol[@id='b_results']//li[1]//div[1]//h2[1]//a[1]//strong[1]  极客时间
