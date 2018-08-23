@@ -86,6 +86,12 @@ def or_in_patttern():
     print(res.groups())  # group 是只包含括号里面的内容,通常用此方法取括号里面匹配的内容
 
 
+# 正则贪婪和非贪婪模式
+def greedy_or_not():
+    greedy_pattern='.*' #python 默认是贪婪匹配
+    not_greedy_pattern = '.*？'  # 非贪婪模式，尽可能少的匹配字符
+
+
 if __name__ == '__main__':
     # match_function()
     # search_function()
