@@ -11,7 +11,7 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        sub_sum, max_sum = 0, 0-
+        sub_sum, max_sum = 0, -float("inf")  # 最大值初始值为负无穷
         for num in nums:
             if sub_sum >= 0:
                 sub_sum = sub_sum + num
