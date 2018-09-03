@@ -178,3 +178,4 @@ selenium-screenshot*.png
 
 *.xml
 *.html
+.pytest_cache
