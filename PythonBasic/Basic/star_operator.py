@@ -73,3 +73,22 @@ a, *b = range(10)
 print(a, b)
 a, *b = [i for i in range(10)]
 print(a, b)
+
+
+def print_parameters(a, *b):
+    print(a)
+    print("print the b")
+    for i in b:
+        print(i)
+
+
+print_parameters(1, 2, 3, [4, 5], {'A': 7})
+
+
+def get_a(one, **values):
+    print(one)
+    print(values)
+    print(values['a'])
+
+
+s = get_a(0, a=1, b=2, c=3)
