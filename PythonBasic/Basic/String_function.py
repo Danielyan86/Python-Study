@@ -25,6 +25,32 @@ a = "1,2,3,4,5"
 print(a.split(","))
 
 # replace
+
 a = "ababababa"
 c = a.replace("a", "c")
 print(c)
+
+# str.translate
+print("==translate==")
+#
+# p = str.maketrans('abcde', '12345')
+#
+# print('ab'.maketrans(p))
+
+intab = "abcde"
+outtab = "12345"
+
+in_dic = {"a": "1", "b": "2"}
+# from string import maketrans
+test_str = "abcde"
+trantab = str.maketrans(intab, outtab, "e")
+
+print(test_str.translate(trantab))
+# print(test_str.maketrans(test_str))
+# print(str.translate(trantab))
+# intab = "aeiou"
+# outtab = "12345"
+# trantab = str.maketrans(intab, outtab)
+#
+# str = "this is string example....wow!!!"
+# print(str.translate(trantab))
