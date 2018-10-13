@@ -13,7 +13,6 @@ with open("test", "r") as f:
     print(f.readline())
     print(f.readline())
 
-
-# readline
+# readlines 返回list
 with open("test", "r") as f:
     print(f.readlines())
