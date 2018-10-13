@@ -10,4 +10,10 @@ with open("test", "r") as f:
 
 # readline
 with open("test", "r") as f:
+    print(f.readline())
+    print(f.readline())
+
+
+# readline
+with open("test", "r") as f:
     print(f.readlines())

@@ -2,8 +2,8 @@ dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
 keys = dishes.keys()
 values = dishes.values()
 
-print(keys, values)
-
+print(keys, type(keys))
+print(values)
 # iteration
 n = 0
 for val in values:
@@ -11,8 +11,8 @@ for val in values:
 print(n)
 
 # keys and values are iterated over in the same order
-list(keys)
-list(values)
+print(list(keys))
+print(list(values))
 
 # view objects are dynamic and reflect dict changes
 del dishes['eggs']
@@ -21,4 +21,3 @@ list(keys)
 
 # set operations
 keys & {'eggs', 'bacon', 'salad'}
-keys ^ {'sausage', 'juice'}
