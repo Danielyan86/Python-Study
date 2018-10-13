@@ -30,17 +30,13 @@ a = "ababababa"
 c = a.replace("a", "c")
 print(c)
 
-# str.translate
+# str.translate 字符串加密
 print("==translate==")
-#
-# p = str.maketrans('abcde', '12345')
-#
-# print('ab'.maketrans(p))
 
 intab = "abcde"
 outtab = "12345"
 
-in_dic = {"a": "1", "b": "2"}
+in_dic = {"a": "1", "b": "2"}  # 定义规则
 # from string import maketrans
 test_str = "abcde"
 trantab = str.maketrans(intab, outtab, "e")
