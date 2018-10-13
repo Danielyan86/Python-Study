@@ -8,11 +8,11 @@ with open("test", "r") as f:
     print(f.readline())
     print(f.readline())
 
-# readline
+# readline 一次读一行
 with open("test", "r") as f:
     print(f.readline())
     print(f.readline())
 
-# readlines 返回list
+# readlines 一次读完，返回list
 with open("test", "r") as f:
     print(f.readlines())
