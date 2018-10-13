@@ -15,7 +15,7 @@ print("2 | 1 = {0}".format(2 | 1))
 
 print("2 & 1 = {0}".format(2 & 1))
 
-print("2 & 1 = {0}".format(3 >> 1))
+print("3 & 1 = {0}".format(3 >> 1))
 
 print(1 << 2)
 # convert the float to int
