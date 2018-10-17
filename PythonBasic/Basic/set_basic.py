@@ -3,7 +3,9 @@
 # 或其它类序列（sequence-like）的操作。
 
 # 直接创建一个集合
-a = {1, 2, 3, 4}
+a_set = {1, 2, 3, 4}
+a_set.add(5)
+print(a_set)
 
 # 工厂方法创建一个集合
 a_set = set([1, 2, 3, 4])

@@ -38,3 +38,11 @@ for num in range(12):
         print("stop this time printing")
         continue
     print(num)
+
+
+def func():
+    pass
+
+
+def fuc2():
+    pass
