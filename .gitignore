@@ -179,3 +179,4 @@ selenium-screenshot*.png
 *.xml
 *.html
 .pytest_cache
+_trial_temp/*
