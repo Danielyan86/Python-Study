@@ -9,7 +9,7 @@ class MyClass:
 
 
 # in python3 this is equivalent to 'class Myclass2(object):'
-class Myclass2(object):
+class Myclass2:
     pass
 
 

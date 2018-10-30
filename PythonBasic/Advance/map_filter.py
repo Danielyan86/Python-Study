@@ -5,11 +5,11 @@ for i in range(1, 20):
 print(a)
 
 
-# map
 def map_function(x):
     return x * x
 
 
+# 使用函数传参
 print(list(map(map_function, range(1, 20))))
 
 # 使用lambda
