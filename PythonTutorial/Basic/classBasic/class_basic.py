@@ -4,7 +4,7 @@ class MyClass:
     i = 12345  # this is class attribute  类属性
     print(globals())
 
-    def f_print(self):  # 对象属性
+    def f_print(self):  # 对象属性，实例化之后才能调用的方法
         return 'hello world'
 
 
