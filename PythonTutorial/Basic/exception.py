@@ -1,4 +1,4 @@
-# 捕获指定异常
+# 捕获指定异常，并让程序继续进行
 def catch_specific_exception():
     try:
         open("blala", 'r')
@@ -56,11 +56,21 @@ def raise_function2():
         raise  # 抛出捕获的异常
 
 
+# 判断传入参数为字符串类型，否则中断程序，抛出异常
+def raise_function3(input_para):
+    if isinstance(input_para, str):
+        print("input para".format(input_para))
+    else:
+        raise AssertionError("parameter type should be string, however it is {}".format(type(input_para)))
+
+
 if __name__ == '__main__':
     # safe_float("1")
-    # catch_specific_exception()
+    catch_specific_exception()
     # raise_function()
-    catch_all_exceptions()
-    assert_keyword()
+    # catch_all_exceptions()
+    # assert_keyword()
     # raise_function()
-    raise_function2()
+    # raise_function2()
+    raise_function3("test")
+    raise_function3(123)
