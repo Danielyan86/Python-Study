@@ -1,10 +1,10 @@
 class MyClass:
     """A simple example class"""
 
-    i = 12345  # this is class attribute
+    i = 12345  # this is class attribute  类属性
     print(globals())
 
-    def f_print(self):
+    def f_print(self):  # 对象属性
         return 'hello world'
 
 

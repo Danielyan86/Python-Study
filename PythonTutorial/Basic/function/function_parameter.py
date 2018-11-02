@@ -16,8 +16,11 @@ print(taxme(10))
 
 
 # 非关键字可变长参数
-def tupleVarArgs(arg1, arg2=2, *tunple):
-    print(arg1, arg2, tunple)
+# *tunple贪婪匹配参数
+def tupleVarArgs(arg1, arg2=2, *tuple):
+    print(arg1, arg2, tuple)
+    for item in tuple:
+        print(item)
 
 
 tupleVarArgs(1, 2, 3, 4)
@@ -32,6 +35,7 @@ def dictVarArgs(arg1, arg2=2, **theRest):
         print(theRest[key])
 
 
+# 针对**theRest可以传入任意多的参数
 dictVarArgs(1, 2, key=3, key4=4)
 
 

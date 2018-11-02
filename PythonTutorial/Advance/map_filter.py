@@ -1,10 +1,15 @@
 # map don't change the element number in list!
+
+# map例子，如何实现1到20的平方数列表
+
+# 使用for条件语句实现
 a = []
 for i in range(1, 20):
     a.append(i * i)
 print(a)
 
 
+# 使用map方法数显
 def map_function(x):
     return x * x
 
@@ -12,17 +17,19 @@ def map_function(x):
 # 使用函数传参
 print(list(map(map_function, range(1, 20))))
 
-# 使用lambda
+# 使用lambda+map实现
 print(list(map(lambda x: x * x, range(1, 20))))
 
-# 使用列表推导式
+# 使用列表推导式实现
 print([x * x for x in range(1, 20)])
 
-# 多个参数
+# map传入多个参数
 print(list(map(lambda x, y: x * x - y * y, range(1, 20), range(20))))
 
 # filter
 # 元素个数可能会变
+# filter例子，求1到20里面的偶数列表
+# 使用for条件语句实现
 print("{0}filter{1}".format("=" * 80, "=" * 80))
 a = []
 for i in range(1, 20):
@@ -30,6 +37,7 @@ for i in range(1, 20):
         a.append(i)
 print(a)
 
+# 使用filter+lambda实现
 print(list(filter(lambda x: x % 2 == 0, range(1, 20))))
 
 # 列表推导式

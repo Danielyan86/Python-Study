@@ -29,13 +29,14 @@ def catch_all_exceptions():
         print(e)
         print("could not open the file")
         # raise
-    finally:
+    finally:  # 无论前面发生什么，最后都要执行finall里面的内容
         print("this is the end")
 
 
 # 使用断言关键字抛出异常
 def assert_keyword():
-    assert 1 == 1
+    assert 1 == 1  # 判断assert后面表达式是否为True
+    assert 2 + 2 == 2 * 2
     # assert 1 == 0
 
 
@@ -66,11 +67,11 @@ def raise_function3(input_para):
 
 if __name__ == '__main__':
     # safe_float("1")
-    catch_specific_exception()
+    # catch_specific_exception()
     # raise_function()
-    # catch_all_exceptions()
+    catch_all_exceptions()
     # assert_keyword()
     # raise_function()
     # raise_function2()
-    raise_function3("test")
-    raise_function3(123)
+    # raise_function3("test")
+    # raise_function3(123)
