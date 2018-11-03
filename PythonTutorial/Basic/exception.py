@@ -41,8 +41,7 @@ def assert_keyword():
 
 
 # raise触发异常
-# raise ZeroDivisionError("error")
-def raise_function(information=None):
+def raise_function():
     print("throw out the exception")
     raise NameError('HiThere')
     # raise AssertionError("throw out the exception")
