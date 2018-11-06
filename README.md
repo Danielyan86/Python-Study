@@ -12,7 +12,7 @@ Python的一些自动化测试工具
 ## PythonBasic
 python基本语法
 ## python challenge         
-python连写 http://www.pythonchallenge.com
+python练习 http://www.pythonchallenge.com
 ## RobotFrameworkBasic
 RobotFramework基本语法和demo
 
