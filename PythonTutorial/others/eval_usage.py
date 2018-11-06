@@ -9,8 +9,8 @@ Created on 2013-12-10
  If provided, globals must be a dictionary. If provided, locals can be any mapping object.
 '''
 x = 1
-print x + 1
+print(x + 1)
 
 # eval will chang the variable of the expression to value
 # in robotframe work this method is equal Evaluate
-print eval('x+1')
+print(eval('x+1'))
