@@ -12,13 +12,14 @@ Python的一些自动化测试工具
 ## PythonBasic
 python基本语法
 ## python challenge         
-python连写 http://www.pythonchallenge.com
+python练习 http://www.pythonchallenge.com
 ## RobotFrameworkBasic
 RobotFramework基本语法和demo
 
-## Python学习进阶的路线
-- 列表推导式
+## Python学习进阶路线
+- 列表，字典，推导式
 - 迭代器和生成器
-- map、reduce、filter、iter函数，函数式编程
+- 学习map、reduce、filter等函数，函数式编程
 - 装饰器
-- 基本设计模式
+- 设计模式
+- 多线程，多进程编程
