@@ -1,0 +1,198 @@
+[
+  {
+    "config": {
+      "name": "testset description",
+      "variables": [],
+      "request": {
+        "base_url": "",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
+        }
+      }
+    }
+  },
+  {
+    "test": {
+      "name": "/",
+      "request": {
+        "url": "http://127.0.0.1:8000/",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/json"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/jquery-3.3.1.min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/jquery-3.3.1.min.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/ajax-form.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/ajax-form.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/csrf.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/csrf.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/bootstrap.min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/bootstrap.min.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/prettify-min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/prettify-min.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/js/default.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/default.js",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/javascript"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "/static/rest_framework/img/grid.png",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/img/grid.png",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "image/png"
+          ]
+        }
+      ]
+    }
+  }
+]
