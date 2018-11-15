@@ -1,0 +1,20 @@
+-   config:
+        name: testset description
+        request:
+            base_url: ''
+            headers:
+                User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+        variables: []
+-   test:
+        name: /users/
+        request:
+            method: GET
+            url: http://127.0.0.1:8000/users/
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - headers.Content-Type
+            - text/html; charset=utf-8
