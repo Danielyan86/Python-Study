@@ -180,3 +180,4 @@ selenium-screenshot*.png
 *.html
 .pytest_cache
 _trial_temp/*
+github_token
