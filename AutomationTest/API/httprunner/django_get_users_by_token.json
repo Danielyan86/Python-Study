@@ -1,0 +1,84 @@
+[
+  {
+    "config": {
+      "name": "testset description",
+      "variables": [],
+      "request": {
+        "base_url": "",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
+        }
+      }
+    }
+  },
+  {
+    "test": {
+      "name": "get token",
+      "request": {
+        "url": "http://localhost:8000/get_auth_token/",
+        "method": "POST",
+        "json": {
+          "username": "adong",
+          "password": "admin123456"
+        }
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/json"
+          ]
+        }
+      ],
+      "extract": [
+        {
+          "token": "content.token"
+        }
+      ]
+    }
+  },
+  {
+    "test": {
+      "name": "get user information",
+      "request": {
+        "url": "http://127.0.0.1:8000/users/",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Token $token"
+        }
+      },
+      "validate": [
+        {
+          "eq": [
+            "status_code",
+            200
+          ]
+        },
+        {
+          "eq": [
+            "headers.Content-Type",
+            "application/json"
+          ]
+        },
+        {
+          "eq": [
+            "content.0.username",
+            "xiaodong.yan"
+          ]
+        },
+        {
+          "eq": [
+            "content.1.username",
+            "adong"
+          ]
+        }
+      ]
+    }
+  }
+]
