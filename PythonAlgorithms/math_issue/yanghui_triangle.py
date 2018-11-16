@@ -1,3 +1,4 @@
+# 打印杨辉三角形
 import itertools
 
 
