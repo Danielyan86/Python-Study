@@ -19,26 +19,17 @@ class user_array:
             raise AssertionError("index is out of range")
 
     def delete_element(self, index: int):
-        if index > self.capacity or index < 0:  # 超出现有数组索引值范围，抛出异常
+        if index > self._count or index < 0:  # 超出现有数组索引值范围，抛出异常
             raise AssertionError("index is out of range")
         if self._count == 0:
             raise AssertionError("array is empty")
         else:
-            if index == 0:
-                if self._count == 1:
-                    self._data = []
-
-                elif self._count > 1:
-                    self._data = self._data[1:]
-            elif index == self._count:
-                self._data.pop()
-            else:
-                self._data = self._data[0:index] + self._data[index + 1:]
+            self._data = self._data[:index] + self._data[index + 1:-1]
             self._count = self._count - 1
 
     # 中间插入一个元素
     def insert_element(self, index: int, value: int):
-        if index > self.capacity or index < 0:  # 超出现有数组索引值范围，抛出异常
+        if index > self._count or index < 0:  # 超出现有数组索引值范围，抛出异常
             raise AssertionError("index is out of range")
         if index == 0:
             self._data = [value] + self._data
