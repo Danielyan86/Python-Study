@@ -115,16 +115,16 @@ class SinglyLinkedList:
             prev.nextnode = None
         self._head = fake_head.nextnode  # in case head.value == value
 
-    # def __repr__(self) -> str:
-    #     nums = []
-    #     current = self._head
-    #     while current:
-    #         nums.append(current.value)
-    #         current = current.nextnode
-    #     if len(nums) > 0:
-    #         return "->".join(str(num) for num in nums)
-    #     else:
-    #         return ""
+    def __repr__(self) -> str:
+        nums = []
+        current = self._head
+        while current:
+            nums.append(current.value)
+            current = current.nextnode
+        if len(nums) > 0:
+            return "->".join(str(num) for num in nums)
+        else:
+            return ""
 
     def print_all(self):
         current = self._head
@@ -174,8 +174,10 @@ if __name__ == '__main__':
     link_list1 = SinglyLinkedList()
     for i in range(1, 6):
         link_list1.insert_value_to_tail(i)
+    print(link_list1)
     assert link_list1.find_by_index(0).value == 1
     assert link_list1.find_by_index(2).value == 3
     assert link_list1.find_by_value(2).value == 2
-    link_list1.delete_by_value(0)
-    assert link_list1.find_by_index(0).value == 3
+    link_list1.delete_by_value(1)
+    print(link_list1.find_by_index(0).value)
+    print(link_list1)
