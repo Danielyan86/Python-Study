@@ -23,6 +23,9 @@ class SinglyLinkedList:
             yield p
             p = p.nextnode
 
+    def get_head_node(self):
+        return self._head
+
     def find_by_value(self, value: int) -> Optional[Node]:
         p = self._head
         while p and p.value != value:
@@ -155,19 +158,6 @@ class create_one_way_linked_list:
         print(node)
         if node.nextnodenode:
             self.inter_nodes(node.nextnodenode)
-
-
-def test_LinkedList():
-    link_list1 = SinglyLinkedList()
-    for i in range(1, 6):
-        link_list1.insert_value_to_tail(i)
-    assert link_list1.find_by_index(0).value == 1
-    assert link_list1.find_by_index(2).value == 3
-    assert link_list1.find_by_value(2).value == 2
-    link_list1.delete_by_value(0)
-    assert link_list1.find_by_index(0).value == 2
-    link_list1.delete_by_node(0)
-    assert link_list1.find_by_index(0).value == 3
 
 
 if __name__ == '__main__':

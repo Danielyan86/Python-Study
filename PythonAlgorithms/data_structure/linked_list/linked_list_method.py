@@ -1,5 +1,5 @@
 from typing import Optional
-from linked_list import SinglyLinkedList, Node
+from linked_list_basic import SinglyLinkedList, Node
 
 
 # 反转单链表
@@ -17,6 +17,19 @@ def reverse_linked_list(head_node: Optional[Node]):
     return res_h
 
 
+def detect_the_loop(head_node: Optional[Node]):
+    node_set = set()
+    node_set.add(head_node)
+    node = head_node
+    while node.nextnode:
+        if head_node.nextnode in node_set:
+            return False
+        else:
+            node_set.add(head_node.nextnode)
+        node = node.nextnode
+    return True
+
+
 if __name__ == '__main__':
     link_list1 = SinglyLinkedList()
     for i in range(1, 6):
@@ -25,6 +38,5 @@ if __name__ == '__main__':
     h = reverse_linked_list(link_list1._head)
     link_list1._head = h
     link_list1.print_all()
-    # while h.nextnode:
-    #     print(h)
-    #     h = h.nextnode
+    res = detect_the_loop(link_list1._head)
+    print(res)
