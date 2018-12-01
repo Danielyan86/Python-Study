@@ -11,10 +11,9 @@ url = "http://www.bing.com"
 # text_box_xpath = "//input[@id='lst-ib']"
 text_box_id="sb_form_q"
 search_button_xpath = "//input[@name='btnK']"
-
 d = webdriver.Chrome()
-
 d.get(url)
 d.find_element_by_id(text_box_id).send_keys("test\n")
 time.sleep(6)
 d.close()
+d.quit()
