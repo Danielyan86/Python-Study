@@ -8,15 +8,16 @@ services:
     command: python app.py
 
   automationtest:
-    image: automationtest
+    image: automation-test
     ports:
       - "5904:25900"
+      - "4444:24444"
     volumes:
       - .:/home/seluser/automation
-    links:
+    links: #link 之后，可以在容器内部通过服务名字找到web-app,避免使用ip查找
       - web-app
-    depends_on:
-      -
+#    depends_on:
+#      -
 
 #networks:
 #  vpcbr:
