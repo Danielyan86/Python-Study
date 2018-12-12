@@ -22,6 +22,14 @@ def merge_sort(num_l: list):
         return templ_list
 
 
+def test_merge_sort():
+    res = merge_sort([1, 2, 3, 4])
+    assert res == [1, 2, 3, 4]
+    assert [1, 2, 3, 4] == merge_sort([4, 3, 2, 1])
+    assert [-4, 1, 2, 3, ] == merge_sort([-4, 3, 2, 1])
+    assert [1, 1, 3, 3, 4] == merge_sort([4, 3, 3, 1, 1])
+
+
 if __name__ == '__main__':
     res = merge_sort([1, 2, 3, 4])
     print(res)
