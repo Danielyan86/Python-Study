@@ -21,6 +21,7 @@ def bucket_sort(original_num):
                 new_list.append(num)
     return new_list
 
+
 if __name__ == '__main__':
     numbers = produce_random_number(20)
-    print bucket_sort(numbers)
+    print(bucket_sort(numbers))
