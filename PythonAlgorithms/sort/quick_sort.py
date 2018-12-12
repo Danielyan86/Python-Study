@@ -1,4 +1,5 @@
 # 快速排序，采取递归方法实现
+# 核心思想：找出标杆，递归比较
 from random import randrange
 
 number_list = []
