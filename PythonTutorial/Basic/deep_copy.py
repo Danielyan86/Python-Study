@@ -14,3 +14,6 @@ d = copy.deepcopy(c)
 d.append(6)
 
 print("After using deepcopy: {0}".format(c))
+
+# py3 里面直接调用内建copy方法
+d = c.copy()
