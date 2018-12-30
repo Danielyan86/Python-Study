@@ -13,7 +13,7 @@ print(any([1, 2, 3]))
 # 添加标注
 def fun_annotation() -> str:
     print("hello")
-    return True
+    return "true"
 
 
 print(fun_annotation.__annotations__)
