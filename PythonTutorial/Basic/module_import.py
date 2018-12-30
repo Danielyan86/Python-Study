@@ -10,6 +10,6 @@ import numpy as nm  # 重命名引入包
 print(math, nm)
 print(fabs(-1))
 
-import PythonTutorial.Basic.function.function_return as fr
+import PythonTutorial.Basic.function_basic.function_return as fr
 
 fr.hello()
