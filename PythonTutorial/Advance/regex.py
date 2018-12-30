@@ -1,14 +1,14 @@
-'''
+"""
 match()	Determine if the RE matches at the beginning of the string.
 search()	Scan through a string, looking for any location where this RE matches.
 findall()	Find all substrings where the RE matches, and returns them as a list.
 finditer()	Find all substrings where the RE matches, and returns them as an iterator.
-'''
+"""
 import re
 
 print("=" * 20, "match", "=" * 20)
 # 将正则表达式编译成Pattern对象
-pattern = re.compile(r'hello')
+# pattern = re.compile(r'hello')
 
 
 def match_function():
@@ -77,9 +77,9 @@ def raw_example():
 def or_in_patttern():
     pattern = re.compile(r'"(htt.*jpg.*) class|(htt.*jpg.*)\)"')
     res = pattern.search(
-        '''
-        '<div class="img"><div data-background="http://static1.keepcdn.com/picture/2018/07/15/20/f09a562a22592fab1ef598517eb04ca222832e9a_1335x1334.jpg?imageMogr2/thumbnail/306x/quality/95" class="keep-lazy"></div></div>'
-        ''')
+            '''
+            '<div class="img"><div data-background="http://static1.keepcdn.com/picture/2018/07/15/20/f09a562a22592fab1ef598517eb04ca222832e9a_1335x1334.jpg?imageMogr2/thumbnail/306x/quality/95" class="keep-lazy"></div></div>'
+            ''')
     group = res.group()
 
     print(group, type(group))  # group 里面匹配的是整个字符串
@@ -88,7 +88,7 @@ def or_in_patttern():
 
 # 正则贪婪和非贪婪模式
 def greedy_or_not():
-    greedy_pattern='.*' #python 默认是贪婪匹配
+    greedy_pattern = '.*'  # python 默认是贪婪匹配
     not_greedy_pattern = '.*？'  # 非贪婪模式，尽可能少的匹配字符
 
 
