@@ -4,7 +4,7 @@ class MyClass:
 
     # 构造器方法
     def __init__(self):
-        print('initized')
+        print('initialized')
         self.classvar = "2.0"
 
     def show_version(self):
