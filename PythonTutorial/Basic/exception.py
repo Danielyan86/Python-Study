@@ -29,7 +29,7 @@ def catch_all_exceptions():
         print(e)
         print("could not open the file")
         # raise
-    finally:  # 无论前面发生什么，最后都要执行finall里面的内容
+    finally:  # 无论前面发生什么，最后都要执行finally里面的内容
         print("this is the end")
 
 
@@ -68,9 +68,9 @@ if __name__ == '__main__':
     # safe_float("1")
     # catch_specific_exception()
     # raise_function()
-    catch_all_exceptions()
+    # catch_all_exceptions()
     # assert_keyword()
     # raise_function()
     # raise_function2()
-    # raise_function3("test")
+    raise_function3("test")
     # raise_function3(123)
