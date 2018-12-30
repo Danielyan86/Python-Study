@@ -8,7 +8,7 @@ import re
 
 print("=" * 20, "match", "=" * 20)
 # 将正则表达式编译成Pattern对象
-# pattern = re.compile(r'hello')
+pattern = re.compile(r'hello')
 
 
 def match_function():
@@ -18,7 +18,7 @@ def match_function():
     if match:
         # 使用Match获得分组信息, group 方法返回匹配正则表达式字符串
         print(match.group(), type(match.group()))
-        print(match.groups())
+        # start 和end分别返回字符串匹配的起始和结束位置
         print(match.start(), match.end())
 
     # 若匹配失败,result为None
@@ -31,7 +31,7 @@ def search_function():
     # search 若匹配失败,result为None
     global pattern
     result = pattern.search('!hello world!hello')
-    print(result.group())  # gourp()方法返回一个字符串
+    print(result.group())  # group()方法返回一个字符串
 
     print("=" * 20, "Groups", "=" * 20)
 
@@ -83,7 +83,7 @@ def or_in_patttern():
     group = res.group()
 
     print(group, type(group))  # group 里面匹配的是整个字符串
-    print(res.groups())  # group 是只包含括号里面的内容,通常用此方法取括号里面匹配的内容
+    print(res.groups())  # groups 是只包含括号里面的内容,通常用此方法取括号里面匹配的内s容
 
 
 # 正则贪婪和非贪婪模式
@@ -93,9 +93,9 @@ def greedy_or_not():
 
 
 if __name__ == '__main__':
-    # match_function()
+    match_function()
     # search_function()
     # findall_function()
     # finditer_function()
     # raw_example()
-    or_in_patttern()
+    # or_in_patttern()
