@@ -2,29 +2,29 @@
 
 # map例子，如何实现1到20的平方数列表
 
-# 使用for条件语句实现
+# 使用for条件语句
 a = []
-for i in range(1, 20):
+for i in range(1, 21):
     a.append(i * i)
 print(a)
 
 
-# 使用map方法数显
+# 使用map方法
 def map_function(x):
     return x * x
 
 
 # 使用函数传参
-print(list(map(map_function, range(1, 20))))
+print(list(map(map_function, range(1, 21))))
 
 # 使用lambda+map实现
-print(list(map(lambda x: x * x, range(1, 20))))
+print(list(map(lambda x: x * x, range(1, 21))))
 
 # 使用列表推导式实现
-print([x * x for x in range(1, 20)])
+print([x * x for x in range(1, 21)])
 
 # map传入多个参数
-print(list(map(lambda x, y: x * x - y * y, range(1, 20), range(20))))
+print(list(map(lambda x, y: x * x - y * y, range(1, 21), range(21))))
 
 # filter
 # 元素个数可能会变
