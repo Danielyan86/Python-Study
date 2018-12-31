@@ -7,6 +7,9 @@ class MyClass:
     def f_print(self):  # 对象属性，实例化之后才能调用的方法
         return 'hello world'
 
+    def __init__(self, var="nihao"):
+        self.var = var
+
 
 # in python3 this is equivalent to 'class Myclass2(object):'
 class Myclass2:

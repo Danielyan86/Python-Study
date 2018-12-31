@@ -20,6 +20,7 @@ def print_builtins():
 def print_globals():
     print("enter globals")
     print(globals())
+    print(locals())
 
 
 def local():
