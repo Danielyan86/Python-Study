@@ -6,7 +6,7 @@ def get_token(req=None):
     url = "http://127.0.0.1:8086/en-gb/"
     response = req.get(url)
     if response.status_code == 200:
-        pattern = r"name='csrfmiddlewaretoken' value='(\w+)'"
+        pattern = r'''name="csrfmiddlewaretoken" value="(\w+)"'''
         reg = re.compile(pattern)
         result = reg.search(response.text)
         return result.groups()[0]
