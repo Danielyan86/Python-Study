@@ -6,6 +6,7 @@ Python解释器首先加载内建名称空间。它由builtins模块中的名字
 '''
 
 
+# 最外面一层
 def print_builtins():
     # __builtins__模块包含内建名称空间中内建名字的集合
     print(dir(builtins))
@@ -15,7 +16,7 @@ def print_builtins():
 # sys.path.append("/path/mymodule")
 # print(sys.path)
 
-
+# 第二层，当前模块
 def print_globals():
     print("enter globals")
     print(globals())
@@ -23,7 +24,7 @@ def print_globals():
 
 def local():
     local_var = 1
-    print("enter locals")
+    print("======enter locals=====")
     print(locals())
 
 
@@ -34,7 +35,8 @@ def overwrite_the_name():
 
 
 if __name__ == '__main__':
-    # local()
+    print_builtins()
     print_globals()
-    # local()
+    local()
+
     # overwrite_the_name()
