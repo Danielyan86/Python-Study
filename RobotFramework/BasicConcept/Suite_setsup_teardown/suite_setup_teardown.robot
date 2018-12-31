@@ -16,7 +16,7 @@ Valid Login negative case one
     Input Text  login-username   test@163.com
     Input Password       login-password  thisisatest
     Click Button         login_submit
-    Page Should Contain  Welcome!
+    Page Should Not Contain  Welcome!
     Sleep  3
 
 Valid Login negative case two
