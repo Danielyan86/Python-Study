@@ -1,7 +1,7 @@
 import requests
 
 
-class django_restapi:
+class DjangoRestapi:
     req = requests.Session()
 
     def get_user_info(self):
@@ -16,7 +16,7 @@ class django_restapi:
     #     url = "http://127.0.0.1:8000/"
 
 
-class github_restapi:
+class GithubRestapi:
     req = requests.Session()
     url = "https://api.github.com/"
 
@@ -33,10 +33,9 @@ class github_restapi:
         print(res.json())
 
 
-
 if __name__ == '__main__':
-    # api_test = django_restapi()
-    # api_test.get_user_info()
-    api_test = github_restapi()
+    api_test = DjangoRestapi()
+    api_test.get_user_info()
+    api_test = GithubRestapi()
     api_test.get_organizations()
     api_test.get_user_info()
