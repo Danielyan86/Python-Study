@@ -17,4 +17,4 @@
             - 200
         -   eq:
             - headers.Content-Type
-            - text/html; charset=utf-8
+            - application/json
