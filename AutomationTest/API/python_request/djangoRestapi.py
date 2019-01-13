@@ -28,14 +28,17 @@ class GithubRestapi:
 
     def get_organizations(self):
         org_url = self.url + "orgs/playpython/members"
-        headers = {"Authorization": "Token c2b29eca987a62cad5f803eca0a684d916c7dfa2"}
+        headers = {"Authorization": "Token 5cf80201637ec471925fba9ade37b8563f667b22"}
         res = self.req.get(org_url, headers=headers)
-        print(res.json())
+        members_data = res.json()
+        for item in members_data:
+            if "Danielyan86" == item["login"]:
+                assert item["type"] == "User"
 
 
 if __name__ == '__main__':
-    api_test = DjangoRestapi()
-    api_test.get_user_info()
+    # api_test = DjangoRestapi()
+    # api_test.get_user_info()
     api_test = GithubRestapi()
     api_test.get_organizations()
-    api_test.get_user_info()
+    # api_test.get_user_info()
