@@ -14,14 +14,15 @@ class TestBingHomepage(unittest.TestCase):
             self.d = webdriver.Remote(command_executor=selenium_grid_url, desired_capabilities=capabilities)
         else:
             self.d = webdriver.Chrome()
-            self.d.implicitly_wait(10)
 
     def test_bing(self):
         print("start test")
         bing_url = "https://bing.com"
+        text_box_id = "sb_form_q"
 
         self.d.get(bing_url)
         self.d.find_element_by_id("sb_form_q")  # 验证输入框
+        self.d.find_element_by_id(text_box_id).send_keys("test\n")
         self.d.implicitly_wait(10)
 
     # 关闭浏览器
