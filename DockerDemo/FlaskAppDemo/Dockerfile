@@ -3,7 +3,7 @@
 FROM python:3.6-slim
 
 # Set the working directory to /app
-# 设置工作目录
+# 切换工作目录，即编译时候的镜像的目录，类似于cd命令
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
@@ -15,7 +15,7 @@ ADD . /app
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
-# 暴露容器里面端口到宿主机
+# 声明容器端口80将会被使用，不同于端口映射操作
 EXPOSE 80
 
 # Define environment variable
@@ -23,5 +23,5 @@ EXPOSE 80
 ENV NAME World
 
 # Run app.py when the container launches
-# 容器运行时候执行CMD里面命令
+# 容器运行时候执行CMD里面命令，也就是执行docker run之后才会执行的操作
 CMD ["python", "app.py"]
