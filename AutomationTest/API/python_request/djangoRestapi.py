@@ -8,6 +8,7 @@ class DjangoRestapi:
         url = "http://127.0.0.1:8000/users/"
         req = self.req.get(url=url)
         res_json = req.json()
+        print(res_json)
         assert req.status_code == 200
         assert res_json[0]['username'] == 'xiaodong.yan'
         assert res_json[0]['is_staff'] is True
@@ -37,8 +38,9 @@ class GithubRestapi:
 
 
 if __name__ == '__main__':
-    # api_test = DjangoRestapi()
+    api_test = DjangoRestapi()
+    api_test.get_user_info()
     # api_test.get_user_info()
-    api_test = GithubRestapi()
-    api_test.get_organizations()
+    # api_test = GithubRestapi()
+    # api_test.get_organizations()
     # api_test.get_user_info()

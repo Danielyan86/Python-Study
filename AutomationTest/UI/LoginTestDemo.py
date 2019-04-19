@@ -1,12 +1,12 @@
+import time
 import unittest
 
-import time
 from selenium import webdriver
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        browser_type = input("input the browser type: ")
+        browser_type = input("input the browser type: ")  # 选择浏览器类型
         if browser_type == "ch":
             self.d = webdriver.Chrome()
         elif browser_type == "ff":

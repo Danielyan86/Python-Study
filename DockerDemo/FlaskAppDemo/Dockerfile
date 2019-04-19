@@ -15,12 +15,13 @@ ADD . /app
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
-# 声明容器端口80将会被使用，不同于端口映射操作
+# 声明容器端口80将会被使用。如果没有声明，并不影响端口映射参数-p使用
 EXPOSE 80
 
 # Define environment variable
 # 定义环境变量
 ENV NAME World
+
 
 # Run app.py when the container launches
 # 容器运行时候执行CMD里面命令，也就是执行docker run之后才会执行的操作
