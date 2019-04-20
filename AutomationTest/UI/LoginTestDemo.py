@@ -14,14 +14,17 @@ class MyTestCase(unittest.TestCase):
 
     def test_login_the_main_page(self):
         url = "http://127.0.0.1:8086/"
+        user_name = "test@163.com"
+        pass_word = "Test123456"
+        account_xpath = '//a[@href="/en-gb/accounts/"]'
         self.d.get(url)
         time.sleep(4)
         self.d.find_element_by_id("login_link").click()
         time.sleep(6)
-        self.d.find_element_by_name("login-username").send_keys("test@163.com")
-        self.d.find_element_by_name("login-password").send_keys("Test123456")
+        self.d.find_element_by_name("login-username").send_keys(user_name)
+        self.d.find_element_by_name("login-password").send_keys(pass_word)
         self.d.find_element_by_name("login_submit").click()
-        self.d.find_element_by_xpath('//a[@href="/en-gb/accounts/"]')
+        self.d.find_element_by_xpath(account_xpath)
 
     def tearDown(self):
         self.d.close()
