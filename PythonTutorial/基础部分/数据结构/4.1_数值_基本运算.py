@@ -10,7 +10,7 @@ print("8 % 5 = {0}".format(8 % 5))
 # 5 squared
 print("5 ** 2 = {0}".format(5 ** 2))
 
-# Bitwise Operations on Integer Types¶
+# Bitwise Operations on Integer Types
 print("2 | 1 = {0}".format(2 | 1))
 
 print("2 & 1 = {0}".format(2 & 1))

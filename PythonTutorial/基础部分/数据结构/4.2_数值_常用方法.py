@@ -1,12 +1,16 @@
 import math
 import random
 
+print("打印圆周率")
 print(math.pi)
 
+print("打印自然常熟")
 print(math.e)
 
+print("2的三次方运算")
 print(math.pow(2, 3))
 
+print("8的平方根")
 print(math.sqrt(8))
 
 print(random.random())  # Random float:  0.0 <= x < 1.0
