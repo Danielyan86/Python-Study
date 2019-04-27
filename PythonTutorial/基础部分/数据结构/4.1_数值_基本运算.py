@@ -1,4 +1,17 @@
-# division always returns a floating point number
+# 打印一个字符的十六进制
+print(ord("A"))
+
+# 把整型数字转化成16进制
+hexadecimal = hex(10)
+print("打印16进制数字: {hexadecimal}".format(hexadecimal=hexadecimal))
+
+bin_number = bin(10)
+print("打印2进制数字: {bin_number}".format(bin_number=bin_number))
+
+oct_number = oct(10)
+print("打印8进制数字: {oct_number}".format(oct_number=oct_number))
+
+# division always returns a floating spoint number
 print("8 / 5 = {0}".format(8 / 5))
 
 # floor division discards the fractional part
@@ -17,10 +30,13 @@ print("2 & 1 = {0}".format(2 & 1))
 
 print("3 & 1 = {0}".format(3 >> 1))
 
+# 左移两位
 print(1 << 2)
+
 # convert the float to int
 print("convert the float to int", int(4.1))
 
+# 复数运算
 print(type(5 + 4j))
 
 print(isinstance(1, int))

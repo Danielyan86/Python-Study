@@ -4,7 +4,7 @@ import random
 print("打印圆周率")
 print(math.pi)
 
-print("打印自然常熟")
+print("打印自然常数")
 print(math.e)
 
 print("2的三次方运算")
