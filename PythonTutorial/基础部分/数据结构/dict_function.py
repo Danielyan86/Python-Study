@@ -1,5 +1,7 @@
 dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
+# 获取字典的key
 keys = dishes.keys()
+# 获取字典的values
 values = dishes.values()
 
 print("=" * 20)
