@@ -2,7 +2,7 @@
 user_input = input()
 print(user_input)
 
-# 统计字符格式
+# 统计字符
 a = "312321"
 print(a.count("2"))
 
