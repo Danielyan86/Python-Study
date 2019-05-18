@@ -33,6 +33,16 @@ def catch_all_exceptions():
         print("this is the end")
 
 
+# else 流程
+def try_else_exception():
+    try:
+        print("This is try block")
+    except Exception as e:
+        print("This is except block")
+    else:
+        print("There is no exception")
+
+
 # 使用断言关键字抛出异常
 def assert_keyword():
     assert 1 == 1  # 判断assert后面表达式是否为True
@@ -65,12 +75,12 @@ def raise_function3(input_para):
 
 
 if __name__ == '__main__':
-    # safe_float("1")
+    safe_float("1")
     # catch_specific_exception()
     # raise_function()
     # catch_all_exceptions()
     # assert_keyword()
     # raise_function()
     # raise_function2()
-    raise_function3("test")
+    # raise_function3("test")
     # raise_function3(123)
