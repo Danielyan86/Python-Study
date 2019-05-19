@@ -14,11 +14,11 @@ def catch_specific_exception():
 # 捕获多个异常
 def safe_float(obj):
     try:
-        retval = float(obj)
+        retrieval = float(obj)
     except (ValueError, TypeError):
-        retval = "argument must be a number or string"
-    print(retval)
-    return retval
+        retrieval = "argument must be a number or string"
+    print(retrieval)
+    return retrieval
 
 
 # 捕获所有异常
@@ -38,6 +38,7 @@ def try_else_exception():
     try:
         print("This is try block")
     except Exception as e:
+        print(e)
         print("This is except block")
     else:
         print("There is no exception")
@@ -75,8 +76,8 @@ def raise_function3(input_para):
 
 
 if __name__ == '__main__':
-    safe_float("1")
-    # catch_specific_exception()
+    # safe_float("1")
+    catch_specific_exception()
     # raise_function()
     # catch_all_exceptions()
     # assert_keyword()
