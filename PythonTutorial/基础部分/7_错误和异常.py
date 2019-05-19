@@ -72,7 +72,7 @@ def raise_function3(input_para):
     if isinstance(input_para, str):
         print("input para".format(input_para))
     else:
-        raise AssertionError("parameter type should be string, however it is {}".format(type(input_para)))
+        raise Exception("parameter type should be string, however it is {}".format(type(input_para)))
 
 
 if __name__ == '__main__':
@@ -83,5 +83,5 @@ if __name__ == '__main__':
     # assert_keyword()
     # raise_function()
     # raise_function2()
-    # raise_function3("test")
-    # raise_function3(123)
+    # raise_function3()
+    raise_function3(123)
