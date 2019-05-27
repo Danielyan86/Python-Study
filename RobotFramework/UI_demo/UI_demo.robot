@@ -16,7 +16,7 @@ Valid Login      #测试用例名字
     Input Text  login-username   test@163.com   #调用第三方库关键字并传入参数
     Input Password       login-password  thisisatest1234
     Click Button         login_submit
-    Page Should Contain  Welcome!
+    Page Should Contain  Account
     Sleep  5             #系统关键字
 
 #用户自定义关键字
