@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.   #注释和说明部分
 Library           SeleniumLibrary                        #调用第三方测试库Selenium2Library
-Test Setup         Open Browser To Main Page
+Test Setup        Open Browser To Main Page
 Test Teardown     Close All Browsers                      #测试结束之后执行关键字
 
 #变量定义部分
@@ -17,7 +17,7 @@ Valid Login
     Input Text  login-username   test@163.com
     Input Password       login-password  thisisatest1234
     Click Button         login_submit
-    Page Should Contain  Welcome!
+    Page Should Contain  Account
     Sleep  5
 
 Click all product
@@ -28,5 +28,5 @@ Click all product
 *** Keywords ***
 Open Browser To Main Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
-    Title Should Be    Oscar - Sandbox
+    Title Should be    All products | Oscar - Sandbox
 

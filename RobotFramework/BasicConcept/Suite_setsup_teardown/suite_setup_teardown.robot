@@ -16,14 +16,14 @@ Valid Login negative case one
     Input Text  login-username   test@163.com
     Input Password       login-password  thisisatest
     Click Button         login_submit
-    Page Should Not Contain  Welcome!
+    Page Should Not Contain   Account
     Sleep  3
 
 Valid Login negative case two
     Input Text  login-username   test@163.com
     Input Password       login-password  thisisatest2
     Click Button         login_submit
-    Page Should Not Contain  Welcome!
+    Page Should Not Contain  Account
     Sleep  3
 
 #用户自定义关键字
