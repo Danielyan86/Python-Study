@@ -2,6 +2,7 @@
 Library       OperatingSystem
 Resource     userdata.robot
 
+# 变量定义部分变量的作用域是当前整个文件
 *** Variables ***
 ${MESSAGE}    Hello, world!    #定义一个字符串
 ${integer}   ${3}              #定义一个整数
