@@ -1,27 +1,23 @@
-#用例配置部分
 *** Settings ***
-Documentation     Simple example using SeleniumLibrary.   #注释和说明部分
-Library           Selenium2Library                        #调用第三方测试库Selenium2Library
-Test Teardown     Close All Browsers                      #测试结束之后执行关键字
+Documentation     Simple example using SeleniumLibrary.
+Library           Selenium2Library                        # Import the test Lib Selenium2Library
+Test Teardown     Close All Browsers
 
-#变量定义部分
 *** Variables ***
 ${LOGIN URL}      http://127.0.0.1:8086/en-gb/accounts/login/
 ${BROWSER}        Chrome
 
-#测试用例部分
 *** Test Cases ***
-Valid Login      #测试用例名字
-    Open Browser To Login Page      #调用用户自定义关键字
-    Input Text  login-username   test@163.com   #调用第三方库关键字并传入参数
+Valid Login      # Test case name
+    Open Browser To Login Page      # User keyword
+    Input Text  login-username   test@163.com   # use the keyword from library Selenium2Library
     Input Password       login-password  thisisatest1234
     Click Button         login_submit
     Page Should Contain  Account
-    Sleep  5             #系统关键字
+    Sleep  5
 
-#用户自定义关键字
 *** Keywords ***
-Open Browser To Login Page          #用户关键字
+Open Browser To Login Page          # Define a user keyword
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Title Should Be    Login or register | Oscar - Sandbox
 

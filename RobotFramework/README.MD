@@ -29,6 +29,13 @@ pip install robotframework
 ### 基础
 - 运行Demo中的RF测试用例，理解测试用例和测试套件概念
 - 创建测试数据，理解常量，变量等不同数据类型概念
+- 导入第三方库并运行其中的一个关键字
+  http://robotframework.org/Selenium2Library/Selenium2Library.html#Click%20Link
+  http://robotframework.org/robotframework/latest/libraries/Collections.html
+- 创建一个用户自定义关键字并运行
+- 执行一个测试用例并修改输出的log名字
+- 查看并理解测试报告
+
 
 ### 进阶
 - 运行并理解Demo中的测试用例
