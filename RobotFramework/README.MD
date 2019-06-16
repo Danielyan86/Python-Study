@@ -24,9 +24,6 @@ pip install robotframework
 ## RF相关文档
 - 官方网站 http://robotframework.org/
 - 用户手册 http://robotframework.org/robotframework/#user-guide
-
-## 示例代码
-- https://github.com/PlayPython/Python-Study/tree/master/RobotFrameworkBasic
  
 ## 练习
 ### 基础
