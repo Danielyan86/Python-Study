@@ -10,7 +10,7 @@ class DjangoRestapi:
         res_json = req.json()
         print(res_json)
         assert req.status_code == 200
-        assert res_json[0]['username'] == 'xiaodong.yan'
+        assert res_json[0]['username'] == 'admin'
         assert res_json[0]['is_staff'] is True
 
     # def login_test(self):

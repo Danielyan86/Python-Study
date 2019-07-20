@@ -18,8 +18,8 @@
         "url": "http://localhost:8000/get_auth_token/",
         "method": "POST",
         "json": {
-          "username": "adong",
-          "password": "admin123456"
+          "username": "admin",
+          "password": "123456"
         }
       },
       "validate": [
@@ -69,13 +69,7 @@
         {
           "eq": [
             "content.0.username",
-            "xiaodong.yan"
-          ]
-        },
-        {
-          "eq": [
-            "content.1.username",
-            "adong"
+            "admin"
           ]
         }
       ]

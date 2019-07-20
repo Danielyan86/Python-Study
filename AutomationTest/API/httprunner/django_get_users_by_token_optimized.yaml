@@ -1,0 +1,35 @@
+- config:
+    name: Get token and verify user
+    variables: {}
+    base_url: http://localhost:8000
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
+    validate:
+    - eq:
+      - status_code
+      - 200
+    - eq:
+      - headers.Content-Type
+      - application/json
+- test:
+    name: get token
+    request:
+      url: "/get_auth_token/"
+      method: POST
+      json:
+        username: admin
+        password: '123456'
+    extract:
+    - token: content.token
+- test:
+    name: get user information
+    request:
+      url: "/users/"
+      method: GET
+      headers:
+        Authorization: Token $token
+    validate:
+    - eq:
+      - content.0.username
+      - admin
