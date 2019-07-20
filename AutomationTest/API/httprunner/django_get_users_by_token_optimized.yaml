@@ -1,6 +1,6 @@
 - config:
     name: Get token and verify user
-    variables: {}
+    variables: {"username": "${get_name()}"}
     base_url: http://localhost:8000
     headers:
       User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36
@@ -32,4 +32,4 @@
     validate:
     - eq:
       - content.0.username
-      - admin
+      - $username
