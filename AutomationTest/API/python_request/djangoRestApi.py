@@ -1,7 +1,7 @@
 import requests
 
 
-class DjangoRestapi:
+class DjangoRestApi:
     req = requests.Session()
 
     def get_user_info(self):
@@ -38,7 +38,7 @@ class GithubRestapi:
 
 
 if __name__ == '__main__':
-    api_test = DjangoRestapi()
+    api_test = DjangoRestApi()
     api_test.get_user_info()
     # api_test.get_user_info()
     # api_test = GithubRestapi()
