@@ -35,9 +35,14 @@ def overwrite_the_name():
     print(list)
 
 
-if __name__ == '__main__':
-    print_builtins()
-    print_globals()
-    local()
+def import_package_with_string():
+    os_import = __import__("os")  # 动态加载类函数
+    os_import.system("ls")
 
+
+if __name__ == '__main__':
+    # print_builtins()
+    # print_globals()
+    # local()
+    import_package_with_string()
     # overwrite_the_name()
