@@ -7,7 +7,7 @@ Suite Teardown   Close All Browsers
 
 #变量定义部分
 *** Variables ***
-${LOGIN URL}      http://127.0.0.1:8086/en-gb/accounts/login/
+${LOGIN URL}      http://127.0.0.1:8080/en-gb/accounts/login/
 ${BROWSER}        Chrome
 
 #测试用例部分
