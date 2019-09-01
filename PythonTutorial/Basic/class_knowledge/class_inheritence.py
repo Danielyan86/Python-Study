@@ -2,7 +2,7 @@ class Car:
     condition = "new"
 
     def __init__(self, model="default", color="default", speed="default"):
-        print("initialize the ElectricCar")
+        print("initialize the Car")
         self.model = model
         self.color = color
         self.mpg = speed
@@ -24,7 +24,6 @@ class ElectricCar(Car):
         # super(ElectricCar, self).__init__(model, color, speed) #python2 way
         super().__init__(model, color, speed)
         self.battery_type = battery_type
-
 
 class OilCar(Car):
     # 调用父类的初始化方法
@@ -51,10 +50,10 @@ if __name__ == '__main__':
     print(Tesla.display_car())
     Tesla.show_feature()
 
-    Toyota = MixedCar("SUV", "red", "40", "new")
-    Toyota.drive_car()
-    print(MixedCar.mro())
-    print(Toyota.condition)
+    # Toyota = MixedCar("SUV", "red", "40", "new")
+    # Toyota.drive_car()
+    # print(MixedCar.mro())
+    # print(Toyota.condition)
     #
     # Ford = OilCar("truck", "blue", "30", "used")
     # Ford.display_car()
