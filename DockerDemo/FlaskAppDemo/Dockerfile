@@ -7,7 +7,7 @@ FROM python:3.6-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-# 复制当前目录内容到容器里面app目录下面
+# 复制当前目录内容到容器里面app目录下面。根路径是根据上下文路径打包到deamon的路径
 ADD . /app
 
 # Install any needed packages specified in requirements.txt
@@ -21,7 +21,6 @@ EXPOSE 80
 # Define environment variable
 # 定义环境变量
 ENV NAME World
-
 
 # Run app.py when the container launches
 # 容器运行时候执行CMD里面命令，也就是执行docker run之后才会执行的操作
