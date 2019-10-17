@@ -12,4 +12,3 @@ for root, dirs, file_list in os.walk("."):
         if res:
             print(res.group())
             os.system("rm {0}".format(path))
-            

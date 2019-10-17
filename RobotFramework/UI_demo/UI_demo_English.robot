@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
-Library           Selenium2Library                        # Import the test Lib Selenium2Library
+Library           SeleniumLibrary                        # Import the test Lib Selenium2Library
 Test Teardown     Close All Browsers
 
 *** Variables ***
