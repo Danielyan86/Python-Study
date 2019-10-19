@@ -21,7 +21,8 @@ Valid Login
     Sleep  5
 
 Click all product
-    Click link       	xpath://li/a[@href="/en-gb/catalogue/"]
+  [tags]  product
+    Page Should Contain     	All products
     Sleep  5
 
 #用户自定义关键字

@@ -16,4 +16,3 @@ ${BROWSER}        Chrome
   Input Text    sb_form_q  极客时间
   Submit Form    sb_form   #提交表单内容
   sleep  5s
-  Element Should Contain  //ol[@id='b_results']//li[1]//div[1]//h2[1]//a[1]//strong[1]  极客时间
