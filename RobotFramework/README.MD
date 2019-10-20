@@ -8,8 +8,8 @@ This project is used for robot framework study
  https://pip.pypa.io/en/stable/installing/
 ## install RF
 pip install robotframework
-## install selenium2library lib
-- pip install --upgrade robotframework-selenium2library
+## install seleniumlibrary lib
+- pip install --upgrade robotframework-seleniumlibrary
 - 无法用pip安装robot的，直接下载源码安装包到本地安装 https://github.com/robotframework/robotframework/releases
 
 ## 安装被测试环境
