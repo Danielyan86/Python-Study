@@ -5,7 +5,7 @@ Resource     userdata.robot
 # 变量定义部分变量的作用域是当前整个文件
 *** Variables ***
 ${MESSAGE}    Hello, world!    #定义一个字符串
-${integer}   ${3}              #定义一个整数
+${integer}   ${3}             #定义一个整数
 @{list}   how   are   you  ${MESSAGE}   #定义一个列表数据
 ${platform}  oracel
 
@@ -31,7 +31,6 @@ For loop                      #使用for循环打印列表
     :FOR    ${var}    IN    @{list}
     \    Log    ${var}
     Log   @{list}[1]
-    log  ${MESSAGE2}
 
 Another Test
     Should Be Equal    ${MESSAGE}    Hello, world!  # 使用内建关键字断言
