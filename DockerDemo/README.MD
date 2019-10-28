@@ -1,6 +1,15 @@
+# 环境安装和镜像准备
+- 官网安装文档 https://docs.docker.com/install/
+- 中文安装文档 https://yeasy.gitbooks.io/docker_practice/content/install/ 
+- Win10用户需要使用使用正版旗舰版。并开启hyper-V服务和BIOS虚拟化设置。https://jingyan.baidu.com/article/ac6a9a5e1f164a2b653eac33.html
+- Docker 安装包建议从官网下载免费社区版
+- 无法直接安装在本机的同学，比如win7。可以尝试使用virtualbox安装Ubuntu虚拟机，在虚拟机里面再安装docker。也可以上网搜索其他方式。建议直接安装在本机上。
+- 安装好docker的同学，请提前拉取一下镜像到本地。如果速度慢，可以配置阿里云或者网易云镜像加速器。
+  - Docker pull ubuntu:16.04
+  - Docker pull elgalu/selenium
+
 # image 镜像练习
-- 安装docker到本地环境
-- Docker pull ubuntu:16.04  #从官方下载ubuntu镜像到本地
+- 从官方下载ubuntu镜像到本地
 - 查看本地镜像文件
 - 删除镜像
 
@@ -15,11 +24,11 @@
 - Docker build -t web-app:latest .   #根据当前文件夹下面的dockerfile创建镜像文件
 - 查看编译好的image
 - Docker run -p 4000:80 web-app      #运行镜像文件并映射端口
-- Docker ps                                   #查看正在运行的容器
-- 127.0.0.1:4000                          #从外部访问容器里面Web APP
+- Docker ps                          #查看正在运行的容器
+- 127.0.0.1:4000                     #从外部访问容器里面Web APP
 
 # 数据卷练习
-- docker run --rm -p 5904:25900 --name automation-container -v "$(pwd)":/home/seluser/automation automationtest:latest  映射本地磁盘到容器
+- docker run --rm -p 5904:25900 --name automation-container -v "$(pwd)":/home/seluser/automation automationtest:latest  #映射本地磁盘到容器
 
 # 推送练习
 - https://cloud.docker.com 注册账号
