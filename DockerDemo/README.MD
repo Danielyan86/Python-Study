@@ -1,4 +1,5 @@
 # 环境安装和镜像准备
+- 推荐学习文档 https://yeasy.gitbooks.io/docker_practice/
 - 官网安装文档 https://docs.docker.com/install/
 - 中文安装文档 https://yeasy.gitbooks.io/docker_practice/content/install/ 
 - Win10用户需要使用使用正版旗舰版。并开启hyper-V服务和BIOS虚拟化设置。https://jingyan.baidu.com/article/ac6a9a5e1f164a2b653eac33.html
