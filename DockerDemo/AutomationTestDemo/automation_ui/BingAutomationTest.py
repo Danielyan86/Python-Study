@@ -1,6 +1,5 @@
 import logging
 import time
-import requests
 
 from selenium import webdriver
 
@@ -38,12 +37,16 @@ def run_UI_test_in_docker_env():
     # 输入URL
     d.get(url)
     # 搜索框输入test
-    d.find_element_by_id(text_box_id).send_keys("test\n")
-    time.sleep(10)
-    d.close()
-    d.quit()
+    try:
+        d.find_element_by_id(text_box_id).send_keys("test\n")
+    except Exception as e:
+        print(e)
+    finally:
+        time.sleep(10)
+        d.close()
+        d.quit()
 
 
 if __name__ == '__main__':
-    run_UI_test_in_local_env()
-    # run_UI_test_in_docker_env()
+    # run_UI_test_in_local_env()
+    run_UI_test_in_docker_env()
