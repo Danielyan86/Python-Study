@@ -12,7 +12,7 @@ ADD . /app
 
 # Install any needed packages specified in requirements.txt
 # 安装依赖包
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
 # 声明容器端口80将会被使用。如果没有声明，并不影响端口映射参数-p使用
