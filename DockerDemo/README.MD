@@ -1,13 +1,19 @@
 # 环境安装和镜像准备
+## docker 相关安装
 - 推荐学习文档 https://yeasy.gitbooks.io/docker_practice/
 - 官网安装文档 https://docs.docker.com/install/
 - 中文安装文档 https://yeasy.gitbooks.io/docker_practice/content/install/ 
+- docker-compose 安装文档 https://docs.docker.com/compose/install/
 - Win10用户需要使用使用正版旗舰版。并开启hyper-V服务和BIOS虚拟化设置。https://jingyan.baidu.com/article/ac6a9a5e1f164a2b653eac33.html
 - Docker 安装包建议从官网下载免费社区版
 - 无法直接安装在本机的同学，比如win7。可以尝试使用virtualbox安装Ubuntu虚拟机，在虚拟机里面再安装docker。也可以上网搜索其他方式。建议直接安装在本机上。
+## 镜像准备
 - 安装好docker的同学，请提前拉取一下镜像到本地。如果速度慢，可以配置阿里云或者网易云镜像加速器。
   - Docker pull ubuntu:16.04
   - Docker pull elgalu/selenium
+  - docker pull oscarcommerce/django-oscar-sandbox
+## 其他工具
+- VNC客户端安装
 
 # image 镜像练习
 - 从官方下载ubuntu镜像到本地
@@ -29,11 +35,13 @@
 - 127.0.0.1:4000                     #从外部访问容器里面Web APP
 
 # 数据卷练习
+- 练习挂载数据卷到容器
 - docker run --rm -p 5904:25900 --name automation-container -v "$(pwd)":/home/seluser/automation automationtest:latest  #映射本地磁盘到容器
 
 # 推送练习
 - https://cloud.docker.com 注册账号
 - Docker login/logout 登录/退出
+- 推送本地镜像到远程仓库
 
 # 自动化测试综合练习
 - 编译自己的自动化镜像文件
@@ -44,4 +52,4 @@
 - 启动多个容器，并行运行UI自动化脚本
 
 # docker-compose练习
-- 练习docker-compose命令
+- 运行示例中的docker-compose文件启动容器
