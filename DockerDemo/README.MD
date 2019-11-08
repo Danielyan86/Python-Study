@@ -53,3 +53,4 @@
 
 # docker-compose练习
 - 运行示例中的docker-compose文件启动容器
+- 在容器中运行自动化用例访问另外一个web容器内容

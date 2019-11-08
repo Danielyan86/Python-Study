@@ -2,13 +2,13 @@ version: "3"
 
 services:
   web-app:
-    image: web-app
+    image: web-app:1.0
     ports:
       - "4000:80"
     command: python app.py
 
   automationtest:
-    image: automation-test
+    image: automationtest
     ports:
       - "5904:25900"
       - "4444:24444"
