@@ -12,6 +12,7 @@
   - Docker pull ubuntu:16.04
   - Docker pull elgalu/selenium
   - docker pull oscarcommerce/django-oscar-sandbox
+  
 ## 其他工具
 - VNC客户端安装
 
@@ -19,6 +20,7 @@
 - 从官方下载ubuntu镜像到本地
 - 查看本地镜像文件
 - 删除镜像
+- 给存在镜像文件打tag
 
 # 容器练习
 - 启动容器
@@ -38,7 +40,7 @@
 - 练习挂载数据卷到容器
 - docker run --rm -p 5904:25900 --name automation-container -v "$(pwd)":/home/seluser/automation automationtest:latest  #映射本地磁盘到容器
 
-# 推送练习
+# 仓库练习
 - https://cloud.docker.com 注册账号
 - Docker login/logout 登录/退出
 - 推送本地镜像到远程仓库
@@ -52,9 +54,10 @@
 - 启动多个容器，并行运行UI自动化脚本
 
 # docker-compose练习
+- 安装和查看docker-compose版本
 - 运行示例中的docker-compose文件启动容器
 - 在有测试环境的容器中运行自动化测试脚本
 
-# 思考？
+# 思考
 - docker有些什么样使用场景？
 - 结合学过的一些内容，创建自己所需要的镜像文件，比如创建一个
