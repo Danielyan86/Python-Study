@@ -40,6 +40,8 @@
 # 数据卷练习
 - 练习挂载数据卷到容器
 - docker run --rm -p 5904:25900 --name automation-container -v "$(pwd)":/home/seluser/automation automationtest:latest  #映射本地磁盘到容器
+- windows 用户如果遇到权限问题，需要开启共享权限设置。
+- windows 用户下面没有pwd命令
 
 # 仓库练习
 - https://cloud.docker.com 注册账号
