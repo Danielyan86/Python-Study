@@ -7,6 +7,7 @@
 - Win10用户需要使用使用正版旗舰版。并开启hyper-V服务和BIOS虚拟化设置。https://jingyan.baidu.com/article/ac6a9a5e1f164a2b653eac33.html
 - Docker 安装包建议从官网下载免费社区版
 - 无法直接安装在本机的同学，比如win7。可以尝试使用virtualbox安装Ubuntu虚拟机，在虚拟机里面再安装docker。也可以上网搜索其他方式。建议直接安装在本机上。
+- 把docker安装在windows的virtualbox里面的，本地访问*IP为192.168.99.100
 ## 镜像准备
 - 安装好docker的同学，请提前拉取一下镜像到本地。如果速度慢，可以配置阿里云或者网易云镜像加速器。
   - Docker pull ubuntu:16.04
