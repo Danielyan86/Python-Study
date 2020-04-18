@@ -20,10 +20,10 @@ httprunner - https://github.com/httprunner/httprunner
 
 # 练习
 ## 分别使用curl，httpie, 完成基本API测试
-- get 请求
-    - curl i  -X GET "http://127.0.0.1:8000/"
-    - 
-- post 请求
+- curl 请求
+    - curl i  -X GET "http://127.0.0.1:8000/"  
+    - curl curl -X POST http://localhost:8000/get_auth_token/ --data "username=admin&password=123456"
+- httpie 请求
     - 
 
 ## postman 练习
