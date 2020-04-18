@@ -6,7 +6,7 @@ metadata:
   labels:
     app: web-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: web-app
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: sheldonyan/web-app:1.0
+        image: sheldonyan/web-app:2.0
         ports:
         - containerPort: 80
