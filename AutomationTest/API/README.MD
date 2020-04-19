@@ -39,3 +39,4 @@ httprunner - https://github.com/httprunner/httprunner
 ## python自动化练习
 - 使用python requests 包发起get， post等请求
 - 使用python unit 对结果进行验证
+- requests 文档 https://requests.readthedocs.io/en/master/
