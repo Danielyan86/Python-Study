@@ -9,9 +9,9 @@ class DjangoRestApi:
         req = self.req.get(url=url)
         res_json = req.json()
         print(res_json)
-        assert req.status_code == 200
-        assert res_json[0]['username'] == 'admin'
-        assert res_json[0]['is_staff'] is True
+        assert req.status_code == 401
+        # assert res_json[0]['username'] == 'admin'
+        # assert res_json[0]['is_staff'] is True
 
     # def login_test(self):
     #     url = "http://127.0.0.1:8000/"
@@ -26,12 +26,16 @@ class GithubRestapi:
         res = self.req.get(user_url)
         assert res.status_code == 200
         print(res.json())
+        username=res.data['username']
+        self.req.post(data={'username':username})
+
 
     def get_organizations(self):
         org_url = self.url + "orgs/playpython/members"
-        headers = {"Authorization": "Token 5cf80201637ec471925fba9ade37b8563f667b22"}
+        headers = {"Authorization": "Token 13b0dccde49aa5a390d8d701602b1b503c8130da"}
         res = self.req.get(org_url, headers=headers)
         members_data = res.json()
+        print(members_data)
         for item in members_data:
             if "Danielyan86" == item["login"]:
                 assert item["type"] == "User"
@@ -40,7 +44,7 @@ class GithubRestapi:
 if __name__ == '__main__':
     api_test = DjangoRestApi()
     api_test.get_user_info()
-    # api_test.get_user_info()
+    api_test.get_user_info()
     # api_test = GithubRestapi()
     # api_test.get_organizations()
     # api_test.get_user_info()
