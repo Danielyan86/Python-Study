@@ -30,9 +30,9 @@
 - 停止一个容器
 - 删除一个容器
 
-# DOCKERFILE 练习
+# DOCKERFILE 练习 (FlaskAppDemo)
 - Docker build -t web-app:latest .   #根据当前文件夹下面的dockerfile创建镜像文件
-- 查看编译好的image
+- docker images                      #查看编译好的image
 - Docker run -p 4000:80 web-app      #运行镜像文件并映射端口
 - Docker ps                          #查看正在运行的容器
 - 127.0.0.1:4000                     #从外部访问容器里面Web APP
