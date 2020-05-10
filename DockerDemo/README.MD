@@ -36,6 +36,11 @@
 - 停止一个容器
 - 删除一个容器
 
+## 仓库练习
+- https://cloud.docker.com 注册账号
+- Docker login/logout 登录/退出
+- 推送本地镜像到个人远程仓库
+
 ## DOCKERFILE 练习 (FlaskAppDemo)
 ### 制作webapp镜像文件并运行
 - Docker build -t web-app:latest .   #根据当前文件夹下面的dockerfile创建镜像文件
@@ -43,9 +48,6 @@
 - Docker run -p 4000:80 web-app      #运行镜像文件并映射端口
 - Docker ps                          #查看正在运行的容器
 - 127.0.0.1:4000                     #从外部访问容器里面Web APP
-### 制作UI自动化镜像文件并运行
-- 切换到 automation_ui 目录
-- sh start_the_container.sh
 
 ## 数据卷练习
 - 练习挂载数据卷到容器
@@ -53,10 +55,10 @@
 - windows 用户如果遇到权限问题，需要开启共享权限设置。
 - windows 用户下面没有pwd命令
 
-## 仓库练习
-- https://cloud.docker.com 注册账号
-- Docker login/logout 登录/退出
-- 推送本地镜像到远程仓库
+## 自动化测试练习
+### 制作UI自动化镜像文件并运行
+- 切换到 automation_ui 目录
+- sh start_the_container.sh
 
 ## 自动化测试综合练习
 - 编译自己的自动化镜像文件
