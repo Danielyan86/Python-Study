@@ -9,7 +9,10 @@
 - 无法直接安装在本机的同学，比如win7。可以尝试使用virtualbox安装Ubuntu虚拟机，在虚拟机里面再安装docker。也可以上网搜索其他方式。建议直接安装在本机上。
 - 把docker安装在windows的virtualbox里面的，本地默认访问*IP为192.168.99.100
 ## 镜像准备
-- 安装好docker的同学，请提前拉取一下镜像到本地。如果速度慢，可以配置阿里云或者网易云镜像加速器。
+- 配置阿里云镜像加速器
+  - 注册阿里云账号
+  - 参考文章 https://yq.aliyun.com/articles/29941
+- 安装好docker的同学，请提前拉取一下镜像到本地。
   - Docker pull ubuntu:16.04
   - Docker pull elgalu/selenium
   - docker pull oscarcommerce/django-oscar-sandbox
@@ -31,11 +34,14 @@
 - 删除一个容器
 
 # DOCKERFILE 练习 (FlaskAppDemo)
+## 制作webapp镜像文件并运行
 - Docker build -t web-app:latest .   #根据当前文件夹下面的dockerfile创建镜像文件
 - docker images                      #查看编译好的image
 - Docker run -p 4000:80 web-app      #运行镜像文件并映射端口
 - Docker ps                          #查看正在运行的容器
 - 127.0.0.1:4000                     #从外部访问容器里面Web APP
+## 制作UI自动化镜像文件并运行
+- sh start_the_container.sh
 
 # 数据卷练习
 - 练习挂载数据卷到容器
