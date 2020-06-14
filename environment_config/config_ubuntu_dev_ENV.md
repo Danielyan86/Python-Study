@@ -21,7 +21,7 @@
 # install om-my-sh
 - https://ohmyz.sh/
 ## install fonts
-- https://github.com/powerline/fontsf
+- https://github.com/powerline/fonts
 ## install theme bullet-train
 - https://github.com/caiogondim/bullet-train.zsh
 ## install plugin
