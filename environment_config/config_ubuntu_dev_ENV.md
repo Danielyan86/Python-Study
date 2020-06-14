@@ -1,6 +1,9 @@
 # udpate ubuntu source
 - use tsinghua https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
 
+# install some tools
+- sudo apt install curl vim git -y
+
 # set network config proxy
 - https://shadowsocks.org/en/download/clients.html
 - https://shadowsockshelp.github.io/Shadowsocks/linux.html
@@ -10,7 +13,7 @@
 - e.g: export HTTPS_PROXY=http://127.0.0.1:1801
  
 # install chrome
-
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # install zsh
 - https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 # install om-my-sh
