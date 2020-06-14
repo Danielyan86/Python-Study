@@ -27,6 +27,8 @@
 ## install plugin
 - git zsh-autosuggestions zsh-completions
 - autojump https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+## change defalut folder
+- add cd ~ in .zshrc file
 
 # install pycharm
 https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC
