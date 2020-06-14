@@ -1,5 +1,7 @@
-# set network config proxy
+# udpate ubuntu source
+- use tsinghua https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
 
+# set network config proxy
 - https://shadowsocks.org/en/download/clients.html
 - https://shadowsockshelp.github.io/Shadowsocks/linux.html
 
@@ -8,6 +10,7 @@
 - e.g: export HTTPS_PROXY=http://127.0.0.1:1801
  
 # install chrome
+
 # install zsh
 - https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 # install om-my-sh
