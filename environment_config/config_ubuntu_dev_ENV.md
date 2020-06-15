@@ -26,7 +26,7 @@
 - https://github.com/caiogondim/bullet-train.zsh
 ## install plugin
 - git zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-- autojump https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+- autojump https://github.com/wting/autojump
 ## change defalut folder
 - add cd ~ in .zshrc file
 
@@ -37,4 +37,4 @@
 # install anaconda
 - https://www.anaconda.com/products/individual#linux
 
-# install pingying
+# install pin yin
