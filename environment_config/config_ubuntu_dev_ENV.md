@@ -25,7 +25,7 @@
 ## install theme bullet-train
 - https://github.com/caiogondim/bullet-train.zsh
 ## install plugin
-- git zsh-autosuggestions zsh-completions
+- git zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 - autojump https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 ## change defalut folder
 - add cd ~ in .zshrc file
