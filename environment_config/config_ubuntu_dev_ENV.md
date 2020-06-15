@@ -2,7 +2,7 @@
 - use tsinghua https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/
 
 # install some tools
-- sudo apt install curl vim git -y
+- sudo apt install curl vim git tmux -y
 
 # set network config proxy
 - https://shadowsocks.org/en/download/clients.html
@@ -31,5 +31,10 @@
 - add cd ~ in .zshrc file
 
 # install pycharm
-https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC
+- https://www.jetbrains.com/pycharm/download/download-thanks.html?platform=linux&code=PCC
 # install code
+- sudo snap install --classic code  
+# install anaconda
+- https://www.anaconda.com/products/individual#linux
+
+# install pingying
