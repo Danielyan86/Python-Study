@@ -1,3 +1,5 @@
+import os
+
 import requests
 
 
@@ -26,13 +28,15 @@ class GithubRestapi:
         res = self.req.get(user_url)
         assert res.status_code == 200
         print(res.json())
-        username=res.data['username']
-        self.req.post(data={'username':username})
-
+        data = res.json()
+        username = data['login']
+        assert username == 'Danielyan86'
 
     def get_organizations(self):
+        token = os.getenv("API_automation_test_token")
+        print(token)
         org_url = self.url + "orgs/playpython/members"
-        headers = {"Authorization": "Token 13b0dccde49aa5a390d8d701602b1b503c8130da"}
+        headers = {"Authorization": f"Token {token}"}
         res = self.req.get(org_url, headers=headers)
         members_data = res.json()
         print(members_data)
@@ -42,9 +46,8 @@ class GithubRestapi:
 
 
 if __name__ == '__main__':
-    api_test = DjangoRestApi()
-    api_test.get_user_info()
-    api_test.get_user_info()
-    # api_test = GithubRestapi()
-    # api_test.get_organizations()
+    # api_test = DjangoRestApi()
     # api_test.get_user_info()
+    api_test = GithubRestapi()
+    # api_test.get_user_info()
+    api_test.get_organizations()
