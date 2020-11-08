@@ -32,4 +32,4 @@
     validate:
     - eq:
       - content.0.username
-      - test
+      - $username
