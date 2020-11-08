@@ -14,6 +14,7 @@ httprunner - https://github.com/httprunner/httprunner
 - python requests 安装 pip install requests
 - Django https://www.djangoproject.com/download/
 - web project https://github.com/Danielyan86/Django-Polls
+    - pip install djangorestframework
     - git checkout restapiexample
     - python manage.py migrate
     - python manage.py runserver
