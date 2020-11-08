@@ -6,6 +6,13 @@ import requests
 class DjangoRestApi:
     req = requests.Session()
 
+    def get_token(self):
+        # headers = {'Accept': 'application/json', 'User-Agent': 'PostmanRuntime/7.24.1'}
+        data = {"username": "admin", "password": "123456"}
+        url = "http://localhost:8000/get_auth_token/"
+        req = self.req.post(url=url, data=data)
+        print(req.text)
+
     def get_user_info(self):
         url = "http://127.0.0.1:8000/users/"
         req = self.req.get(url=url)
@@ -46,8 +53,8 @@ class GithubRestapi:
 
 
 if __name__ == '__main__':
-    # api_test = DjangoRestApi()
+    api_test = DjangoRestApi()
+    api_test.get_token()
+    # api_test = GithubRestapi()
     # api_test.get_user_info()
-    api_test = GithubRestapi()
-    api_test.get_user_info()
-    api_test.get_organizations()
+    # api_test.get_organizations()
