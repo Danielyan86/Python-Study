@@ -49,5 +49,5 @@ if __name__ == '__main__':
     # api_test = DjangoRestApi()
     # api_test.get_user_info()
     api_test = GithubRestapi()
-    # api_test.get_user_info()
+    api_test.get_user_info()
     api_test.get_organizations()

@@ -23,7 +23,7 @@ httprunner - https://github.com/httprunner/httprunner
 # 练习
 ## 分别使用curl，httpie, 完成基本API测试
 - curl 请求
-    - curl i  -X GET "http://127.0.0.1:8000/"  
+    - curl i  -X GET "http://127.0.0.1:8000/"  (需要在django setting 注释配置'rest_framework.permissions.IsAuthenticated',，)
     - curl -X POST http://localhost:8000/get_auth_token/ --data "username=admin&password=123456"
     - curl -X GET http://127.0.0.1:8000/users/ -H 'Authorization: Token af60bd228881ea4e2fca375221f39627578026ff'
 
