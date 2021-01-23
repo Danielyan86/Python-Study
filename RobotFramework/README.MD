@@ -9,18 +9,18 @@ This project is used for robot framework study
 ## install RF
 pip install robotframework
 ## install seleniumlibrary lib
+- pip install robotframework-selenium2library
 - pip install --upgrade robotframework-seleniumlibrary
 - 无法用pip安装robot的，直接下载源码安装包到本地安装 https://github.com/robotframework/robotframework/releases
 
 ## 安装被测试环境
-- 本机通过docker安装并启动被测试产品：docker run -p 8001:8000 -p 8086:8080 oscarcommerce/django-oscar-sandbox
+- 本机通过docker安装并启动被测试产品：docker run -p 8001:8000 -p 8080:8080 oscarcommerce/django-oscar-sandbox
 - 被测代码仓库  https://github.com/django-oscar/django-oscar
 - 安装Chrome webdriver（已经安装好的跳过）：
  http://npm.taobao.org/mirrors/chromedriver/
  https://sites.google.com/a/chromium.org/chromedriver/home
  下载chrome驱动程序并复制到系统默认路径下，比如Linux系统复制到/usr/local/bin
 
- 
 ## RF相关文档
 - 官方网站 http://robotframework.org/
 - 用户手册 http://robotframework.org/robotframework/#user-guide
@@ -28,6 +28,7 @@ pip install robotframework
 ## 练习
 ### 基础
 - 运行Demo中的RF测试用例，理解测试用例和测试套件概念
+    - UI_demo 需要提前注册一个账号
 - 创建测试数据，理解常量，变量等不同数据类型概念
 - 导入第三方库并运行其中的一个关键字
   http://robotframework.org/Selenium2Library/Selenium2Library.html#Click%20Link

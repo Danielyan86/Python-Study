@@ -9,7 +9,7 @@ class mylib(object):
         self._get_token()
 
     def _get_token(self):
-        url = "http://127.0.0.1:8086/en-gb/"
+        url = "http://127.0.0.1:8080/en-gb/"
         response = self.req.get(url)
         if response.status_code == 200:
             pattern = r'''name=[',"]csrfmiddlewaretoken[',"] value="(\w+)"'''
@@ -19,7 +19,7 @@ class mylib(object):
 
     def login(self, username=None, password=None):
         self._get_token()
-        url = "http://127.0.0.1:8086/en-gb/accounts/login/"
+        url = "http://127.0.0.1:8080/en-gb/accounts/login/"
 
         post_data = {"csrfmiddlewaretoken": self.token,
                      "login-username": username,
@@ -39,7 +39,7 @@ class mylib(object):
         print('hello')
 
     def log_out(self):
-        log_out_url = "http://127.0.0.1:8086/en-gb/accounts/logout/"
+        log_out_url = "http://127.0.0.1:8080/en-gb/accounts/logout/"
         res = self.req.get(url=log_out_url)
 
 
