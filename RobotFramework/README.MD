@@ -15,7 +15,7 @@ pip install robotframework
 
 ## 安装被测试环境
 - 本机通过docker安装并启动被测试产品：docker run -p 8001:8000 -p 8080:8080 oscarcommerce/django-oscar-sandbox
-- 被测代码仓库  https://github.com/django-oscar/django-oscar
+- oscarcommerce/django-oscar-sandbox 产品代码库  https://github.com/django-oscar/django-oscar
 - 安装Chrome webdriver（已经安装好的跳过）：
  http://npm.taobao.org/mirrors/chromedriver/
  https://sites.google.com/a/chromium.org/chromedriver/home
