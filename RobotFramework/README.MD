@@ -1,4 +1,4 @@
-ROBOT 
+ROBOT framework
 =====================
 
 ### Abstract
