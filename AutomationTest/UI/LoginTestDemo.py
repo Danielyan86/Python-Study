@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
             self.d = webdriver.firefox
 
     def test_login_the_main_page(self):
-        url = "http://127.0.0.1:8086/"
+        url = "http://127.0.0.1:8080/"
         user_name = "test@163.com"
         pass_word = "Test123456"
         account_xpath = '//a[@href="/en-gb/accounts/"]'
