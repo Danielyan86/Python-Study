@@ -4,7 +4,7 @@ Library           SeleniumLibrary                        # Import the test Lib S
 Test Teardown     Close All Browsers
 
 *** Variables ***
-${LOGIN URL}      http://127.0.0.1:8086/en-gb/accounts/login/
+${LOGIN URL}      http://127.0.0.1:8080/en-gb/accounts/login/
 ${BROWSER}        Chrome
 
 *** Test Cases ***

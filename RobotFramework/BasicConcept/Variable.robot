@@ -19,7 +19,7 @@ My Test
     log  ${MESSAGE2}
 
     ${MESSAGE3}  set variable    ${MESSAGE2}, world!  #设置局部变量
-    My Keyword   /Users/admin/PycharmProjects/Python-Study/RobotFramework/
+    My Keyword   /Users/admin/github_project/Python-Study/RobotFramework
 
     log  ${true}
 

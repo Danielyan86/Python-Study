@@ -7,7 +7,7 @@ Test Teardown     Close All Browsers                      #测试结束之后执
 
 #变量定义部分
 *** Variables ***
-${LOGIN URL}      http://127.0.0.1:8086/
+${LOGIN URL}      http://127.0.0.1:8080/
 ${BROWSER}        Chrome
 
 #测试用例部分
