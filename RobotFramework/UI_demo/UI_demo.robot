@@ -1,7 +1,7 @@
 #用例配置部分
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.   #注释和说明部分
-Library           SeleniumLibrary                        #调用第三方测试库Selenium2Library
+Library           SeleniumLibrary                         #调用第三方测试库Selenium2Library
 Test Teardown     Close All Browsers                      #测试结束之后执行关键字
 
 #变量定义部分
