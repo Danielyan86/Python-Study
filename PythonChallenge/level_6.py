@@ -10,7 +10,7 @@ while True:
     try:
         prefix = Res.search(file.read(str(prefix) + suffix)).group(1)
     except:
-        print file.read(str(prefix) + suffix)
+        print(file.read(str(prefix) + suffix))
         break
     ans.append(file.getinfo(str(prefix) + suffix).comment)
-print "".join(ans)
+print("".join(ans))
