@@ -1,4 +1,4 @@
-from PythonTutorial.基础部分.类 import class_inheritence as cl
+from PythonTutorial.Basic.class_knowledge import class_inheritence as cl
 
 # 判断一个类是否是另一个类的子类
 print(issubclass(cl.ElectricCar, cl.Car))
