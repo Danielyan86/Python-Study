@@ -31,7 +31,7 @@ def violent_enumeration():
     print('Running time: %s Seconds' % (end - start))
 
 
-def optmized_enumeration():
+def optimized_enumeration():
     start = time.clock()
     for num in range(123, 500):
         for num2 in range(123, 500):
