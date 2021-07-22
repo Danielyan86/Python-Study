@@ -54,10 +54,31 @@ foo()
 # 函数不需要做任何修改，只需在定义的地方加上装饰器，调用的时候还是和以前一样，如果我们有其他的类似函数，我们可以继续调用装饰器来修饰函数，
 # 而不用重复修改函数或者增加新的封装。这样，我们就提高了程序的可重复利用性，并增加了程序的可读性。
 
-class example:
+class Example:
     @staticmethod
     def print_fun():
         print("this is a static method")
 
 
-example.print_fun()
+Example.print_fun()
+
+
+# 带参数的装饰器
+def decorator(func):
+    def wrapper(*arg, **kwargs):
+        # your function
+        print()
+        result = func(*arg, **kwargs)
+        # your function
+        return result
+
+    return wrapper
+
+
+@decorator
+def foo(*arg, **kw):
+    print(arg)
+    print(kw)
+
+
+foo("test11",key1=1)
