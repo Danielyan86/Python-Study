@@ -10,7 +10,7 @@ def switch_number(number1, number2):
     number_list[number1], number_list[number2] = number_list[number2], number_list[number1]
 
 
-def quciksort(left_num, right_num):
+def quick_sort(left_num, right_num):
     if left_num > right_num:
         return
 
@@ -30,8 +30,8 @@ def quciksort(left_num, right_num):
             switch_number(left_soldier, right_soldier)
 
     switch_number(base_number, left_soldier)
-    quciksort(left_num, left_soldier - 1)
-    quciksort(left_soldier + 1, right_num)
+    quick_sort(left_num, left_soldier - 1)
+    quick_sort(left_soldier + 1, right_num)
 
 
 # more elegant solution

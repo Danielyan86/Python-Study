@@ -7,19 +7,19 @@ def merge_sort(num_l: list):
     else:
         l_nums = merge_sort(num_l[0:length // 2])
         r_nums = merge_sort(num_l[length // 2:])
-        templ_list = []
+        temp_list = []
         while l_nums and r_nums:
             if l_nums[0] < r_nums[0]:
-                templ_list.append(l_nums[0])
+                temp_list.append(l_nums[0])
                 del l_nums[0]
             else:
-                templ_list.append(r_nums[0])
+                temp_list.append(r_nums[0])
                 del r_nums[0]
         if l_nums:
-            templ_list.extend(l_nums)
+            temp_list.extend(l_nums)
         if r_nums:
-            templ_list.extend(r_nums)
-        return templ_list
+            temp_list.extend(r_nums)
+        return temp_list
 
 
 def test_merge_sort():
