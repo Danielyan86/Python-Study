@@ -35,6 +35,7 @@ def quick_sort(left_num, right_num):
 
 
 # more elegant solution
+# 利用python语法特点，用列表推导式实现
 def qsort(arr):
     if len(arr) <= 1:
         return arr
