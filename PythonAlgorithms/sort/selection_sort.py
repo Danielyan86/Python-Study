@@ -4,12 +4,12 @@
 
 def sort_selection(nums_list):
     for i in range(len(nums_list) - 1):
-        min = i  # 假下标为i的首元素为最小值
+        min_lable = i  # 假下标为i的首元素为最小值
         for j in range(i + 1, len(nums_list)):  # 遍历剩下的元素跟当前元素比较
-            if (nums_list[j] < nums_list[min]):  # 如果有跟小的值，则更新最下值下标
-                min = j
-        if min != i:  # 如果min没有更新，则说明值索引i对应值已经是最小的，则不用交换
-            nums_list[i], nums_list[min] = nums_list[min], nums_list[i]
+            if nums_list[j] < nums_list[min_lable]:  # 如果有跟小的值，则更新最下值下标
+                min_lable = j
+        if min_lable != i:  # 如果min没有更新，则说明值索引i对应值已经是最小的，则不用交换
+            nums_list[i], nums_list[min_lable] = nums_list[min_lable], nums_list[i]
     print(nums_list)
 
 
