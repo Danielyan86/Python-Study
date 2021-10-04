@@ -207,7 +207,8 @@ class Point(object):
 5.0
 ```
 用闭包来实现：
-```def point(x, y):
+```
+def point(x, y):
     def get_distance(u, v):
         return sqrt((x - u) ** 2 + (y - v) ** 2)
 
@@ -224,3 +225,7 @@ class Point(object):
 - 闭包在运行可以有多个实例。
 - 尽量不要在闭包中引用循环变量，或者后续会发生变化的变量。
 
+
+## 参考资料
+- https://docs.python.org/zh-cn/3/howto/functional.html#functional-howto-iterators
+- https://wiki.jikexueyuan.com/project/explore-python/Functional/closure.html
