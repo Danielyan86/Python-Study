@@ -315,7 +315,7 @@ def makeitalic(func):
 对于这个小瑕疵，后文将会给出解决方法。
 
 现在，我们梳理一下上面的例子，为了增强原函数 hello 的功能，我们定义了一个函数，它接收原函数作为参数，并返回一个新的函数，完整的代码如下：
-```
+```python
 def makeitalic(func):
     def wrapped():
         return "<i>" + func() + "</i>"
@@ -437,9 +437,9 @@ def hello(name):
     return 'hello %s' % name
 这就是带参数的装饰器，其实就是在装饰器外面多了一层包装，根据不同的参数返回不同的装饰器。
 
-多个装饰器
+### 多个装饰器
 现在，让我们来看看多个装饰器的例子，为了简单起见，下面的例子就不使用带参数的装饰器。
-
+```python
 def makebold(func):
     def wrapped():
         return '<b>' + func() + '</b>'
@@ -456,16 +456,19 @@ def makeitalic(func):
 @makeitalic
 def hello():
     return 'hello world'
+```
 上面定义了两个装饰器，对 hello 进行装饰，上面的最后几行代码相当于：
-
+```python
 def hello():
     return 'hello world'
 
 hello = makebold(makeitalic(hello))
+```
 调用函数 hello：
-
+```python
 >>> hello()
 '<b><i>hello world</i></b>'
+```
 
 ### 装饰器的副作用
 前面提到，使用装饰器有一个瑕疵，就是被装饰的函数，它的函数名称已经不是原来的名称了，回到最开始的例子：
