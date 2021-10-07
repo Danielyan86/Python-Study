@@ -278,6 +278,112 @@ def deactivate_users(users: Iterable[User]):
 - 考虑什么是类的核心特征，然后为父类增加新的方法和属性可以帮到你
 - 子类方法应该和父类同名方法返回同一类型，或者返回支持更多操作的子类型也行
 - 子类的方法参数应该和父类同名方法完全一致，或者更为宽松
+
+## 接口隔离原则
+接口隔离原则（Interface Segregation Principle，ISP）
+>要求程序员尽量将臃肿庞大的接口拆分成更小的和更具体的接口，让接口中只包含客户感兴趣的方法。
+
+2002 年罗伯特·C.马丁给“接口隔离原则”的定义是：客户端不应该被迫依赖于它不使用的方法（Clients should not be forced to depend on methods they do not use）。该原则还有另外一个定义：一个类对另一个类的依赖应该建立在最小的接口上（The dependency of one class to another one should depend on the smallest possible interface）。
+
+以上两个定义的含义是:
+要为各个类建立它们需要的专用接口，而不要试图去建立一个很庞大的接口供所有依赖它的类去调用。
+
+接口隔离原则和单一职责都是为了提高类的内聚性、降低它们之间的耦合性，体现了封装的思想，但两者是不同的：
+
+- 单一职责原则注重的是职责，而接口隔离原则注重的是对接口依赖的隔离。
+- 单一职责原则主要是约束类，它针对的是程序中的实现和细节；接口隔离原则主要约束接口，主要针对抽象和程序整体框架的构建。
+### 接口隔离原则的优点
+- 接口隔离原则是为了约束接口、降低类对接口的依赖性，遵循接口隔离原则有以下 5 个优点。
+- 将臃肿庞大的接口分解为多个粒度小的接口，可以预防外来变更的扩散，提高系统的灵活性和可维护性。
+- 接口隔离提高了系统的内聚性，减少了对外交互，降低了系统的耦合性。
+- 如果接口的粒度大小定义合理，能够保证系统的稳定性；但是，如果定义过小，则会造成接口数量过多，使设计复杂化；如果定义太大，灵活性降低，无法提供定制服务，给整体项目带来无法预料的风险。
+- 使用多个专门的接口还能够体现对象的层次，因为可以通过接口的继承，实现对总接口的定义。
+- 能减少项目工程中的代码冗余。过大的大接口里面通常放置许多不用的方法，当实现这个接口的时候，被迫设计冗余的代码。
+### 接口隔离原则的实现方法
+- 在具体应用接口隔离原则时，应该根据以下几个规则来衡量。
+- 接口尽量小，但是要有限度。一个接口只服务于一个子模块或业务逻辑。
+- 为依赖接口的类定制服务。只提供调用者需要的方法，屏蔽不需要的方法。
+- 了解环境，拒绝盲从。每个项目或产品都有选定的环境因素，环境不同，接口拆分的标准就不同深入了解业务逻辑。
+- 提高内聚，减少对外交互。使接口用最少的方法去完成最多的事情。
+
+让我们看一个IShape类
+```python
+class IShape:
+    def draw_square(self):
+        raise NotImplementedError
+    
+    def draw_rectangle(self):
+        raise NotImplementedError
+    
+    def draw_circle(self):
+        raise NotImplementedError
+```
+当我们去实现这个借口时候可以用以下方式
+```python
+class Circle(IShape):
+    def draw_circle(self):
+        pass
+
+class Square(IShape):
+    def draw_square(self):
+        pass
+
+class Rectangle(IShape):
+
+    def draw_rectangle(self):
+        pass
+```
+乍一看好像没有什么问题，可是基类IShape设计太胖了，当我们用具体几何图形类继承积累之后，返现有额外的两个借口没有使用。
+
+IShape这个类并没有遵守ISP原则。客户端（这里是是矩形、圆形和方形）不应该被迫依赖他们不需要或不使用的方法。
+ 此外，ISP还指出，接口应该只执行一项工作（就像就像SRP原则一样）任何额外的行为分组都应该被抽象出来到另一个接口上。
+在这里，我们的IShape接口执行的动作应该由其他接口独立处理其他接口独立处理的动作。
+为了使我们的IShape接口符合ISP原则，我们将这些动作分离到动作到不同的接口。 类（圆形、矩形、方形、三角形......）可以直接继承自IShape接口。
+等）可以直接继承自IShape接口，并实现自己的绘制行为。
+```python
+class IShape:
+    def draw(self):
+        raise NotImplementedError
+
+class Circle(IShape):
+    def draw(self):
+        pass
+
+class Square(IShape):
+    def draw(self):
+        pass
+
+class Rectangle(IShape):
+    def draw(self):
+        pass
+```
+
+## 依赖倒置原则
+依赖倒置原则（Dependence Inversion Principle，DIP）是 Object Mentor 公司总裁罗伯特·马丁（Robert C.Martin）于 1996 年在 C++ Report 上发表的文章。
+
+依赖倒置原则的原始定义为：高层模块不应该依赖低层模块，两者都应该依赖其抽象；抽象不应该依赖细节，细节应该依赖抽象（High level modules shouldnot depend upon low level modules.Both should depend upon abstractions.Abstractions should not depend upon details. Details should depend upon abstractions）。其核心思想是：要面向接口编程，不要面向实现编程。
+
+依赖倒置原则是实现开闭原则的重要途径之一，它降低了客户与实现模块之间的耦合。
+
+由于在软件设计中，细节具有多变性，而抽象层则相对稳定，因此以抽象为基础搭建起来的架构要比以细节为基础搭建起来的架构要稳定得多。这里的抽象指的是接口或者抽象类，而细节是指具体的实现类。
+
+使用接口或者抽象类的目的是制定好规范和契约，而不去涉及任何具体的操作，把展现细节的任务交给它们的实现类去完成。
+
+### 依赖、倒置原则的作用
+依赖倒置原则的主要作用如下。
+
+- 依赖倒置原则可以降低类间的耦合性。
+- 依赖倒置原则可以提高系统的稳定性。
+- 依赖倒置原则可以减少并行开发引起的风险。
+- 依赖倒置原则可以提高代码的可读性和可维护性。
+### 依赖倒置原则的实现方法
+- 依赖倒置原则的目的是通过要面向接口的编程来降低类间的耦合性，所以我们在实际编程中只要遵循以下4点，就能在项目中满足这个规则。
+- 每个类尽量提供接口或抽象类，或者两者都具备。
+- 变量的声明类型尽量是接口或者是抽象类。
+- 任何类都不应该从具体类派生。
+- 使用继承时尽量遵循里氏替换原则。
+
+
 ## 参考资料：
 - https://zhuanlan.zhihu.com/p/89969529
 - https://github.com/heykarimoff/solid.python
