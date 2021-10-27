@@ -55,7 +55,7 @@ class 类名：
 ```
 对象名.方法名(参数)
 ```
-check the code example
+instance_example.py
 
 ### self 概念
 - self 表示实例，而不是类
@@ -68,8 +68,11 @@ check the code example
 #### 动态添加实例方法
 - 直接添加
 查看代码例子
+add_method_dynamically
+
 - 使用type方法添加
 查看代码例子
+add_method_dynamically_types
 
 ## 元类
  - https://realpython.com/python-metaclasses/  （查看图片）
@@ -100,5 +103,5 @@ cls作为第一个参数      | 不需要确定参数     |
 - 实际项目常见问题
     - 方法名字，类，变量，等覆盖内建或者上层名字
     - 文件名字覆盖
+check code moudle_and_name_space
 - 类和实例命名空间
-- 
