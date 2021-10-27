@@ -4,7 +4,7 @@
 - 一切皆为对象
 - 程序是对象的集合，他们通过发送消息来进行通信
 - 每个对象有类型
-## 每个对象都有一个借口
+## 每个对象都有一个interface
 ## 每个对象提供服务
 ## 服用具体实现
 
@@ -32,3 +32,13 @@ class 类名：
 - 没有返回值
 
 查看init例子
+
+## instantiate
+### use the instance
+
+check the code example
+
+## self concept
+- self represents the instance, not the class
+- self can be reanmed
+- Method is bound to the instance in default, if the method need to bind to the class, the decorator should be used.
