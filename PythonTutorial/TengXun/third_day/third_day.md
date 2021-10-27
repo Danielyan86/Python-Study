@@ -4,9 +4,9 @@
 - 一切皆为对象
 - 程序是对象的集合，他们通过发送消息来进行通信
 - 每个对象有类型
-## 每个对象都有一个interface
+## 每个对象都有一个接口
 ## 每个对象提供服务
-## 服用具体实现
+## 服务具体实现
 
 查看代码样例 tortoise.py
 
@@ -33,12 +33,60 @@ class 类名：
 
 查看init例子
 
-## instantiate
-### use the instance
+## 实例化
+### 调用实例化类并调用
+其语法格式：
+```
+类名(参数)
+```
+#### 对象的使用
 
+实例化后的类对象可以执行以下操作：
+
+- 访问或修改类对象具有的实例变量，甚至可以添加新的实例变量或者删除已有的实例变量；
+- 调用类对象的方法，包括调用现有的方法，以及给类对象动态添加方法。
+- 类对象访问变量或方法
+
+使用已创建好的类对象访问类中实例变量的语法格式如下：
+```
+类对象名.变量名
+```
+使用类对象调用类中方法的语法格式如下：
+```
+对象名.方法名(参数)
+```
 check the code example
 
-## self concept
-- self represents the instance, not the class
-- self can be reanmed
-- Method is bound to the instance in default, if the method need to bind to the class, the decorator should be used.
+### self 概念
+- self 表示实例，而不是类
+- self 可以被重命名
+- 类里面方法默认被绑定在实例上面，而不是类。如果要设定成类方法，需要加装饰器方法@staticmetho或者@classmethod
+
+### 动态创建类或者方法
+#### 使用type动态创建类
+
+#### 动态添加实例方法
+- 直接添加
+查看代码例子
+- 使用type方法添加
+查看代码例子
+
+## 元类
+ - https://realpython.com/python-metaclasses/  （查看图片）
+ - 
+
+## 属性
+- 类属性
+- 实例属性
+- 局部变量
+查看代码例子
+## 方法
+- 实例方法（默认）
+- 类方法
+- 静态方法
+### 类方法和静态方法区别
+class方法 |static方法 
+------ | ------|
+cls作为第一个参数      | 不需要确定参数     | 
+可以访问或者修改类状态      | 不能访问     | 
+
