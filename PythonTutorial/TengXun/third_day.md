@@ -33,12 +33,28 @@ class 类名：
 
 查看init例子
 
-## instantiate
-### use the instance
+## 实例化
+### 调用实例化类并调用
 
 check the code example
 
-## self concept
-- self represents the instance, not the class
-- self can be reanmed
-- Method is bound to the instance in default, if the method need to bind to the class, the decorator should be used.
+### self 概念
+- self 表示实例，而不是类
+- self 可以被重命名
+- 类里面方法默认被绑定在实例上面，而不是类。如果要设定成类方法，需要加装饰器方法@staticmetho或者@classmethod
+
+### 动态创建类或者方法
+#### 使用type动态创建类
+
+#### 动态添加实例方法
+- 直接添加
+查看代码例子
+- 使用type方法添加
+查看代码例子
+
+## 元类
+ - https://realpython.com/python-metaclasses/  （查看图片）
+ - 
+
+
+
