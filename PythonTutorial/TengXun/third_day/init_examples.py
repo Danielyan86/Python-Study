@@ -9,6 +9,11 @@ class TheFirstDemo:
     add = 'hello class'
 
 
+class TheSecondDemo:
+    # 类属性
+    add = 'hello class'
+
+
 if __name__ == '__main__':
     t = TheFirstDemo()
-    t.__init__()
+    t2 = TheSecondDemo()

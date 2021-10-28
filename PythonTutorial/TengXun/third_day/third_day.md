@@ -1,12 +1,19 @@
 # 面向对象
 ## 面向对象编程基本概念
-### 抽象过程
+计（Object-Oriented Programming， 缩写为
+OOP）是一种范式，其基本理念是将数据块及与数据相关的
+行为封装成为特殊的、名为对象的实体，同时对象实体的生
+成工作则是基于程序员给出的一系列“蓝图”，这些“蓝图”
+就是类。
+### 抽象对象
+程序是系统的仿真
+- 和面向过程区别
 - 一切皆为对象
 - 程序是对象的集合，他们通过发送消息来进行通信
-- 每个对象有类型
-## 每个对象都有一个接口
-## 每个对象提供服务
-## 服务具体实现
+- 对象是类的实例
+- 每个对象都有一个接口
+- 每个对象提供服务
+- 服务具体实现
 
 查看代码样例 tortoise.py
 
@@ -26,8 +33,11 @@ class 类名：
     多个（≥0）类属性...
     多个（≥0）类方法...
 ```
-## __init__方法
+查看代码样例 tortoise.py
+
+## __init__构造方法
 - 作用-初始化参数
+- 实例化类时候隐式调用（自动调用）怎么显示出来？
 - 通过重写父类__init__实现自己的init
 - 没有返回值
 
@@ -57,22 +67,23 @@ class 类名：
 ```
 instance_example.py
 
+
+
+## 动态创建类或者方法
 ### self 概念
 - self 表示实例，而不是类
 - self 可以被重命名
 - 类里面方法默认被绑定在实例上面，而不是类。如果要设定成类方法，需要加装饰器方法@staticmetho或者@classmethod
+查看 self_example.py
 
-### 动态创建类或者方法
 #### 使用type动态创建类
 
 #### 动态添加实例方法
 - 直接添加
-查看代码例子
-add_method_dynamically
+查看代码例子 add_method_dynamically
 
 - 使用type方法添加
-查看代码例子
-add_method_dynamically_types
+查看代码例子 add_method_dynamically_types
 
 ## 元类
  - https://realpython.com/python-metaclasses/  （查看图片）
@@ -82,7 +93,7 @@ add_method_dynamically_types
 - 类属性
 - 实例属性
 - 局部变量
-查看代码例子
+查看代码例子 property
 ## 方法
 - 实例方法（默认）
 - 类方法
@@ -103,5 +114,7 @@ cls作为第一个参数      | 不需要确定参数     |
 - 实际项目常见问题
     - 方法名字，类，变量，等覆盖内建或者上层名字
     - 文件名字覆盖
-check code moudle_and_name_space
+查看 budin_and_globals.py
+
 - 类和实例命名空间
+instance_and_class.py
