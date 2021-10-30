@@ -17,10 +17,13 @@ class Person:
 
         self._first_name = value
 
+    # 使用property出现代码冗余
     @property
     def last_name(self):
         return self._last_name
 
+
+    # 使用property出现代码冗余
     @last_name.setter
     def last_name(self, value):
         if not isinstance(value, str):

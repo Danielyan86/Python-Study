@@ -139,6 +139,7 @@ add_method_property/static_way.py
 - 类属性
 - 实例属性
 - 局部变量
+- 私有属性
 
 查看代码例子 property
 ## 方法
@@ -183,6 +184,7 @@ namespace/instance_and_class.py
 - 子类拥有父类所有属性
 - 子类可以重写父类属性
 - 子类可以新增属性
+- 子类可以通过super访问父类方法
 
 查看例子
 Inherit/Employee.py
@@ -204,13 +206,26 @@ python的类分为两种类型: 经典类(python2的默认类)和新式类(pytho
 
 在python中访问、设置、删除对象属性的时候，有以下几种方式：
 
-- 使用内置函数getattr()、setattr()和delattr()
-- 自己编写getter()、setter()、deleter()方法
-- 重载__getattr__()、__setattr__()、__delattr__()运算符，这决定了x.y的访问、赋值方式以及del x.y的方式
-- 使用__getattribute__()方法
-- 使用描述符协议
 - 内置函数管理属性
+    - buildin_method.py
+
+- 使用内置函数getattr()、setattr()和delattr()
+    - management_property/buildin_method.py
+
+- 自己编写getter()、setter()、deleter()方法
+    - user-defined_set_and_get.py
+
+- 重载__getattr__()、__setattr__()、__delattr__()运算符，这决定了x.y的访问、赋值方式以及del x.y的方式
+    - reload_operator.py
+
+- 使用__getattribute__()方法
+    - 使用类名调用类属性时，不会经过__getattribute__方法，只争取实例对象对属性的调用，包括调用类属性
+    - __getattribute__是属性拦截器，属性调用会传入处理，最后要有返回值，将传入属性处理后返回给调用者。
+    - __getattribute__ 与 __getattr__ 相似，重要的区别是 __getattribute__ 将拦截所有的属性查询，而不管这个属性是否存在。
+    - getattribute.py
+
 ## 使用property协议，
+
 它是一种特殊的描述符，把方法变成属性。如果只有@property装饰，那么value是只读不可写的。因此在property装饰的基础上，还附赠了@x.setter装饰器和@x.deleter装饰器。
     - 语法简洁，可读性高
     - 可以直接访问实例属性，同事使用（getter和setters来验证新值，避免直接修改数据
@@ -220,6 +235,28 @@ python的类分为两种类型: 经典类(python2的默认类)和新式类(pytho
 @property可以被认为是定义getters、setters和deleters的 "pythonic "方式。
 通过定义属性，你可以在不影响程序的情况下改变类的内部实现，因此你可以添加作为 "幕后 "中介的getters、setters和deleters，以避免直接访问或修改数据。
 
-## 元类
+
+# 描述符（decriptor）协议
+python中的描述符可以用来定义触发自动执行的代码，它像是一个对象属性操作(访问、赋值、删除)的代理类一样。前面介绍过的property是描述符的一种。
+定义
+- 描述符（descriptor）：是一个有"绑定行为"的对象属性(object attribute)，它的访问控制会被描述器协议方法重写。
+- 任何定义了 __get__, __set__ 或者 __delete__ 任一方法的类称为描述符类，其实例对象便是一个描述符，这些方法称为描述符协议。
+- 当对一个实例属性进行访问时，Python 会按 obj.__dict__ → type(obj).__dict__ → type(obj)的父类.__dict__ 顺序进行查找，如果查找到目标属性并发现是一个描述符，Python 会调用描述符协议来改变默认的控制行为。
+描述符是 @property @classmethod @staticmethod 和 super 的底层实现机制。
+## 特性
+- 同时定义了 __get__ 和 __set__ 的描述符称为 数据描述符(data descriptor)；仅定义了 __get__ 的称为 非数据描述符(non-data descriptor) 。两者区别在于：如果 obj.__dict__ 中有与描述符同名的属性，若描述符是数据描述符，则优先调用描述符，若是非数据描述符，则优先使用 obj.__dict__ 中属性。
+- 描述符协议必须定义在类的层次上，否则无法被自动调用。
+
+大致流程是这样的：
+
+- 定义一个描述符类D，其内包含一个或多个__get__()、__set__()、__delete__()方法
+- 将描述符类D的实例对象d赋值给另一个要代理的类中某个属性attr，即attr = D()
+- 之后访问、赋值、删除attr属性，将会自动触发描述符类中的__get__()、__set__()、__delete__()方法
+    - descriptor_way.py Person_perperty_method.py
+# 装饰器
+
+# 魔术方法
+
+# 元类
  - https://realpython.com/python-metaclasses/  （查看图片）
  - 

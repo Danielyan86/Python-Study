@@ -14,11 +14,13 @@ class House:
         else:
             print("Please enter a valid price")
 
-    @price.deleter
+    @price.deleter  # 等价于 H=H.delter
     def price(self):
         del self._price
 
 
 if __name__ == '__main__':
     my_house = House(100000)
-    print(my_house.price)
+    print(my_house.price)  # will call the price function under the     @property
+    my_house.price = 0  # will call the function under the   @price.setter
+
