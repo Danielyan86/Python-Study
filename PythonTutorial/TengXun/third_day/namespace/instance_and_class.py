@@ -1,4 +1,4 @@
-class supcls():
+class supcls:
     x = 3
     y = 4
 

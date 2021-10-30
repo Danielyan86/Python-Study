@@ -1,5 +1,5 @@
 class tortoise:
-    """This is the description"""
+    """这是描述部分"""
     body_color = "绿色"  # 类属性
     foot_num = 4
     weight = 10
