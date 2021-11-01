@@ -76,6 +76,11 @@ def new(cls):
 
 >>> f = Foo()
 >>> f.attr
+100
+
+>>> g = Foo()
+>>> g.attr
+100
 ```
 
 # 参考资料
