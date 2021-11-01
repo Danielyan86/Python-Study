@@ -89,7 +89,6 @@ PyObject_IsInstance(PyObject *inst, PyObject *cls)
 isinstance() 做的事情其实很简单，就是判断inst -> ob_type 指向的类型是不是 (PyTypeObject *)cls。instance(object,type) <==>  if object.ob_type == type return 1 else return 0;从前面可以看到 ob_type = &PyType_Type，而 PyType_Type 就是 type，所以，显然object 被判断为了 type 的实例。实际上他们在代码实现上并没有类与实例的关系，但是在判断的时候强加了这层关系。
 
 ## 继承关系
-
 issubclass():
 ```
 [abstract.c]

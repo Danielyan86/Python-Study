@@ -16,6 +16,7 @@ def _info(title):
     print('parent process:', os.getppid())
     print('process id:', os.getpid())
 
+
 if __name__ == '__main__':
     print('Parent process %s.' % os.getpid())
     p = Pool()
