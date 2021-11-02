@@ -1,3 +1,6 @@
+import re
+
+
 # 通过函数方式构建生成器，生成器本身具有迭代器属性
 def generator_function():
     print('hello 1')
@@ -7,13 +10,15 @@ def generator_function():
     print('hello 3')
 
 
-g = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器。
+g = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器对象。
 g.__next__()  # 此处开始正真执行，打印第一个hell0
 g.__next__()
 for item in g:
     print(item)
 
 
+# 通过生成器生成斐波那契额数列
+# 定义一个无限循环产生斐波那契额数列的函数
 def fib():
     a, b = 0, 1
     while True:
@@ -21,7 +26,8 @@ def fib():
         yield a
 
 
-f = fib()
+f = fib()  # 函数没有执行
+# 通过控制for循环的调用次数来控制要返回数列第几个值
 for item in f:
     if item > 10:
         break
@@ -44,15 +50,13 @@ def read_in_chunks(file_object, chunk_size=5):
         yield data
 
 
-with  open('really_big_file.dat', "w+") as f:
+with open('really_big_file.dat', "w+") as f:
     f.write("big file")
     f.write("really big file")
 
-with  open('really_big_file.dat') as f:
+with open('really_big_file.dat') as f:
     for piece in read_in_chunks(f):
         print(piece)
-
-import re
 
 # 生成器表达式
 b_generator = (x for x in range(10))
@@ -60,7 +64,7 @@ for num in b_generator:
     print(num)
 
 # 类里面自定义定义生成器函数
-reword = re.compile('\w+')
+reword = re.compile('w+')
 
 
 class Sentence:
