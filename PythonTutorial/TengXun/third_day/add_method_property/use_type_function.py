@@ -11,6 +11,7 @@ class Person:
 def info(self):
     print("---info函数---", self)
 
+
 if __name__ == '__main__':
     p = Person('scg', 18)
 
