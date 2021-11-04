@@ -1,4 +1,5 @@
-import threading, zipfile
+import threading
+import zipfile
 
 
 class AsyncZip(threading.Thread):
@@ -16,6 +17,7 @@ class AsyncZip(threading.Thread):
 
     def test_thread(self):
         print("test2")
+
 
 background = AsyncZip('mydata.txt', 'myarchive.zip')
 background.start()
