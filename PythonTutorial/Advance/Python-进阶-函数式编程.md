@@ -128,7 +128,7 @@ reduece(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
 filter 函数用于过滤元素，它的使用形式如下：
 
 filter(function, sequnce)
-解释：将 function 依次作用于 sequnce 的每个 item，即 function(item)，将返回值为 True 的 item 组成一个 List/String/Tuple (取决于 sequnce 的类型，python3 统一返回迭代器) 返回。
+解释：将 function 依次作用于 sequnce 的每个 item，即 function(item)，将返回值为 True 的 item 组成一个 List/String/Tuple (取决于 sequence 的类型，python3 统一返回迭代器) 返回。
 
 看一些例子。
 ```python

@@ -13,7 +13,7 @@ class FakeDatabase:
         local_copy = self.value  # 读出来加一再写回去
         local_copy += 1
         time.sleep(0.1)
-        self.value = local_copy  # 模拟写写
+        self.value = local_copy  # 模拟写
         logging.info("Thread %s: finishing update", name)
 
 
