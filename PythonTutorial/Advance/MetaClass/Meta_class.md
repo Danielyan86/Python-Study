@@ -8,14 +8,18 @@ why).1 — Tim Peters
 ```python
 class Foo:
     pass
-...
->>> x = Foo()
 
->>> type(x)
+
+...
+>> > x = Foo()
+
+>> > type(x)
+
 
 class '__main__.Foo'>
 
->>> type(Foo)
+>> > type(Foo)
+
 
 class 'type'>
 ```
@@ -23,7 +27,7 @@ class 'type'>
 > 一般来说，任何新式类的类型都是type()
 
 ```python
->>> for t in int, float, dict, list, tuple:
+>> > for t in int, float, dict, list, tuple:
     ...
 print(type(t))
 ```
@@ -31,7 +35,9 @@ print(type(t))
 > type自己也是自己创建的
 
 ```python
->>> type(type)
+>> > type(type)
+
+
 class 'type'>
 ```
 
@@ -54,8 +60,8 @@ Type传入一个参数时候是返回数据类型 传入三个参数可以动态
 - <bases> 指定类所继承的基类的一个元组。这将成为该类的 __bases__ 属性。
 - <dct>指定了一个包含类主体定义的命名空间字典。这将成为该类的 __dict__ 属性。
 
-查看 meta_class_example1.py
-meta_class_example2.py
+查看 meta_class_example1.py meta_class_example2.py
+
 # 创建用户自定义类
 
 ```python
@@ -84,14 +90,14 @@ def new(cls):
     x.attr = 100
     return x
 
->>> Foo.__new__ = new
+>> > Foo.__new__ = new
 
->>> f = Foo()
->>> f.attr
+>> > f = Foo()
+>> > f.attr
 100
 
->>> g = Foo()
->>> g.attr
+>> > g = Foo()
+>> > g.attr
 100
 ```
 
@@ -120,7 +126,7 @@ recent
 call
 last)
 < ipython - input - 6 - 82
-f954370be2> in < module>
+f954370be2 > in < module >
 ----> 1
 type.__new__ = new
 
@@ -143,24 +149,28 @@ class Meta(type):
         x.attr = 100
         return x
 ```
+
 定义Meta(type)：指定Meta派生自type。由于type是一个元类，这使得Meta也是一个元类。
 
 注意， Meta 定义了一个自定义的 __new__() 方法。对 type 元类直接这样做是不可能的。这个 __new__() 方法做了以下工作。
 
-- 通过 super() 委托给父元类 (type) 的 __new__() 方法，以实际创建一个新类。 
-- 为该类指定自定义属性attr，值为100。 
+- 通过 super() 委托给父元类 (type) 的 __new__() 方法，以实际创建一个新类。
+- 为该类指定自定义属性attr，值为100。
 - 返回新创建的类
 
 接下来定义一个新的类 Foo 并指定它的元类是自定义元类 Meta，而不是标准的元类类型。这是在类的定义中使用元类关键字完成的。
 
 ```python
 class Foo(metaclass=Meta):
-...     pass
+    ...
+
+
+pass
 ...
->>> Foo.attr
+>> > Foo.attr
 ```
-Foo已经从Meta元类中自动获取了attr属性。当然，定义的任何其他类也会做同样的事情。
-就像类作为创建对象的模板一样，元类作为创建类的模板。元类有时被称为类工厂。
+
+Foo已经从Meta元类中自动获取了attr属性。当然，定义的任何其他类也会做同样的事情。 就像类作为创建对象的模板一样，元类作为创建类的模板。元类有时被称为类工厂。
 
 # 参考资料
 
