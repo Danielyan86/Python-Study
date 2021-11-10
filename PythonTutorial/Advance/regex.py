@@ -77,9 +77,9 @@ def raw_example():
 def or_in_patttern():
     pattern = re.compile(r'"(htt.*jpg.*) class|(htt.*jpg.*)\)"')
     res = pattern.search(
-            '''
-            '<div class="img"><div data-background="http://static1.keepcdn.com/picture/2018/07/15/20/f09a562a22592fab1ef598517eb04ca222832e9a_1335x1334.jpg?imageMogr2/thumbnail/306x/quality/95" class="keep-lazy"></div></div>'
-            ''')
+        '''
+        '<div class="img"><div data-background="http://static1.keepcdn.com/picture/2018/07/15/20/f09a562a22592fab1ef598517eb04ca222832e9a_1335x1334.jpg?imageMogr2/thumbnail/306x/quality/95" class="keep-lazy"></div></div>'
+        ''')
     group = res.group()
 
     print(group, type(group))  # group 里面匹配的是整个字符串
