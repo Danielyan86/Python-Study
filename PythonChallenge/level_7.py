@@ -2,7 +2,7 @@
 import Image
 
 im = Image.open("oxygen.png")
-print im.format, im.mode, im.size
+print im.log_format, im.mode, im.size
 
 w,h=im.size
 
