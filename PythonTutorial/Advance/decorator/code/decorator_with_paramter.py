@@ -9,6 +9,7 @@ def do_twice(func):
 def say_whee():
     print("Whee!")
 
+if __name__ == '__main__':
 
-whee_new = do_twice(say_whee)
-whee_new()
+    whee_new = do_twice(say_whee)
+    whee_new()
