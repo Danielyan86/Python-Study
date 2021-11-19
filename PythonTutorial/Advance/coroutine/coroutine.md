@@ -1,6 +1,7 @@
 # 概念
 
 与其久经考验的表亲--多处理和线程--相比，异步IO的知名度要低一些。本节将让你更全面地了解什么是异步IO，以及它是如何融入周围环境的。
+Coroutines是计算机程序组件，它概括了非抢占式多任务的子程序，允许在某些位置暂停和恢复执行的多个入口点。Coroutines非常适用于实现熟悉的程序组件，如合作任务、异常、事件循环、迭代器、无限列表和管道。
 
 ## 异步输入法适合在哪里使用？
 
@@ -91,7 +92,6 @@ async def g():
     return r
 ```
 
-
 还有一套严格的规则，围绕着何时和如何使用async/await。无论你是在学习语法还是已经接触过使用async/await，这些规则都很方便。
 
 - 你用async def引入的一个函数是一个coroutine。它可以使用await、return或yield，但所有这些都是可选的。声明async def noop(): pass是有效的。
@@ -102,4 +102,87 @@ async def g():
 
     - 任何用async def定义的东西都不能使用yield from，这将引发SyntaxError。
 
--  就像在def函数之外使用yield是一个语法错误一样，在async def coroutine之外使用await也是一个语法错误。你只能在coroutine的主体中使用await。
+- 就像在def函数之外使用yield是一个语法错误一样，在async def coroutine之外使用await也是一个语法错误。你只能在coroutine的主体中使用await。
+
+```python
+
+async def f(x):
+    y = await z(x)  # OK - `await` and `return` allowed in coroutines
+    return y
+
+
+async def g(x):
+    yield x  # OK - this is an async generator
+
+
+async def m(x):
+    yield from gen(x)  # No - SyntaxError
+
+
+def m(x):
+    y = await z(x)  # Still no - SyntaxError (no `async def` here)
+    return y
+```
+
+最后，当你使用 await f() 时，要求 f() 是一个可等待的对象。嗯，这不是很有帮助，不是吗？现在，只要知道一个可等待的对象是
+
+- (1) 另一个 coroutine 或
+- (2) 一个定义了返回迭代器的 .__await__() dunder 方法的对象。如果你正在写一个程序，对于绝大多数的目的，你应该只需要担心情况1。
+
+这给我们带来了一个你可能会看到的技术上的区别：将一个函数标记为coroutine的老方法是用@asyncio.coroutine来装饰一个正常的def函数。其结果是一个基于生成器的coroutine。自从 async/await 语法在
+Python 3.5 中出现后，这种结构已经过时了。
+
+这两个 coroutine 基本上是等价的 (都是可等待的)，但第一个是基于生成器的，而第二个是原生 coroutine。
+
+```python
+
+import asyncio
+
+
+@asyncio.coroutine
+def py34_coro():
+    """Generator-based coroutine, older syntax"""
+    yield from stuff()
+
+
+async def py35_coro():
+    """Native coroutine, modern syntax"""
+    await stuff()
+```
+
+下面是一个关于异步IO如何减少等待时间的例子：给定一个循环程序makerandom()，它不断产生范围为[0, 10]
+的随机整数，直到其中一个超过阈值，你想让这个循环程序的多个调用不需要等待对方连续完成。你大体上可以沿用上面两个脚本的模式，只是稍作改动。
+> range.py
+
+# 异步IO设计模式
+
+异步IO有它自己的一套可能的脚本设计，你将在这一节中得到介绍。
+
+## 链式循环程序
+
+Coroutines的一个关键特征是它们可以被串联起来。(记住，一个coroutine对象是可等待的，所以另一个coroutine对象可以等待它）。 这允许你将程序分解成更小的、可管理的、可回收的coroutine 程序。
+
+## 使用队列
+
+使用队列 asyncio包提供了队列类，其设计类似于队列模块的类。在我们到目前为止的例子中，我们还没有真正需要一个队列结构。在 chained.py 中，每个任务（future）都是由一组 coroutines 组成的，这些
+coroutines 明确地互相等待，并在每条链上传递一个输入。
+
+有一个替代的结构，也可以与异步IO一起工作：一些生产者，它们之间没有关联，向一个队列添加项目。每个生产者可以在交错的、随机的、未宣布的时间向队列中添加多个项目。一组消费者从队列中提取物品，因为它们出现了，贪婪地，不等待任何其他信号。
+
+在这种设计中，没有任何一个消费者与生产者之间的连锁关系。消费者不知道生产者的数量，甚至不会提前知道将被添加到队列中的项目的累积数量。
+
+单个生产者或消费者分别需要花费不同的时间来放置和提取队列中的项目。队列作为一个吞吐量，可以与生产者和消费者沟通，而不需要他们直接对话。
+
+注意：虽然由于queue.Queue()的线程安全，队列经常被用于线程程序中，但当涉及到异步IO时，你不需要需要关注线程安全问题.
+
+队列的一个用例（如这里的情况）是队列作为生产者和消费者的发送器，而这些生产者和消费者并不是直接连锁或相互关联的。
+
+这个程序的同步版本看起来非常糟糕：一组阻塞的生产者连续向队列中添加项目，一次一个生产者。只有在所有生产者都完成后，才能由一个消费者逐项处理队列。这种设计有很大的延迟性。项目可能会在队列中闲置，而不是立即被拾起和处理。
+
+下面是一个异步的版本，asyncq.py，。这个工作流程的挑战在于，需要有一个信号给消费者，说明生产已经完成。否则，await q.get()将无限期地挂起，因为队列将被完全处理，但消费者不会有任何生产完成的想法。
+
+理清了main()的思路：关键是等待q.join()，它一直阻塞到队列中的所有项目都被接收和处理，然后取消消费者任务，否则这些任务会挂起，无休止地等待更多队列项目出现。）
+
+# 参考文档
+
+- https://realpython.com/async-io-python/
