@@ -11,15 +11,13 @@ class Foo:
 
 
 ...
->> > x = Foo()
-
->> > type(x)
+x = Foo()
+type(x)
 
 
 class '__main__.Foo'>
 
->> > type(Foo)
-
+type(Foo)
 
 class 'type'>
 ```
