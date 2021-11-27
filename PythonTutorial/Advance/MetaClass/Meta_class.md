@@ -102,16 +102,16 @@ g.attr
 
 ```python
 def new(cls):
-    ...: x = type.__new__(cls)
-    ...: x.attr = 100
-    ...:
+    x = type.__new__(cls)
+    x.attr = 100
+    
     return x
-    ...:
-    ...:
+    
+    
 
 
 In[6]: type.__new__ = new
-...:
+
 ---------------------------------------------------------------------------
 TypeError
 Traceback(most
