@@ -11,9 +11,11 @@ def generator_function():
 
 
 g = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器对象。
-g.__next__()  # 此处开始正真执行，打印第一个hell0
-g.__next__()
-for item in g:
+g.__next__()  # 此处开始正真执行，打印第一个hello 1
+next(g)  # 等价于g.__next__()
+
+g1 = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器对象。
+for item in g1:
     print(item)
 
 
@@ -26,7 +28,7 @@ def fib():
         yield a
 
 
-f = fib()  # 函数没有执行
+f = fib()  # 函数没有执行 所谓的懒加载
 # 通过控制for循环的调用次数来控制要返回数列第几个值
 for item in f:
     if item > 10:
@@ -58,7 +60,7 @@ with open('really_big_file.dat') as f:
     for piece in read_in_chunks(f):
         print(piece)
 
-# 生成器表达式
+# 生成器表达式例子
 b_generator = (x for x in range(10))
 for num in b_generator:
     print(num)
