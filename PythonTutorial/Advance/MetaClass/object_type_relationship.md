@@ -44,7 +44,7 @@ Out[20]: True
 
 为什么
 type 实际上是：
-```c
+```
 #define PyVarObject_HEAD_INIT(type, size)       \
     1, type, size,
 
