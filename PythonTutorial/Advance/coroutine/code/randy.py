@@ -13,7 +13,7 @@ color = (
 )
 
 
-async def makerandom(idx: int, threshold: int = 6) -> int:
+async def makerandom(idx: int, threshold: int = 8) -> int:
     print(color[idx + 1] + f"input parameter {idx}, {threshold}")
     print(color[idx + 1] + f"Initiated makerandom({idx})." + color[0])
     i = random.randint(0, 10)
