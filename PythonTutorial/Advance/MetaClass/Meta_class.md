@@ -9,14 +9,10 @@ why).1 — Tim Peters
 class Foo:
     pass
 
-
-...
 x = Foo()
 type(x)
 
-
 class '__main__.Foo'>
-
 type(Foo)
 
 class 'type'>
@@ -25,15 +21,14 @@ class 'type'>
 > 一般来说，任何新式类的类型都是type()
 
 ```python
->> > for t in int, float, dict, list, tuple:
-    ...
-print(type(t))
+for t in int, float, dict, list, tuple:
+    print(type(t))
 ```
 
 > type自己也是自己创建的
 
 ```python
->> > type(type)
+type(type)
 
 
 class 'type'>
@@ -78,9 +73,9 @@ __new__()
 __init__()
 ```
 
-如果 Foo 没有定义 __new__() 和 __init__() ，默认的方法将从 Foo 的祖先那里继承过来。但是如果 Foo 定义了这些方法，它们就会覆盖那些来自祖先的方法，这就允许在实例化 Foo 时进行自定义行为。
+如果 Foo 没有定义 `__new__()` 和 `__init__()` ，默认的方法将从 Foo 的祖先那里继承过来。但是如果 Foo 定义了这些方法，它们就会覆盖那些来自祖先的方法，这就允许在实例化 Foo 时进行自定义行为。
 
-在下面，一个叫做 new() 的自定义方法被定义并被指定为 Foo 的 __new__() 方法。
+在下面，一个叫做 new() 的自定义方法被定义并被指定为 Foo 的 `__new__()` 方法。
 
 ```python
 def new(cls):
@@ -88,14 +83,14 @@ def new(cls):
     x.attr = 100
     return x
 
->> > Foo.__new__ = new
+Foo.__new__ = new
 
->> > f = Foo()
->> > f.attr
+f = Foo()
+f.attr
 100
 
->> > g = Foo()
->> > g.attr
+g = Foo()
+g.attr
 100
 ```
 
@@ -165,7 +160,7 @@ class Foo(metaclass=Meta):
 
 pass
 ...
->> > Foo.attr
+ Foo.attr
 ```
 
 Foo已经从Meta元类中自动获取了attr属性。当然，定义的任何其他类也会做同样的事情。 就像类作为创建对象的模板一样，元类作为创建类的模板。元类有时被称为类工厂。
