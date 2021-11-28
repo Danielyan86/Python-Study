@@ -8,7 +8,7 @@ class Bar(Foo):
     attr = 100
 
 
-x = Foo()
+x = Bar()
 print(x)
 
 # 动态创建，和上面等价

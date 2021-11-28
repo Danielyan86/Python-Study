@@ -53,7 +53,8 @@ Type传入一个参数时候是返回数据类型 传入三个参数可以动态
 - <bases> 指定类所继承的基类的一个元组。这将成为该类的 __bases__ 属性。
 - <dct>指定了一个包含类主体定义的命名空间字典。这将成为该类的 __dict__ 属性。
 
-查看 meta_class_example1.py meta_class_example2.py
+查看 
+```meta_class_example1.py meta_class_example2.py```
 
 # 创建用户自定义类
 
