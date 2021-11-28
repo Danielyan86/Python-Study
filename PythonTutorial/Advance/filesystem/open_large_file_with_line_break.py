@@ -1,4 +1,4 @@
-# 没有换行符大文件
+# 有换行符大文件
 import sys
 
 with open("large_file.txt", "w+") as f:
