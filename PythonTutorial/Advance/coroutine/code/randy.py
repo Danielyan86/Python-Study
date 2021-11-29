@@ -6,32 +6,35 @@ import random
 
 # ANSI colors
 color = (
-    "\033[0m",  # End of color
+
     "\033[31m",  # Red
     "\033[32m",  # GREEN
     "\033[33m",  # yellow
+    "\033[0m",  # End of color
 )
 
 
 async def makerandom(idx: int, threshold: int = 8) -> int:
-    print(color[idx + 1] + f"input parameter {idx}, {threshold}")
-    print(color[idx + 1] + f"Initiated makerandom({idx})." + color[0])
-    i = random.randint(0, 10)
-    while i <= threshold:
-        print(color[idx + 1] + f"makerandom({idx}) , {i} < {threshold} too low; retrying." + color[0])
-        await asyncio.sleep(idx + 1)
-        i = random.randint(0, 10)
-    print(color[idx + 1] + f"---> Finished: makerandom({idx}) ,Final value of i:{i}" + color[0])
+    # 传入的idx参数主要用来标记不同协程在终端显示颜色
+    print(color[idx] + f"input parameter {idx}, {threshold}")
+    print(color[idx] + f"Initiated makerandom({idx})." + color[-1])
+    i = random.randint(0, 10)  # 产生一个0到10的随机数
+    while i <= threshold:  # 如果随机数小于阀值则进入循环否则退出
+        print(color[idx] + f"makerandom({idx}) , {i} < {threshold} too low; retrying." + color[-1])
+        await asyncio.sleep(idx + 1)  # 遇到暂停事件，暂时停止运行当前函数，直到暂停时间结束
+        i = random.randint(0, 10)  # 重新产生一个随机数
+    print(color[idx] + f"---> Finished: makerandom({idx}) ,Final value of i:{i}" + color[-1])
     return i
 
 
 async def main():
-    res = await asyncio.gather(*(makerandom(i, 10 - i - 1) for i in range(3)))
+    # gather 方法类似于线程概念
+    res = await asyncio.gather(*(makerandom(i) for i in range(3)))
     return res
 
 
 if __name__ == "__main__":
-    random.seed(444)
+    # random.seed(444)
     r1, r2, r3 = asyncio.run(main())
     print()
     print(f"r1: {r1}, r2: {r2}, r3: {r3}")

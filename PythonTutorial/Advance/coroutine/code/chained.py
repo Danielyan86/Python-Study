@@ -4,36 +4,39 @@ import time
 
 # ANSI colors
 color = (
-    "\033[0m",  # End of color
+
     "\033[31m",  # Red
     "\033[32m",  # GREEN
     "\033[33m",  # yellow
+    "\033[0m",  # End of color
 )
 
 
 async def part1(n: int) -> str:
     i = random.randint(0, 10)
-    print(color[n + 1] + f"part1({n}) sleeping for {i} seconds." + color[0])
+    print(color[n])
+    print(f"part1({n}) sleeping for {i} seconds.")
     await asyncio.sleep(i)
     result = f"result{n}-1"
-    print(color[n + 1] + f"Returning part1({n}) == {result}." + color[0])
+    print(f"Returning part1({n}) == {result}.")
+    print(color[-1])
     return result
 
 
 async def part2(n: int, arg: str) -> str:
     i = random.randint(0, 10)
-    print(color[n + 1])
-    print(f"part2{n, arg} sleeping for {i} seconds." + color[0])
+    print(color[n])
+    print(f"part2{n, arg} sleeping for {i} seconds.")
     await asyncio.sleep(i)
     result = f"result{n}-2 derived from {arg}"
-    print(color[n + 1] + f"Returning part2{n, arg} == {result}." + color[0])
-    print(color[0])
+    print(f"Returning part2{n, arg} == {result}.")
+    print(color[-1])
     return result
 
 
 async def chain(n: int) -> None:
     start = time.perf_counter()
-    p1 = await part1(n)  # p1结束之后才会执行p2
+    p1 = await part1(n)  # p1结束之后才会执行p2,因为p1返回值是p2输入值
     p2 = await part2(n, p1)
     end = time.perf_counter() - start
     print(f"-->Chained result{n} => {p2} (took {end:0.2f} seconds).")
