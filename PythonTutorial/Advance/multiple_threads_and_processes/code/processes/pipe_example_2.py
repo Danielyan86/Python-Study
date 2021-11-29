@@ -2,6 +2,7 @@ from multiprocessing import Process, Pipe
 
 
 def cube_sender(x, x_conn):
+    # conn 就是pipe传进来的对象
     x_conn.send(x * x * x)
 
 
@@ -13,20 +14,11 @@ if __name__ == "__main__":
     x_conn, y_conn = Pipe()
     processes = []
 
-    p1 = Process(
-        target=cube_sender,
-        args=(
-            19,
-            x_conn,
-        ),
-    )
+    p1 = Process(target=cube_sender,
+                 args=(19, x_conn,))
 
-    p2 = Process(
-        target=cube_receiver,
-        args=(
-            y_conn,
-        ),
-    )
+    p2 = Process(target=cube_receiver,
+                 args=(y_conn,))
 
     processes.extend([p1, p2])
 
