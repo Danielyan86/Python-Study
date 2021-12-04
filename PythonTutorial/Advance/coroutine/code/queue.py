@@ -5,10 +5,12 @@ import random
 import time
 
 
+# 生产随机数
 async def makeitem(size: int = 5) -> str:
     return os.urandom(size).hex()
 
 
+# 产生一个随机数并sleep
 async def randsleep(caller=None) -> None:
     i = random.randint(0, 10)
     if caller:
@@ -16,6 +18,7 @@ async def randsleep(caller=None) -> None:
     await asyncio.sleep(i)
 
 
+# 模拟生产者
 async def produce(name: int, q: asyncio.Queue) -> None:
     n = random.randint(0, 10)
     for _ in it.repeat(None, n):  # Synchronous loop for each single producer
@@ -26,6 +29,7 @@ async def produce(name: int, q: asyncio.Queue) -> None:
         print(f"Producer {name} added <{i}> to queue.")
 
 
+# 模拟消费者
 async def consume(name: int, q: asyncio.Queue) -> None:
     while True:
         await randsleep(caller=f"Consumer {name}")
