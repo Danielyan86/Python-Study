@@ -7,7 +7,7 @@ finditer()	Find all substrings where the RE matches, and returns them as an iter
 import re
 
 print("=" * 20, "match", "=" * 20)
-# 将正则表达式编译成Pattern对象
+# 将正则表达式编译成Pattern对象 提高正则匹配效率
 pattern = re.compile(r'hello')
 
 
