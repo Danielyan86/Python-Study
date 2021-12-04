@@ -78,7 +78,7 @@ shared_memory_value.py
 
 ## 使用server进程
 
-服务器进程是一个Python程序开始时被触发的主要进程。其他进程可以利用其对象进行操作。一个Manager()类的对象控制着一个服务器进程。 Manager() 支持多种数据类型，如 list, dict, Lock, RLock,
+服务器进程是一个Python程序开始时被触发的*`主要进程`*。其他进程可以利用其对象进行操作。一个Manager()类的对象控制着一个服务器进程。 Manager() 支持多种数据类型，如 list, dict, Lock, RLock,
 Semaphore, BoundedSemaphore, Namespace, Condition, Event, Queue, Value, 和 Array。
 
 查看例子
