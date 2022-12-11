@@ -183,5 +183,5 @@ _trial_temp/*
 github_token
 _trial_temp*
 selenium_*
-data*
+data
 video
