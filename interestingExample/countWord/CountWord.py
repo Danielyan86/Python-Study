@@ -36,6 +36,7 @@
 #                             dict_count[w] = 0
 #     print(dict_count)
 import thulac
+import os
 
 
 def get_words(filename):
@@ -55,7 +56,7 @@ def get_words(filename):
                         word_dict[word] = word_dict[word] + 1
                     else:
                         word_dict[word] = 0
-                # print(word_dict)
+                print(word_dict)
         word_dict_sort = sorted(word_dict.items(), key=lambda x: x[1], reverse=True)
         print(word_dict_sort)
     with open(f"sorted_{filename}.txt", "w+") as f:
@@ -65,5 +66,6 @@ def get_words(filename):
 
 
 if '__main__' == __name__:
-    filename="./data/santi.txt"
-    res = get_words(filename=filename)
+    print(os.getcwd())
+    filename = "santi.txt"
+    get_words(filename=filename)
