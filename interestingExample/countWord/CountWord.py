@@ -1,5 +1,5 @@
 # encoding=utf-8
-import jieba
+# import jieba
 
 # jieba.enable_paddle()  # 启动paddle模式。 0.40版之后开始支持，早期版本不支持
 # strs = ["我来到北京清华大学", "乒乓球拍卖完了", "中国科学技术大学"]
@@ -21,7 +21,7 @@ import jieba
 # def get_words():
 #     dict_count = {}
 #     jieba.enable_paddle()
-#     with open('all.txt') as f:
+#     with open('sanguo.txt') as f:
 #         for line in f:
 #
 #             words = jieba.cut(line, use_paddle=True)
@@ -38,12 +38,12 @@ import jieba
 import thulac
 
 
-def get_words():
+def get_words(filename):
     thu1 = thulac.thulac()  # 默认模式
     text = thu1.cut("张飞爱北京天安门", text=True)  # 进行一句话分词
     print(text)
     word_dict = {}
-    with open('all.txt') as f:
+    with open(filename) as f:
         for line in f:
             text = thu1.cut(line, text=True)
             for item in text.split():
@@ -57,12 +57,13 @@ def get_words():
                         word_dict[word] = 0
                 # print(word_dict)
         word_dict_sort = sorted(word_dict.items(), key=lambda x: x[1], reverse=True)
-        # print(word_dict_sort)
-    with open("sorted_name.txt", "w+") as f:
+        print(word_dict_sort)
+    with open(f"sorted_{filename}.txt", "w+") as f:
         for item in word_dict_sort:
             f.write(str(item))
             f.write("\n")
 
 
 if '__main__' == __name__:
-    res = get_words()
+    filename="./data/santi.txt"
+    res = get_words(filename=filename)
