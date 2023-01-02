@@ -1,7 +1,7 @@
 '''
 Created on 2013-11-13
 
-@author: yannpxia
+@author: xiaodong
 '''
 from xml.etree import ElementTree as ET
 

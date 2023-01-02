@@ -1,7 +1,7 @@
 '''
 Created on 2013-2-26
 
-@author: yannpxia
+@author: xiaodong
 '''
 def Sum_Square_Difference(num):
     list=[]

@@ -1,7 +1,7 @@
 '''
 Created on 2013-3-3
 
-@author: yannpxia
+@author: xiaodong
 '''
 # Find the greatest product of five consecutive digits in the 1000-digit number.
 import urllib

@@ -1,7 +1,7 @@
 '''
 Created on 2013-3-3
 
-@author: yannpxia
+@author: xiaodong
 '''
 def Special_Pythagorean_triplet(num):
     for a in range(1,1000):

@@ -1,7 +1,7 @@
 '''
 Created on 2013-3-10
 
-@author: yannpxia
+@author: xiaodong
 '''
 import Problem3_Largest_prime_factor
 import problem1
