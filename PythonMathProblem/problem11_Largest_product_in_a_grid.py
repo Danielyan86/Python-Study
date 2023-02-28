@@ -5,16 +5,21 @@ Created on 2013-3-20
 '''
 import re
 
+
 def Largest_product_in_a_grid(grid):
     Max_number = 0
     num_list = grid.split('\n')
     pattern = '\w+'
     for eachline in num_list:
-        print eachline
+        print
+        eachline
         mo = re.search(pattern, eachline)
-        print mo.group()
+        print
+        mo.group()
 
-    print Max_number
+    print
+    Max_number
+
 
 if __name__ == '__main__':
     grid = '''
