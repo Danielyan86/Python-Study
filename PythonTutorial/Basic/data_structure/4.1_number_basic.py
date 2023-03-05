@@ -11,7 +11,7 @@ print("打印2进制字符: {bin_number}".format(bin_number=bin_number))
 oct_number = oct(10)
 print("打印8进制字符: {oct_number}".format(oct_number=oct_number))
 
-# division always returns a floating spoint number
+# division always returns a floating point number
 print("8 / 5 = {0}".format(8 / 5))
 
 # floor division discards the fractional part
