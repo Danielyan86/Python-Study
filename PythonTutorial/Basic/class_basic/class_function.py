@@ -4,14 +4,14 @@ class MyClass:
 
     # 构造器方法
     def __init__(self):
-        print('initialized')
+        print("initialized")
         self.classvar = "2.0"
 
     def show_version(self):
         print(self.myVersion)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 方法要在绑定之后才能用
     #    MyClass.show_version()
     my_instance = MyClass()

@@ -1,5 +1,4 @@
 class Person:
-
     def __init__(self):
         print(f"This is the instance id {self}")
         self.name = "default name"
@@ -17,6 +16,6 @@ class Person:
         print(self.gender)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     xiaohong = Person()
     xiaohong.self_test()

@@ -12,7 +12,7 @@ class supcls:
         return self.x, self.y, self.z
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s1 = supcls()
     s2 = supcls()
     print(s1.x)  # 输出3，搜索到类名称空间

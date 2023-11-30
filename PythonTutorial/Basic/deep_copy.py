@@ -6,7 +6,13 @@ b = a  # the default copy is shallow
 b.append(6)
 print(a)
 
-c = [1, 2, 3, 4, 5, ]
+c = [
+    1,
+    2,
+    3,
+    4,
+    5,
+]
 d = copy.deepcopy(c)
 d.append(6)
 

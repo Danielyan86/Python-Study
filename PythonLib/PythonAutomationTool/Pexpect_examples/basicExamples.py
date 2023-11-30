@@ -9,10 +9,10 @@ def run_example():
 
 def spawn_example():
     # 通过spqwn方法把输出写入文件
-    child = PX.spawn('docker exec -it ecstatic_liskov /bin/bash')
-    fout = open('mylog.txt', 'wb')
+    child = PX.spawn("docker exec -it ecstatic_liskov /bin/bash")
+    fout = open("mylog.txt", "wb")
     # child.logfile = fout
-    child.expect('[#$] ')
+    child.expect("[#$] ")
     res = child.sendline(r"free")
     # 将之前 open 的 file 对象指定为 spawn 类子程序对象的 log 文件.
     child.logfile = fout
@@ -27,5 +27,5 @@ def spawn_example():
 # print(child)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     spawn_example()

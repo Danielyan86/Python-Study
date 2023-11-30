@@ -24,7 +24,7 @@ class user_array:
         if self._count == 0:
             raise AssertionError("array is empty")
         else:
-            self._data = self._data[:index] + self._data[index + 1:-1]
+            self._data = self._data[:index] + self._data[index + 1 : -1]
             self._count = self._count - 1
 
     # 中间插入一个元素
@@ -70,7 +70,7 @@ def test_user_arrry():
     my_array.return_array()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     my_array = user_array(10)
     my_array.insert_element(0, 1)
     print(my_array.return_array())

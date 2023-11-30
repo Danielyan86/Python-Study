@@ -17,8 +17,10 @@ def get_face_images(picture_path):
         # Print the location of each face in this image
         top, right, bottom, left = face_location
         print(
-            "A face is located at pixel location Top: {}, Left: {}, Bottom: {}, Right: {}".format(top, left, bottom,
-                                                                                                  right))
+            "A face is located at pixel location Top: {}, Left: {}, Bottom: {}, Right: {}".format(
+                top, left, bottom, right
+            )
+        )
 
         # You can access the actual face itself like this:
         face_image = image[top:bottom, left:right]
@@ -27,7 +29,7 @@ def get_face_images(picture_path):
         pil_image.save("{0}.jpg".format(picture_path[-7:-3]))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import os
 
     pic_path = "/Users/xyan/pycharm_project/Movie-scrapy/movie/images/full"

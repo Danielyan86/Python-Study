@@ -16,14 +16,16 @@ def user_login(username=None, password=None):
     req = requests.Session()
     login_url = "http://127.0.0.1:8080/en-gb/accounts/login/"
 
-    post_data = {"csrfmiddlewaretoken": get_token(req),
-                 "login-username": username,
-                 "login-password": password,
-                 "login-redirect_url": "",
-                 "login_submit": "Log In"}
+    post_data = {
+        "csrfmiddlewaretoken": get_token(req),
+        "login-username": username,
+        "login-password": password,
+        "login-redirect_url": "",
+        "login_submit": "Log In",
+    }
     res = req.post(url=login_url, data=post_data)
     if res.status_code == 200:
-        if 'Account' in res.text:
+        if "Account" in res.text:
             return True
         else:
             return False
@@ -35,5 +37,5 @@ def hello(para):
     print(para)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(user_login())

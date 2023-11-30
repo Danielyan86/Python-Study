@@ -25,5 +25,5 @@ def make_greeting(name, age=None):
         return f"Whoa {name}! {age} already, you are growing up!"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     make_greeting("xiaoming", 66)

@@ -1,4 +1,4 @@
-class supcls():
+class supcls:
     x = 3
     y = 4
 
@@ -20,7 +20,7 @@ class childcls(supcls):
         self.z = 5555
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(childcls.x)  # 父类属性，搜索到父类名称空间
     print(childcls.y)  # 子类自身属性，搜索到子类名称空间
 

@@ -1,4 +1,4 @@
-dishes = {'eggs': 2, 'sausage': 1, 'bacon': 1, 'spam': 500}
+dishes = {"eggs": 2, "sausage": 1, "bacon": 1, "spam": 500}
 # 获取字典的key
 keys = dishes.keys()
 # 获取字典的values
@@ -18,9 +18,9 @@ print(list(keys))
 print(list(values))
 
 # view objects are dynamic and reflect dict changes
-del dishes['eggs']
-del dishes['sausage']
+del dishes["eggs"]
+del dishes["sausage"]
 list(keys)
 
 # set operations
-keys & {'eggs', 'bacon', 'salad'}
+keys & {"eggs", "bacon", "salad"}

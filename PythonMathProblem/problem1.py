@@ -18,14 +18,14 @@ class Multiples(object):
         sum = 0
         for i in Num_list:
             sum = i + sum
-        print('sum of the list is %d' % (sum))
+        print("sum of the list is %d" % (sum))
         return sum
 
     def Multiple_list(self, Num_list):
         result = 1
         for i in Num_list:
             result = i * result
-        print('multiple of the list is %d' % result)
+        print("multiple of the list is %d" % result)
         return result
 
 
@@ -41,7 +41,7 @@ class Multiples_refactor(object):
         return functools.reduce(lambda x, y: x * y, Num_list)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     num = 100
     Myobject = Multiples()
     Num_list = Myobject.Multiples_three_and_five(num)

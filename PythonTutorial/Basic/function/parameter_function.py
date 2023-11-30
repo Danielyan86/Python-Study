@@ -41,7 +41,7 @@ dict_var_args(1, 2, key=3, key4=4)
 
 # 参数拷贝问题
 def parameter_copy(a={}):
-    a['key2'] = 'new'
+    a["key2"] = "new"
 
 
 b_dic = {"key1": 1}

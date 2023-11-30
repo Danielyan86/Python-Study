@@ -1,4 +1,4 @@
-fruits = ['strawberry', 'fig', 'apple', 'cherry', 'raspberry', 'banana']
+fruits = ["strawberry", "fig", "apple", "cherry", "raspberry", "banana"]
 print(sorted(fruits, key=len))
 print(fruits)
 

@@ -10,7 +10,7 @@ class Person:
         print("this a static method. It can be called without instantiate")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     xiaoming = Person()
     xiaohong = Person()
     RS = Person()

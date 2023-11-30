@@ -12,5 +12,5 @@ def return_greeting(name):
     return f"Hi {name}"
 
 
-if __name__ == '__main__':
-    print(return_greeting('adam'))
+if __name__ == "__main__":
+    print(return_greeting("adam"))

@@ -7,7 +7,6 @@ class Car:
 
 
 class CarInfo:
-
     def __init__(self):
         self.lst = []
 
@@ -21,15 +20,17 @@ class CarInfo:
         if self.lst:
             print("print all cars information")
             for item in self.lst:
-                print(f"brand: {item.brand}, speed: {item.speed}, color: {item.color}, price: {item.price}")
+                print(
+                    f"brand: {item.brand}, speed: {item.speed}, color: {item.color}, price: {item.price}"
+                )
         else:
             print("car list is empty, there is no information to print")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     c = CarInfo()
-    bmw = Car('bmw', 300, 'red', '200000')
-    porsche = Car('porsche', 100, 'blue', 1000)
+    bmw = Car("bmw", 300, "red", "200000")
+    porsche = Car("porsche", 100, "blue", 1000)
     c.add_car(bmw)
     c.add_car(porsche)
     c.print_all_infor()

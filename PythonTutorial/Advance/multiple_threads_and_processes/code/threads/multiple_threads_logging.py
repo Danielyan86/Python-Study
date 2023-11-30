@@ -11,8 +11,7 @@ def thread_function(name):
 
 if __name__ == "__main__":
     log_format = "%(asctime)s: %(message)s"
-    logging.basicConfig(format=log_format, level=logging.INFO,
-                        datefmt="%H:%M:%S")
+    logging.basicConfig(format=log_format, level=logging.INFO, datefmt="%H:%M:%S")
 
     threads = list()
     for index in range(3):

@@ -3,14 +3,14 @@ import math
 import colorsys
 
 screen = turtle.Screen()
-screen.title('Pentaflake Fractal Colored - PythonTurtle.Academy')
+screen.title("Pentaflake Fractal Colored - PythonTurtle.Academy")
 screen.setup(1000, 1000)
 screen.setworldcoordinates(-1000, -1000, 1000, 1000)
 turtle.speed(0)
 # turtle.hideturtle()
 turtle.showturtle()
 screen.tracer(0, 0)
-turtle.fillcolor('dark cyan')
+turtle.fillcolor("dark cyan")
 
 
 def pentagon(x, y, r, direction):  # x,y is the center
@@ -37,7 +37,9 @@ def pentaflake(x, y, r, direction, n):
     r2 = r / (1 + 2 * math.cos(math.radians(36)))
     d = 2 * r2 * math.cos(math.radians(36))
     for _ in range(5):
-        x2, y2 = x + d * math.cos(math.radians(direction)), y + d * math.sin(math.radians(direction))
+        x2, y2 = x + d * math.cos(math.radians(direction)), y + d * math.sin(
+            math.radians(direction)
+        )
         pentaflake(x2, y2, r2, direction, n - 1)
         direction += 72
     pentaflake(x, y, r2, direction + 180, n - 1)

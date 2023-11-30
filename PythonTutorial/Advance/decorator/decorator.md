@@ -7,8 +7,8 @@ def add_one(number):
     return number + 1
 
 
-add_one(2) 
-``` 
+add_one(2)
+```
 
 一般来说，Python 中的函数也可能有副作用，而不仅仅是把输入变成输出。print() 函数就是一个基本的例子：它在返回 None
 的同时有一个向控制台输出的副作用。然而，为了理解装饰器，只要把函数看作是把给定的参数变成一个值的东西就足够了
@@ -50,7 +50,7 @@ def parent():
 
 - 内部函数的定义顺序并不重要。就像其他函数一样，只有当内部函数被执行时才会发生打印。
 
-- 此外，内部函数在调用父函数之前不会被定义。它们是对parent()的局部作用域：它们只在parent()函数内部作为局部变量存在。试着调用first_child()。你应该得到一个错误。
+- 此外，内部函数在调用父函数之前不会被定义。它们是对 parent()的局部作用域：它们只在 parent()函数内部作为局部变量存在。试着调用 first_child()。你应该得到一个错误。
 
 # 从函数中返回函数
 
@@ -71,7 +71,7 @@ def parent(num):
         return second_child
 ```
 
-在返回first_child的时候没有加括号。重新调用函数意味着你正在返回一个对函数first_child的引用。相反，带括号的first_child()指的是对函数的计算结果。这可以在下面的例子中看到。
+在返回 first_child 的时候没有加括号。重新调用函数意味着你正在返回一个对函数 first_child 的引用。相反，带括号的 first_child()指的是对函数的计算结果。这可以在下面的例子中看到。
 
 # 简单装饰器
 
@@ -91,7 +91,7 @@ def say_whee():
 
 # 语法糖!
 
-你上面装饰say_whee()的方式有点笨拙。首先，你最终输入了三次 say_whee 这个名字。此外，装饰被隐藏在函数定义的下面。
+你上面装饰 say_whee()的方式有点笨拙。首先，你最终输入了三次 say_whee 这个名字。此外，装饰被隐藏在函数定义的下面。
 
 相反，Python 允许你用 @ 符号以更简单的方式使用装饰器，有时称为 "饼 "语法。下面的例子与第一个装饰器的例子做了完全相同的事情。
 
@@ -126,7 +126,8 @@ def do_twice(func):
     return wrapper_do_twice
 ```
 
-wrapper_do_twice()内部函数现在可以接受任意数量的参数，并将它们传递给它装饰的函数。现在你的say_whee()和greet()的例子都可以工作了。
+wrapper_do_twice()内部函数现在可以接受任意数量的参数，并将它们传递给它装饰的函数。现在你的 say_whee()和 greet()的例子都可以工作了。
+
 > decorator_withparams.py
 
 # 从装饰器函数中返回值
@@ -173,12 +174,12 @@ def waste_some_time(num_times):
         sum([i ** 2 for i in range(10000)])
 ```
 
-这个装饰器的工作原理是存储函数开始运行前的时间（在标有#1的一行）和函数结束后的时间（在#2）。然后，函数花费的时间就是这两者之间的差值（在#3处）。
-我们使用time.perf_counter()函数，它在测量时间间隔方面做得很好。
+这个装饰器的工作原理是存储函数开始运行前的时间（在标有#1 的一行）和函数结束后的时间（在#2）。然后，函数花费的时间就是这两者之间的差值（在#3 处）。
+我们使用 time.perf_counter()函数，它在测量时间间隔方面做得很好。
 
 ## 调试代码
 
-下面的@debug装饰器将在每次函数被调用时，打印函数的参数以及其返回值。
+下面的@debug 装饰器将在每次函数被调用时，打印函数的参数以及其返回值。
 
 ```python
 import functools
@@ -200,15 +201,15 @@ def debug(func):
     return wrapper_debug
 ```
 
-- 创建一个位置参数的列表。使用repr()得到一个代表每个参数的字符串。
-- 创建一个关键字参数的列表。f-string将每个参数格式化为key=value，其中的！！！r指定符意味着repr()被用来表示值。
+- 创建一个位置参数的列表。使用 repr()得到一个代表每个参数的字符串。
+- 创建一个关键字参数的列表。f-string 将每个参数格式化为 key=value，其中的！！！r 指定符意味着 repr()被用来表示值。
 - 位置参数和关键字参数的列表被连接成一个签名字符串，每个参数用逗号隔开。
 - 返回值在函数执行完毕后被打印出来
 
 # 装饰类
 
 一些常用的装饰器在 Python 中甚至是内建的，它们是 @classmethod, @staticmethod, 和 @property。@classmethod 和 @staticmethod
-装饰器用于定义类命名空间中的方法，这些方法与该类的特定实例没有关系。@property装饰器是用来定制类属性的getters和setters的。 查看代码
+装饰器用于定义类命名空间中的方法，这些方法与该类的特定实例没有关系。@property 装饰器是用来定制类属性的 getters 和 setters 的。 查看代码
 
 ```
 decorator_class
@@ -217,7 +218,7 @@ decorator_class
 
 ## 装饰整个类
 
-在python3.7中加入新的模块dataclass module
+在 python3.7 中加入新的模块 dataclass module
 
 ```python
 from dataclasses import dataclass
@@ -230,13 +231,12 @@ class PlayingCard:
 
 ```
 
-语法的含义与函数装饰器类似。在上面的例子中，你可以通过写PlayingCard = dataclass(PlayingCard)来完成这个装饰。
+语法的含义与函数装饰器类似。在上面的例子中，你可以通过写 PlayingCard = dataclass(PlayingCard)来完成这个装饰。
 
 类装饰器的一个常见用途是作为元类的一些使用情况的更简单的替代。在这两种情况下，你都在动态地改变一个类的定义。
 
 编写一个类装饰器与编写一个函数装饰器非常相似。唯一的区别是，装饰器将接收一个类而不是一个函数作为参数
 。事实上，你在上面看到的所有装饰器都可以作为类装饰器工作。当你在一个类而不是一个函数上使用它们时，其效果可能不是你想要的。
-
 
 # 装饰器嵌套
 
@@ -287,7 +287,7 @@ def wrapper_repeat(*args, **kwargs):
 ```
 
 这个 wrapper_repeat() 函数接受任意参数，并返回装饰函数 func()
-的值。这个包装函数也包含了调用装饰函数num_times次数的循环。这与你之前看到的包装函数没有什么不同，只是它使用的num_times参数必须从外部提供。
+的值。这个包装函数也包含了调用装饰函数 num_times 次数的循环。这与你之前看到的包装函数没有什么不同，只是它使用的 num_times 参数必须从外部提供。
 
 跳出来看
 
@@ -314,11 +314,10 @@ def repeat(num_times):
 
 repeat()函数中发生了一些微妙的事情。
 
-- 将decorator_repeat()定义为一个内部函数意味着 repeat()将引用一个函数对象--decorator_repeat。早些时候，我们使用不带括号的 repeat
+- 将 decorator_repeat()定义为一个内部函数意味着 repeat()将引用一个函数对象--decorator_repeat。早些时候，我们使用不带括号的 repeat
   来引用函数对象。在定义带参数的装饰器时，添加括号是必要的。
-- 在 repeat()本身中，num_times这个参数似乎没有被使用。但通过传递num_times，我们创建了一个闭包，num_times的值被存储在其中，直到以后被wrapper_repeat()使用。
+- 在 repeat()本身中，num_times 这个参数似乎没有被使用。但通过传递 num_times，我们创建了一个闭包，num_times 的值被存储在其中，直到以后被 wrapper_repeat()使用。
 
 # 参考资料
 
 - https://realpython.com/primer-on-python-decorators/#debugging-code
-

@@ -44,5 +44,5 @@ def iter_mode():
             print(line)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     iter_mode()

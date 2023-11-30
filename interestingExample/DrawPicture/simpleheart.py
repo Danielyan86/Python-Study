@@ -2,14 +2,14 @@ import turtle
 import math
 
 screen = turtle.Screen()
-screen.title('Heart Animation - PythonTurtle.Academy')
+screen.title("Heart Animation - PythonTurtle.Academy")
 screen.setup(1000, 1000)
 screen.setworldcoordinates(-1000, -1000, 1000, 1000)
 turtle.speed(10)
 # turtle.hideturtle()
 
 screen.tracer(0, 0)
-turtle.color('red')
+turtle.color("red")
 
 
 def draw_heart(alpha, d):

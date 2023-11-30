@@ -6,14 +6,14 @@ class TheFirstDemo:
         print("调用构造方法")
 
     # 类属性
-    add = 'hello class'
+    add = "hello class"
 
 
 class TheSecondDemo:
     # 类属性
-    add = 'hello class'
+    add = "hello class"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = TheFirstDemo()
     t2 = TheSecondDemo()

@@ -8,7 +8,9 @@ class Car:
         self.mpg = speed
 
     def display_car(self):
-        return "This is a {0} {1} with {2} MPG. ".format(self.color, self.model, self.mpg)
+        return "This is a {0} {1} with {2} MPG. ".format(
+            self.color, self.model, self.mpg
+        )
 
     def drive_car(self):
         self.condition = "used"
@@ -24,6 +26,7 @@ class ElectricCar(Car):
         # super(ElectricCar, self).__init__(model, color, speed) #python2 way
         super().__init__(model, color, speed)
         self.battery_type = battery_type
+
 
 class OilCar(Car):
     # 调用父类的初始化方法
@@ -45,7 +48,7 @@ class MixedCar(ElectricCar, OilCar):
         print("this is a MixedCar")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     Tesla = ElectricCar("SUV", "red", "40", "new")
     print(Tesla.display_car())
     Tesla.show_feature()

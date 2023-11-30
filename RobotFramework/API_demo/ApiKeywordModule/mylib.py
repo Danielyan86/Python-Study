@@ -4,7 +4,6 @@ import requests
 
 
 class mylib(object):
-
     def __init__(self):
         self.req = requests.Session()
         self.url = "http://127.0.0.1:8080"
@@ -22,14 +21,16 @@ class mylib(object):
     def login(self, username=None, password=None):
         url = f"{self.url}/en-gb/accounts/login/"
 
-        post_data = {"csrfmiddlewaretoken": self.token,
-                     "login-username": username,
-                     "login-password": password,
-                     "login-redirect_url": "",
-                     "login_submit": "Log In"}
+        post_data = {
+            "csrfmiddlewaretoken": self.token,
+            "login-username": username,
+            "login-password": password,
+            "login-redirect_url": "",
+            "login_submit": "Log In",
+        }
         res = self.req.post(url=url, data=post_data)
         if res.status_code == 200:
-            if 'Account' in res.text:
+            if "Account" in res.text:
                 return True
             else:
                 return False
@@ -37,13 +38,13 @@ class mylib(object):
             return False
 
     def hello(self):
-        print('hello')
+        print("hello")
 
     def log_out(self):
         log_out_url = f"{self.url}/en-gb/accounts/logout/"
         res = self.req.get(url=log_out_url)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     mylib_obj = mylib()
     print(mylib_obj.login("test@163.com", "thisisatest1234"))

@@ -31,5 +31,5 @@ class MyTestCase(unittest.TestCase):
         self.d.quit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

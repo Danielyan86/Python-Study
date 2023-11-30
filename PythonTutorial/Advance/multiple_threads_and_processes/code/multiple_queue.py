@@ -27,20 +27,20 @@ class Spider:
         url = "https://api.github.com/orgs/PlayPython/members?access_token="
         res = self.req.get(url)
         res.raise_for_status()
-        self.user_urls = [item['url'] for item in res.json()]
+        self.user_urls = [item["url"] for item in res.json()]
 
     def one_thread_get_public_repos(self):
         res_list = []
         for url in self.user_urls:
             res = self.req.get(url + "?access_token=")
-            res_list.append(res.json()['public_repos'])
+            res_list.append(res.json()["public_repos"])
         print(res_list)
 
     def get_function(self, url):
         print(url)
         res = self.req.get(url + "?access_token=")
-        print(res.json()['public_repos'])
-        self.q.put(res.json()['public_repos'])
+        print(res.json()["public_repos"])
+        self.q.put(res.json()["public_repos"])
 
     def multiple_thread_get_public_repos(self):
         threads = []
@@ -57,7 +57,7 @@ class Spider:
             # print(q.get())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     spider_inst = Spider()
     spider_inst.get_user_list()
     # spider_inst.one_thread_get_public_repos()

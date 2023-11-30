@@ -10,10 +10,10 @@ class Person:
     @first_name.setter
     def first_name(self, value):
         if not isinstance(value, str):
-            raise ValueError('The first name must a string')
+            raise ValueError("The first name must a string")
 
         if len(value) == 0:
-            raise ValueError('The first name cannot be empty')
+            raise ValueError("The first name cannot be empty")
 
         self._first_name = value
 
@@ -22,19 +22,18 @@ class Person:
     def last_name(self):
         return self._last_name
 
-
     # 使用property出现代码冗余
     @last_name.setter
     def last_name(self, value):
         if not isinstance(value, str):
-            raise ValueError('The last name must a string')
+            raise ValueError("The last name must a string")
 
         if len(value) == 0:
-            raise ValueError('The last name cannot be empty')
+            raise ValueError("The last name cannot be empty")
 
         self._last_name = value
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     jonny = Person("Jonny", "wang")
     jonny.first_name = ""  # exception will be thrown

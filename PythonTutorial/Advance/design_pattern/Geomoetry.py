@@ -20,7 +20,7 @@ class Square(Geometry):
         return self.side_length * self.side_length
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     Rectangle1 = Rectangle(2, 5)
     print(Rectangle1.area())
     Square1 = Square(2)

@@ -1,4 +1,5 @@
-# 通过一个例子查看python里面object 和 type关系
+# 通过一个例子查看 python 里面 object 和 type 关系
+
 ```python
 class A:
     pass
@@ -44,6 +45,7 @@ Out[20]: True
 
 为什么
 type 实际上是：
+
 ```
 #define PyVarObject_HEAD_INIT(type, size)       \
     1, type, size,
@@ -57,7 +59,9 @@ PyTypeObject PyType_Type = {
     ...
 }
 ```
+
 object 实际上是：
+
 ```
 PyTypeObject PyBaseObject_Type = {
     PyVarObject_HEAD_INIT(&PyType_Type, 0)
@@ -68,9 +72,11 @@ PyTypeObject PyBaseObject_Type = {
     ...
 }
 ```
-type 和 object在底层本来就是一个数据类型
+
+type 和 object 在底层本来就是一个数据类型
 
 ## isinstance() 做了什么?
+
 ```
 #define Py_TYPE(ob)             (((PyObject*)(ob))->ob_type)
 
@@ -86,10 +92,12 @@ PyObject_IsInstance(PyObject *inst, PyObject *cls)
 }
 ```
 
-isinstance() 做的事情其实很简单，就是判断inst -> ob_type 指向的类型是不是 (PyTypeObject *)cls。instance(object,type) <==>  if object.ob_type == type return 1 else return 0;从前面可以看到 ob_type = &PyType_Type，而 PyType_Type 就是 type，所以，显然object 被判断为了 type 的实例。实际上他们在代码实现上并没有类与实例的关系，但是在判断的时候强加了这层关系。
+isinstance() 做的事情其实很简单，就是判断 inst -> ob_type 指向的类型是不是 (PyTypeObject \*)cls。instance(object,type) <==> if object.ob_type == type return 1 else return 0;从前面可以看到 ob_type = &PyType_Type，而 PyType_Type 就是 type，所以，显然 object 被判断为了 type 的实例。实际上他们在代码实现上并没有类与实例的关系，但是在判断的时候强加了这层关系。
 
 ## 继承关系
+
 issubclass():
+
 ```
 [abstract.c]
 PyObject_IsSubclass(PyObject *derived, PyObject *cls)
@@ -115,14 +123,18 @@ int PyType_IsSubtype(PyTypeObject *a, PyTypeObject *b)
     }
 }
 ```
-从上面我们也可以看出 python 的继承机制。我们也可以看到，如果一个类没有基类，那他的父类就是object ，即便在代码实现上它并没有基类，但是在 issubclass()中就是这样认为的！
+
+从上面我们也可以看出 python 的继承机制。我们也可以看到，如果一个类没有基类，那他的父类就是 object ，即便在代码实现上它并没有基类，但是在 issubclass()中就是这样认为的！
 
 ## 总结
-type 和 object 其实并没有继承与实例化的关系，只是开发者为了保持 python 纯正的思想，给他们添加了联系。添加联系的方式有两种：一种是设置标志位，如ob_type，一种是函数判断中做特殊处理（就像 PyType_IsSubtype 函数那样）。
-对于python使用者,只需要记住
+
+type 和 object 其实并没有继承与实例化的关系，只是开发者为了保持 python 纯正的思想，给他们添加了联系。添加联系的方式有两种：一种是设置标志位，如 ob_type，一种是函数判断中做特殊处理（就像 PyType_IsSubtype 函数那样）。
+对于 python 使用者,只需要记住
+
 - object ：是一切类的基类
-- type   ：一切类型都是它的实例
+- type ：一切类型都是它的实例
 
 # 参考
+
 - https://www.zhihu.com/question/38791962
 - https://zhuanlan.zhihu.com/p/100885824

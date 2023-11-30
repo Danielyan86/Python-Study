@@ -65,7 +65,7 @@ def get_words(filename):
             f.write("\n")
 
 
-if '__main__' == __name__:
+if "__main__" == __name__:
     print(os.getcwd())
     filename = "santi.txt"
     get_words(filename=filename)

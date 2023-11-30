@@ -1,169 +1,169 @@
 config:
-    name: testcase description
-    variables: {}
+  name: testcase description
+  variables: {}
 teststeps:
--   name: /
+  - name: /
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - text/html; charset=utf-8
--   name: /static/rest_framework/css/bootstrap.min.css
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - text/html; charset=utf-8
+  - name: /static/rest_framework/css/bootstrap.min.css
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/css/bootstrap.min.css
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/css/bootstrap.min.css
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - text/css
--   name: /static/rest_framework/css/bootstrap-tweaks.css
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - text/css
+  - name: /static/rest_framework/css/bootstrap-tweaks.css
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/css/bootstrap-tweaks.css
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/css/bootstrap-tweaks.css
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - text/css
--   name: /static/rest_framework/css/prettify.css
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - text/css
+  - name: /static/rest_framework/css/prettify.css
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/css/prettify.css
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/css/prettify.css
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - text/css
--   name: /static/rest_framework/css/default.css
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - text/css
+  - name: /static/rest_framework/css/default.css
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/css/default.css
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/css/default.css
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - text/css
--   name: /static/rest_framework/js/jquery-3.4.1.min.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - text/css
+  - name: /static/rest_framework/js/jquery-3.4.1.min.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/jquery-3.4.1.min.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/jquery-3.4.1.min.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/js/ajax-form.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/js/ajax-form.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/ajax-form.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/ajax-form.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/js/csrf.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/js/csrf.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/csrf.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/csrf.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/js/bootstrap.min.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/js/bootstrap.min.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/bootstrap.min.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/bootstrap.min.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/js/prettify-min.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/js/prettify-min.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/prettify-min.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/prettify-min.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/js/default.js
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/js/default.js
     request:
-        headers:
-            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/js/default.js
+      headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36
+          (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/js/default.js
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - application/javascript
--   name: /static/rest_framework/img/grid.png
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - application/javascript
+  - name: /static/rest_framework/img/grid.png
     request:
-        method: GET
-        url: http://127.0.0.1:8000/static/rest_framework/img/grid.png
+      method: GET
+      url: http://127.0.0.1:8000/static/rest_framework/img/grid.png
     validate:
-    -   eq:
-        - status_code
-        - 200
-    -   eq:
-        - headers.Content-Type
-        - image/png
+      - eq:
+          - status_code
+          - 200
+      - eq:
+          - headers.Content-Type
+          - image/png

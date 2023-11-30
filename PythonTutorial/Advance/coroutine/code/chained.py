@@ -4,7 +4,6 @@ import time
 
 # ANSI colors
 color = (
-
     "\033[31m",  # Red
     "\033[32m",  # GREEN
     "\033[33m",  # yellow

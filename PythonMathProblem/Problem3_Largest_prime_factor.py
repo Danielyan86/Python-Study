@@ -2,13 +2,13 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
 
-class Prime(object):
 
+class Prime(object):
     # judge the is prime
     def Judge_prime(self, num):
         prime_flag = 1
         i = 2
-        while i < num ** 0.5 + 1:
+        while i < num**0.5 + 1:
             if num % i == 0:
                 prime_flag = 0
                 break
@@ -24,7 +24,7 @@ class Prime(object):
             if self.Judge_prime(i):
                 list_prime.append(i)
         print
-        'prime list is %s' % list_prime
+        "prime list is %s" % list_prime
         return list_prime
 
     def Devide_prime_list(self, Prime_list, num):
@@ -34,7 +34,7 @@ class Prime(object):
                 if num % i == 0:
                     devide_prime_list.append(i)
         print
-        'devided prime list is %s' % devide_prime_list
+        "devided prime list is %s" % devide_prime_list
         return devide_prime_list
 
     def Find_largest_prime(self, num):
@@ -46,11 +46,11 @@ class Prime(object):
                     break
             i = i + 1
         print
-        'the largest prime is %d' % new_num
+        "the largest prime is %d" % new_num
         return new_num
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     num = 26000001
     myObject = Prime()
     #    new_list = myObject.Prime_list(num)

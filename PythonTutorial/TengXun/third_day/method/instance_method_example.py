@@ -8,6 +8,6 @@ class Person:
         print("正在调用 say() 实例方法")
 
 
-if __name__ == '__main__':
-    p1 = Person('scg', 18)
+if __name__ == "__main__":
+    p1 = Person("scg", 18)
     p1.say()

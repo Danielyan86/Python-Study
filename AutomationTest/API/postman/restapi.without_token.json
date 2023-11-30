@@ -1,100 +1,85 @@
 {
-	"info": {
-		"_postman_id": "55a96aa5-ac7e-4580-944d-d2dc978cdffc",
-		"name": "restapi",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "http://127.0.0.1:8000/users/",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "5428cd63-ede8-45cd-bb12-06f7fceca333",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);",
-							"});",
-							"pm.test(\"Your test name\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData[0].username).to.eql(\"admin\");",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/users/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"users",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get_token",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "aaac9583-4eea-42bf-9ee7-4f12975d3619",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123456",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/get_auth_token/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"get_auth_token",
-						""
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "55a96aa5-ac7e-4580-944d-d2dc978cdffc",
+    "name": "restapi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "http://127.0.0.1:8000/users/",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5428cd63-ede8-45cd-bb12-06f7fceca333",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response time is less than 200ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(200);",
+              "});",
+              "pm.test(\"Your test name\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData[0].username).to.eql(\"admin\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/users/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "8000",
+          "path": ["users", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "aaac9583-4eea-42bf-9ee7-4f12975d3619",
+            "exec": [""],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "username",
+              "value": "admin",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/get_auth_token/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["get_auth_token", ""]
+        }
+      },
+      "response": []
+    }
+  ]
 }

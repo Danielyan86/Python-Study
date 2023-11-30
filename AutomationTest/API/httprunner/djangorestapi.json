@@ -20,16 +20,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/json"
-          ]
+          "eq": ["headers.Content-Type", "application/json"]
         }
       ]
     }
@@ -43,16 +37,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -66,16 +54,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -89,16 +71,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -112,16 +88,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -135,16 +105,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -158,16 +122,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/javascript"
-          ]
+          "eq": ["headers.Content-Type", "application/javascript"]
         }
       ]
     }
@@ -181,16 +139,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "image/png"
-          ]
+          "eq": ["headers.Content-Type", "image/png"]
         }
       ]
     }

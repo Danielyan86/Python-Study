@@ -33,12 +33,16 @@ class Student(Person):
         print("学会了")
 
     def __str__(self):
-        return f"name: {self.name}, gender:{self.gender}, age:{self.age}, college: {self.college}" \
-               f" class: {self.class_stu}"
+        return (
+            f"name: {self.name}, gender:{self.gender}, age:{self.age}, college: {self.college}"
+            f" class: {self.class_stu}"
+        )
 
 
 class Teacher(Person):
-    def __init__(self, name: str, gender: str, age: str, college: str, professional: str):
+    def __init__(
+        self, name: str, gender: str, age: str, college: str, professional: str
+    ):
         super().__init__(name, gender, age)
         self.college = college
         self.professional = professional
@@ -48,7 +52,7 @@ class Teacher(Person):
         print(self.college, self.professional)
 
     def teach(self):
-        return ("今天讲了如何用面向对象设计程序")
+        return "今天讲了如何用面向对象设计程序"
 
     def __str__(self):
         return f"name: {self.name}, gender:{self.gender}, age:{self.age}, college: {self.college}, professional: {self.professional}"
@@ -60,7 +64,7 @@ class Teach:
         self.teacher = teacher
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     xiaohong = Student("xiaohong", "female", "18", "engineer", "1")
     xiaohong.person_info()
     mr_liu = Teacher("liu", "male", "33", "engineer", "electronic technology")

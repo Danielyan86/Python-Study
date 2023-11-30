@@ -1,5 +1,5 @@
 def queue(string_para):
-    string_new = ''
+    string_new = ""
     string_old = string_para
 
     while 1:
@@ -17,5 +17,5 @@ def queue(string_para):
     return string_new
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(queue("63175892443"))

@@ -7,7 +7,10 @@ base_position = 0
 
 
 def switch_number(number1, number2):
-    number_list[number1], number_list[number2] = number_list[number2], number_list[number1]
+    number_list[number1], number_list[number2] = (
+        number_list[number2],
+        number_list[number1],
+    )
 
 
 def quick_sort(left_num, right_num):
@@ -20,10 +23,14 @@ def quick_sort(left_num, right_num):
     right_soldier = right_num
 
     while left_soldier != right_soldier:
-        while (number_list[right_soldier] >= base_number_value) and (right_soldier > left_soldier):
+        while (number_list[right_soldier] >= base_number_value) and (
+            right_soldier > left_soldier
+        ):
             right_soldier = right_soldier - 1
 
-        while (number_list[left_soldier] <= base_number_value) and (right_soldier > left_soldier):
+        while (number_list[left_soldier] <= base_number_value) and (
+            right_soldier > left_soldier
+        ):
             left_soldier = left_soldier + 1
 
         if right_soldier > left_soldier:
@@ -41,7 +48,11 @@ def qsort(arr):
         return arr
     else:
         pivot = arr[0]
-        return qsort([x for x in arr[1:] if x < pivot]) + [pivot] + qsort([x for x in arr[1:] if x >= pivot])
+        return (
+            qsort([x for x in arr[1:] if x < pivot])
+            + [pivot]
+            + qsort([x for x in arr[1:] if x >= pivot])
+        )
 
 
 if __name__ == "__main__":

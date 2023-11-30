@@ -1,11 +1,11 @@
-charles = {'name': 'Charles L. Dodgson', 'born': 1832}
+charles = {"name": "Charles L. Dodgson", "born": 1832}
 lewis = charles
 print(lewis is charles)
 print(id(charles), id(lewis))
-lewis['balance'] = 950
+lewis["balance"] = 950
 print(charles)
 
-alex = {'name': 'Charles L. Dodgson', 'born': 1832, 'balance': 950}
+alex = {"name": "Charles L. Dodgson", "born": 1832, "balance": 950}
 # == 表示值比较
 print(alex == charles)
 # 对象比较，是否是同一个对象，比较id值
@@ -35,9 +35,9 @@ l1.append(100)
 print(l1, l2)
 print("remove 55")
 l1[1].remove(55)  # 从l1 移走55，会影响到l2，因为l2[1]是l1[1]一样的
-print('l1:', l1)
-print('l2:', l2)
+print("l1:", l1)
+print("l2:", l2)
 l2[1] += [33, 22]
 l2[2] += (10, 11)
-print('l1:', l1)
-print('l2:', l2)
+print("l1:", l1)
+print("l2:", l2)

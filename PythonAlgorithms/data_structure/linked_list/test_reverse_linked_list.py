@@ -4,7 +4,6 @@ from linked_list_method import reverse_linked_list, detect_the_loop
 
 
 class Test_linked_list_Method(TestCase):
-
     def setUp(self):
         self.link_list1 = SinglyLinkedList()
         for i in range(1, 6):

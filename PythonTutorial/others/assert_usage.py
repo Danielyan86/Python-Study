@@ -9,14 +9,16 @@ Created on 2013-11-7
 def assert_usage():
     expression = False
     if __debug__:
-        if not expression: raise AssertionError
+        if not expression:
+            raise AssertionError
 
 
 def assert_usage2():
     expression = False
     if __debug__:
         print("enter")
-        if expression: raise AssertionError("the satatement is false")
+        if expression:
+            raise AssertionError("the satatement is false")
 
 
 assert_usage()

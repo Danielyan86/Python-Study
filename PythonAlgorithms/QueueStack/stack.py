@@ -24,7 +24,7 @@ class stack(object):
                 break
             else:
                 print(i)
-                right_string = string[-i + 1:]
+                right_string = string[-i + 1 :]
                 break
             i += 1
         print("left string is {0}".format(self.stack_struct))
@@ -35,7 +35,7 @@ class stack(object):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     stack_obj = stack()
     string = "12235111253221"
     print(stack_obj.Judge_plalindrome(string))

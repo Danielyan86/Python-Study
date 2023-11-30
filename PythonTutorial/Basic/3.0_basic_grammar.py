@@ -22,7 +22,7 @@ fun_demo()
 var_a = True
 
 # 同一行书写多个语句，不提倡！
-print("1");
+print("1")
 print("2")
 
 # 4个作为空格缩进

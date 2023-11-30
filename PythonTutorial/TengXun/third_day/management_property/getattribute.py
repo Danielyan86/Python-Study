@@ -1,6 +1,6 @@
 class Dummy(object):
     def __getattribute__(self, attr):
-        return 'YOU SEE ME?'
+        return "YOU SEE ME?"
 
 
 d = Dummy()

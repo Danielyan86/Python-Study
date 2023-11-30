@@ -1,4 +1,4 @@
-class Animal():
+class Animal:
     def who(self):
         print("I am an Animal")
 

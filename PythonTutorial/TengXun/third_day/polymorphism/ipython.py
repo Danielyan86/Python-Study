@@ -13,7 +13,7 @@ class JPython(IPython):
         print("调用的是 JPython 类的say方法")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     a = IPython()
     a.say()
     a = CPython()

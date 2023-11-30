@@ -1,5 +1,6 @@
 class tortoise:
     """这是描述部分"""
+
     body_color = "绿色"  # 类属性
     foot_num = 4
     weight = 10
@@ -19,6 +20,6 @@ class tortoise:
         print("乌龟缩进了壳里")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tortoise_one = tortoise()
     tortoise_one.crawl()

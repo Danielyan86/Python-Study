@@ -6,6 +6,6 @@ class myClass:
         return self.infor
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     my_obj = myClass("lala")
     print(my_obj)

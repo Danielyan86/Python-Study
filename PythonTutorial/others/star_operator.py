@@ -13,7 +13,7 @@ s = sum_number(*values)
 s = sum_number(1, 2)
 # The double star ** does the same, only using a dictionary and thus named arguments:
 
-values = {'a': 1, 'b': 2}
+values = {"a": 1, "b": 2}
 s = sum_number(**values)
 
 
@@ -23,7 +23,7 @@ def sum_number(a, b, c, d):
 
 
 values1 = (1, 2)
-values2 = {'c': 10, 'd': 15}
+values2 = {"c": 10, "d": 15}
 s = sum_number(*values1, **values2)
 # will execute as:
 s = sum_number(1, 2, c=10, d=15)
@@ -44,7 +44,7 @@ s = sum(1, 2, 3, 4, 5)
 
 # or with **:
 def get_a(**values):
-    return values['a']
+    return values["a"]
 
 
 s = get_a(a=1, b=2)  # returns 1
@@ -52,6 +52,7 @@ s = get_a(a=1, b=2)  # returns 1
 
 # this can allow you to specify a large number of optional parameters without having to declare them.
 # And again, you can combine:
+
 
 def sum_numbers(*values, **options):
     s = 0
@@ -82,13 +83,13 @@ def print_parameters(a, *b):
         print(i)
 
 
-print_parameters(1, 2, 3, [4, 5], {'A': 7})
+print_parameters(1, 2, 3, [4, 5], {"A": 7})
 
 
 def get_a(one, **values):
     print(one)
     print(values)
-    print(values['a'])
+    print(values["a"])
 
 
 s = get_a(0, a=1, b=2, c=3)

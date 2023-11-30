@@ -1,293 +1,221 @@
 {
-    "config": {
-        "name": "testcase description",
-        "variables": {}
-    },
-    "teststeps": [
-        {
-            "name": "/",
-            "request": {
-                "url": "http://127.0.0.1:8000/",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "text/html; charset=utf-8"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/css/bootstrap.min.css",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/css/bootstrap.min.css",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "text/css"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/css/bootstrap-tweaks.css",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/css/bootstrap-tweaks.css",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "text/css"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/css/prettify.css",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/css/prettify.css",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "text/css"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/css/default.css",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/css/default.css",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "text/css"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/jquery-3.4.1.min.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/jquery-3.4.1.min.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/ajax-form.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/ajax-form.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/csrf.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/csrf.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/bootstrap.min.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/bootstrap.min.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/prettify-min.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/prettify-min.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/js/default.js",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/js/default.js",
-                "method": "GET",
-                "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
-                }
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "application/javascript"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "/static/rest_framework/img/grid.png",
-            "request": {
-                "url": "http://127.0.0.1:8000/static/rest_framework/img/grid.png",
-                "method": "GET"
-            },
-            "validate": [
-                {
-                    "eq": [
-                        "status_code",
-                        200
-                    ]
-                },
-                {
-                    "eq": [
-                        "headers.Content-Type",
-                        "image/png"
-                    ]
-                }
-            ]
+  "config": {
+    "name": "testcase description",
+    "variables": {}
+  },
+  "teststeps": [
+    {
+      "name": "/",
+      "request": {
+        "url": "http://127.0.0.1:8000/",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
         }
-    ]
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "text/html; charset=utf-8"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/css/bootstrap.min.css",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/css/bootstrap.min.css",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "text/css"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/css/bootstrap-tweaks.css",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/css/bootstrap-tweaks.css",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "text/css"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/css/prettify.css",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/css/prettify.css",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "text/css"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/css/default.css",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/css/default.css",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "text/css"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/jquery-3.4.1.min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/jquery-3.4.1.min.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/ajax-form.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/ajax-form.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/csrf.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/csrf.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/bootstrap.min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/bootstrap.min.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/prettify-min.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/prettify-min.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/js/default.js",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/js/default.js",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36"
+        }
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "application/javascript"]
+        }
+      ]
+    },
+    {
+      "name": "/static/rest_framework/img/grid.png",
+      "request": {
+        "url": "http://127.0.0.1:8000/static/rest_framework/img/grid.png",
+        "method": "GET"
+      },
+      "validate": [
+        {
+          "eq": ["status_code", 200]
+        },
+        {
+          "eq": ["headers.Content-Type", "image/png"]
+        }
+      ]
+    }
+  ]
 }

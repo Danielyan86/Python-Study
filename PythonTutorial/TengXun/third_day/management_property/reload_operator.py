@@ -19,7 +19,7 @@ class Person2:
             raise AttributeError(attrname)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p = Person("xiaoming")
     print(p.name)  # (1)访问p对象的name属性
     p.name = "abc"  # (2)为p对象的name属性赋值

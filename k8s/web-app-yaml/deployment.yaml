@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment  # claim the resource type
+kind: Deployment # claim the resource type
 metadata:
   namespace: web-demo
   name: web-app-deployment
@@ -16,7 +16,7 @@ spec:
         app: web-app
     spec:
       containers:
-      - name: web-app
-        image: sheldonyan/web-app:2.0
-        ports:
-        - containerPort: 80
+        - name: web-app
+          image: sheldonyan/web-app:2.0
+          ports:
+            - containerPort: 80

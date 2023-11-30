@@ -9,8 +9,8 @@ from locust import HttpLocust, TaskSet, task
 from locust.events import request_failure
 
 logging.getLogger().setLevel(logging.CRITICAL)
-logging.getLogger('locust.main').setLevel(logging.INFO)
-logging.getLogger('locust.runners').setLevel(logging.INFO)
+logging.getLogger("locust.main").setLevel(logging.INFO)
+logging.getLogger("locust.runners").setLevel(logging.INFO)
 
 
 class WebPageTasks(TaskSet):
@@ -28,7 +28,7 @@ class WebPageTasks(TaskSet):
                 request_type=self.test_runner.exception_request_type,
                 name=self.test_runner.exception_name,
                 response_time=0,
-                exception=ex
+                exception=ex,
             )
 
 

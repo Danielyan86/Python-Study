@@ -1,6 +1,6 @@
 # return None
 def hello():
-    print('hello world')
+    print("hello world")
 
 
 # return one object
@@ -10,10 +10,10 @@ def return_list():
 
 # return multiple object
 def return_tuple():
-    return 123, 'xyz', {"key": "value"}
+    return 123, "xyz", {"key": "value"}
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     res = hello()
     print(res)  # 没有返回值
 

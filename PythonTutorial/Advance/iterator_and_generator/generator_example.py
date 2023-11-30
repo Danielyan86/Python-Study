@@ -3,11 +3,11 @@ import re
 
 # 通过函数方式构建生成器，生成器本身具有迭代器属性
 def generator_function():
-    print('hello 1')
+    print("hello 1")
     yield 1
-    print('hello 2')
+    print("hello 2")
     yield 2
-    print('hello 3')
+    print("hello 3")
 
 
 g = generator_function()  # 此处并不会执行函数的任何操作，只是获得了一个生成器对象。
@@ -44,7 +44,7 @@ def read_in_chunks(file_object, chunk_size=5):
     """Lazy function (generator) to read a file piece by piece.
     Default chunk size: 1k.
     :param file_object:
-    :param chunk_size: """
+    :param chunk_size:"""
     while True:
         data = file_object.read(chunk_size)
         if not data:
@@ -52,11 +52,11 @@ def read_in_chunks(file_object, chunk_size=5):
         yield data
 
 
-with open('really_big_file.dat', "w+") as f:
+with open("really_big_file.dat", "w+") as f:
     f.write("big file")
     f.write("really big file")
 
-with open('really_big_file.dat') as f:
+with open("really_big_file.dat") as f:
     for piece in read_in_chunks(f):
         print(piece)
 
@@ -66,7 +66,7 @@ for num in b_generator:
     print(num)
 
 # 类里面自定义定义生成器函数
-reword = re.compile('w+')
+reword = re.compile("w+")
 
 
 class Sentence:
@@ -82,7 +82,7 @@ class Sentence:
             yield i
 
 
-title = Sentence('We have a dream too!')
+title = Sentence("We have a dream too!")
 print(title)
 for i in title:
     print(i)

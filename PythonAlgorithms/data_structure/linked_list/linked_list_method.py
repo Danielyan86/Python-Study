@@ -30,7 +30,7 @@ def detect_the_loop(head_node: Optional[Node]):
     return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     link_list1 = SinglyLinkedList()
     for i in range(1, 6):
         link_list1.insert_value_to_tail(i)

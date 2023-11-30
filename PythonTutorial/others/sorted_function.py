@@ -11,14 +11,14 @@ print(ret1)
 a_list = [5, 2, 3, 1, 4]
 print(sorted(a_list))
 
-b_dic = {1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}
+b_dic = {1: "D", 2: "B", 3: "B", 4: "E", 5: "A"}
 print(sorted(b_dic))
 
 # Key Functions
 student_tuples = [
-    ('john', 'A', 15),
-    ('jane', 'B', 12),
-    ('dave', 'B', 10),
+    ("john", "A", 15),
+    ("jane", "B", 12),
+    ("dave", "B", 10),
 ]
 res = sorted(student_tuples, key=lambda student: student[2])  # sort by age
 print(res)

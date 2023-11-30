@@ -17,7 +17,7 @@ def f2(d, l):
     l.sort()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     with Manager() as manager:
         # Manager() 返回一个启动的SyncManager对象，该对象可用于在进程之间共享对象。返回的管理器对象对应于一个被创建的子进程.
         d = manager.dict()

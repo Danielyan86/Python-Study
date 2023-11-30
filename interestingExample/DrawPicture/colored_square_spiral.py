@@ -4,7 +4,7 @@ import colorsys
 import sys
 
 screen = turtle
-screen.title('5 Degree Square Spiral in a Square - PythonTurtle.Academy')
+screen.title("5 Degree Square Spiral in a Square - PythonTurtle.Academy")
 screen.setup(1000, 1000)
 screen.setworldcoordinates(-1000, -1000, 1000, 1000)
 screen.tracer(0, 0)
@@ -34,10 +34,16 @@ def draw_square(x, y, direction, length):
 
 
 def square_spiral(x, y, direction, length):
-    if length < 5: return
+    if length < 5:
+        return
 
     draw_square(x, y, direction, length)
-    square_spiral(x, y, direction + alpha, length / (math.sin(math.radians(alpha)) + math.cos(math.radians(alpha))))
+    square_spiral(
+        x,
+        y,
+        direction + alpha,
+        length / (math.sin(math.radians(alpha)) + math.cos(math.radians(alpha))),
+    )
 
 
 alpha = 0.1

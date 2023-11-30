@@ -24,16 +24,10 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/json"
-          ]
+          "eq": ["headers.Content-Type", "application/json"]
         }
       ],
       "extract": [
@@ -55,22 +49,13 @@
       },
       "validate": [
         {
-          "eq": [
-            "status_code",
-            200
-          ]
+          "eq": ["status_code", 200]
         },
         {
-          "eq": [
-            "headers.Content-Type",
-            "application/json"
-          ]
+          "eq": ["headers.Content-Type", "application/json"]
         },
         {
-          "eq": [
-            "content.0.username",
-            "admin"
-          ]
+          "eq": ["content.0.username", "admin"]
         }
       ]
     }

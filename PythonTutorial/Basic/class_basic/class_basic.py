@@ -6,7 +6,7 @@ class MyClass:
 
     def f_print(self):  # 对象属性，实例化之后才能调用的方法
         print(self.var)
-        return 'hello world'
+        return "hello world"
 
     def __init__(self, var="nihao"):
         self.var = var
@@ -17,7 +17,7 @@ class Myclass2:
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(MyClass.i)
     my_ojject = MyClass("fdf")
     my_ojject.f_print()

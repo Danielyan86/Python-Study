@@ -29,7 +29,9 @@ def triangle2(n=1):
     elif n > 2:
         init_list = [1, 1]  # 初始化第一个状态
         for i in range(3, n + 1):  # 根据前一个状态推导下一个状态
-            new_list = [1] + [init_list[j] + init_list[j + 1] for j in range(i - 2)] + [1]
+            new_list = (
+                [1] + [init_list[j] + init_list[j + 1] for j in range(i - 2)] + [1]
+            )
             init_list = new_list
         return new_list
 
@@ -41,7 +43,11 @@ def triangle3():
     yield [1]
     init_list = [1]  # 初始化第一个状态
     while True:
-        new_list = [1] + [init_list[j] + init_list[j + 1] for j in range(len(init_list) - 1)] + [1]
+        new_list = (
+            [1]
+            + [init_list[j] + init_list[j + 1] for j in range(len(init_list) - 1)]
+            + [1]
+        )
         yield new_list
         init_list = new_list
 
@@ -73,7 +79,7 @@ def test_triangle3():
     assert i == [1, 2, 1]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # print(triangle2(10))
     for i in itertools.islice(triangle3(), 10):
         print(i)

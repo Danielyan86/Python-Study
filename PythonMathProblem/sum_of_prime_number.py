@@ -4,7 +4,7 @@ import math
 def eratosthenes(n):
     IsPrime = [True] * (n + 1)
     IsPrime[1] = False  # 1不为素数
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n**0.5) + 1):
         if IsPrime[i]:
             for j in range(i * i, n + 1, i):
                 IsPrime[j] = False

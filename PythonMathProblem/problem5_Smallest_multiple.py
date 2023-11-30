@@ -1,8 +1,8 @@
-'''
+"""
 Created on 2013-2-26
 
 @author: xiaodong
-'''
+"""
 # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
@@ -18,11 +18,11 @@ def Smallest_multiple(num):
     sum = P1object.Multiple_list(prime_list)
 
     print
-    'Smallest multiple is %d' % sum
+    "Smallest multiple is %d" % sum
     return sum
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     num = 10
     print
     Smallest_multiple(num)

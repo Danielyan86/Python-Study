@@ -4,7 +4,7 @@ class Person:
         self.age = age
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     p = Person("max", 10)
     # 为p对象增加一个hobby实例变量
     p.hobby = "篮球"

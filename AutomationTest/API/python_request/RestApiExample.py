@@ -36,8 +36,8 @@ class GithubRestapi:
         assert res.status_code == 200
         print(res.json())
         data = res.json()
-        username = data['login']
-        assert username == 'Danielyan86'
+        username = data["login"]
+        assert username == "Danielyan86"
 
     def get_organizations(self):
         token = os.getenv("API_automation_test_token")
@@ -52,7 +52,7 @@ class GithubRestapi:
                 assert item["type"] == "User"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     api_test = DjangoRestApi()
     api_test.get_token()
     # api_test = GithubRestapi()

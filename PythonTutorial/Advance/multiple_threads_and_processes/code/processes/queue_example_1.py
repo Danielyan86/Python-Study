@@ -16,7 +16,13 @@ if __name__ == "__main__":
     # 启动一个线程数目为10的线程池,分别往队列里面写入x立方的值
     # 每个线程池依次传入0到10值
     for i in range(10):
-        process = Process(target=cube, args=(i, q,))
+        process = Process(
+            target=cube,
+            args=(
+                i,
+                q,
+            ),
+        )
         processes.append(process)
 
     # 启动线程池里面线程
@@ -31,7 +37,13 @@ if __name__ == "__main__":
     while not q.empty():  # 把队列里面数据取出来直到队列为空
         val = q.get()
         print(val)
-        process = Process(target=add, args=(val, q,))  # 取出的数据再放到add方法里面加一，然后放入一个新的队列
+        process = Process(
+            target=add,
+            args=(
+                val,
+                q,
+            ),
+        )  # 取出的数据再放到add方法里面加一，然后放入一个新的队列
         processes.append(process)
     for process in processes:
         process.start()

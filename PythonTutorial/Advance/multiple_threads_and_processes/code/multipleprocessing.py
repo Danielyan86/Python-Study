@@ -6,9 +6,9 @@ import os
 
 
 def f(x):
-    print('module name:', __name__)
-    print('parent process:', os.getppid())
-    print('process id:', os.getpid())
+    print("module name:", __name__)
+    print("parent process:", os.getppid())
+    print("process id:", os.getpid())
     return x * x
 
 
@@ -20,35 +20,35 @@ def pool_example():
 
 def pool_example_two() -> object:
     with Pool(processes=10) as p:
-        proce = p.Process(target=lambda name: _info(name), args=('bob',))  # 参数加逗号
+        proce = p.Process(target=lambda name: _info(name), args=("bob",))  # 参数加逗号
         proce.start()
         proce.join()
 
 
 def pool_example_three() -> object:
     with Pool(processes=10) as p:
-        p.apply_async(_info, args=('bob',))
-        p.apply_async(_info, args=('bob2',))
-        p.apply_async(_info, args=('bob3',))
+        p.apply_async(_info, args=("bob",))
+        p.apply_async(_info, args=("bob2",))
+        p.apply_async(_info, args=("bob3",))
         p.close()
         p.join()
 
 
 def _info(title):
     print(title)
-    print('module name:', __name__)
-    print('parent process:', os.getppid())
-    print('process id:', os.getpid())
+    print("module name:", __name__)
+    print("parent process:", os.getppid())
+    print("process id:", os.getpid())
 
 
 # 创建一个子进程
 def process_example():
-    p = Process(target=lambda name: _info(name), args=('bob',))
+    p = Process(target=lambda name: _info(name), args=("bob",))
     p.start()
     p.join()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # pool_example()
     # pool_example_two()
     pool_example_three()

@@ -4,7 +4,7 @@ import math
 
 cx = 0.7885
 cy = 0
-R = (1 + (1 + 4 * (cx ** 2 + cy ** 2) ** 0.5) ** 0.5) / 2 + 0.001
+R = (1 + (1 + 4 * (cx**2 + cy**2) ** 0.5) ** 0.5) / 2 + 0.001
 max_iteration = 200
 
 w, h, zoom = 1000, 1000, 1
@@ -14,8 +14,8 @@ def julia(cx, cy, R, max_iteration, x, y, minx, maxx, miny, maxy):
     zx = (x - minx) / (maxx - minx) * 2 * R - R
     zy = (y - miny) / (maxy - miny) * 2 * R - R
     i = 0
-    while zx ** 2 + zy ** 2 < R ** 2 and i < max_iteration:
-        temp = zx ** 2 - zy ** 2
+    while zx**2 + zy**2 < R**2 and i < max_iteration:
+        temp = zx**2 - zy**2
         zy = 2 * zx * zy + cy
         zx = temp + cx
         i += 1

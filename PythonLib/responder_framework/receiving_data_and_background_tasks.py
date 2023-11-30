@@ -19,7 +19,7 @@ async def receive_incoming(req, resp):
     process_data(data)
 
     # Immediately respond that upload was successful.
-    resp.media = {'success': True}
+    resp.media = {"success": True}
 
 
 api.run()

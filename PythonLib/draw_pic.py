@@ -17,13 +17,13 @@ def draw_test():
     draw = ImageDraw.Draw(image)
 
     # 绘制直线
-    draw.line((20, 20, 150, 150), 'cyan')
+    draw.line((20, 20, 150, 150), "cyan")
 
     # 绘制矩形
-    draw.rectangle((100, 200, 300, 400), 'black', 'red')
+    draw.rectangle((100, 200, 300, 400), "black", "red")
 
     image.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     draw_test()

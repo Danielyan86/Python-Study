@@ -24,11 +24,18 @@ def violent_enumeration():
 
         if judge_numbers(number):
             number_string = str(number)
-            if int(number_string[0:3]) + int(number_string[3:6]) == int(number_string[6:]) and int(
-                    number_string[0:3]) < 200:
-                print("{0}+{1}={2}".format(number_string[0:3], number_string[3:6], number_string[6:]))
+            if (
+                int(number_string[0:3]) + int(number_string[3:6])
+                == int(number_string[6:])
+                and int(number_string[0:3]) < 200
+            ):
+                print(
+                    "{0}+{1}={2}".format(
+                        number_string[0:3], number_string[3:6], number_string[6:]
+                    )
+                )
     end = time.clock()
-    print('Running time: %s Seconds' % (end - start))
+    print("Running time: %s Seconds" % (end - start))
 
 
 def optimized_enumeration():
@@ -40,7 +47,7 @@ def optimized_enumeration():
             if judge_numbers(all_num_string):
                 print("{0}+{1}={2}".format(num, num2, add_result))
     end = time.clock()
-    print('Running time: %s Seconds' % (end - start))
+    print("Running time: %s Seconds" % (end - start))
 
 
 def permutations_fun():
@@ -48,22 +55,36 @@ def permutations_fun():
     # 优化后的方案采用全排列的思想, 大大执行提高效率
     for item in itertools.permutations("123456789", 9):  # 全排列方法permutations
         number_string = "".join(item)  # 字符串转化成列表
-        if int(number_string[0:3]) + int(number_string[3:6]) == int(number_string[6:]) and int(
-                number_string[0:3]) < 500 and int(number_string[3:6]) < 500 and int(number_string[6:]) < 1000:
-            print("{0}+{1}={2}".format(number_string[0:3], number_string[3:6], number_string[6:]))
+        if (
+            int(number_string[0:3]) + int(number_string[3:6]) == int(number_string[6:])
+            and int(number_string[0:3]) < 500
+            and int(number_string[3:6]) < 500
+            and int(number_string[6:]) < 1000
+        ):
+            print(
+                "{0}+{1}={2}".format(
+                    number_string[0:3], number_string[3:6], number_string[6:]
+                )
+            )
     end = time.clock()
-    print('Running time: %s Seconds' % (end - start))
+    print("Running time: %s Seconds" % (end - start))
 
 
 def multiple():
     for i in range(1, 10):
         if int("{0}3".format(i)) * 6528 == int("3{0}".format(i)) * 8256:
             print(i, int("{0}3".format(i)) * 6528)
-    print([i for i in range(1, 10) if int("{0}3".format(i)) * 6528 == int("3{0}".format(i)) * 8256])
+    print(
+        [
+            i
+            for i in range(1, 10)
+            if int("{0}3".format(i)) * 6528 == int("3{0}".format(i)) * 8256
+        ]
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # violent_enumeration()
-    # optmized_enumeration()
+    # optimized_enumeration()
     permutations_fun()
     multiple()

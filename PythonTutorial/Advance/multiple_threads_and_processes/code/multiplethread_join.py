@@ -22,7 +22,7 @@ def multiple_fuc(fun):
     #     th.join()  # join 函数会等到线程结束
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     multiple_fuc(thread_fuc())
     for i in range(10):
         thread_fuc()

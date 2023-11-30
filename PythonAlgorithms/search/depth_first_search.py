@@ -29,10 +29,12 @@ def dfs(a_list, step):
 # 迷宫最短路径算法
 class Maze(object):
     path = [(0, 0)]
-    maze = ((0, 0, 0, 1),
-            (1, 0, 0, 0),
-            (0, 0, 1, 2),
-            (1, 0, 0, 0),)
+    maze = (
+        (0, 0, 0, 1),
+        (1, 0, 0, 0),
+        (0, 0, 1, 2),
+        (1, 0, 0, 0),
+    )
     columns = len(maze) - 1
     rows = len(maze[0]) - 1
     print(rows)
@@ -66,7 +68,7 @@ class Maze(object):
             return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # a = [1, 2, 3]
     # dfs(a, 0)
     maze_obj = Maze()

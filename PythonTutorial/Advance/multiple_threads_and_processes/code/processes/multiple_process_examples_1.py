@@ -1,6 +1,7 @@
 import time
 from multiprocessing import Process
 
+
 # 定义一个需要多进程跑的方法
 def cube(x):
     print(f"start process {x}")

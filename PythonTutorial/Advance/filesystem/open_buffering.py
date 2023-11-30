@@ -19,5 +19,3 @@ with open("test.txt", "wb+") as f:
         f.write(b"12")
 end = time.time()
 print(end - start)
-
-

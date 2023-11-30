@@ -35,8 +35,7 @@ async def consume(name: int, q: asyncio.Queue) -> None:
         await randsleep(caller=f"Consumer {name}")
         i, t = await q.get()
         now = time.perf_counter()
-        print(f"Consumer {name} got element <{i}>"
-              f" in {now - t:0.5f} seconds.")
+        print(f"Consumer {name} got element <{i}>" f" in {now - t:0.5f} seconds.")
         q.task_done()
 
 

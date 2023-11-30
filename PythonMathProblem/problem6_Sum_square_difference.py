@@ -1,8 +1,8 @@
-'''
+"""
 Created on 2013-2-26
 
 @author: xiaodong
-'''
+"""
 
 
 def Sum_Square_Difference(num):
@@ -28,7 +28,7 @@ def Sum_and_square(num):
     return sum
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     num = 100
     difference = Sum_and_square(num) - Squar_and_sum(num)
     print

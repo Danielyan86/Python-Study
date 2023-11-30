@@ -6,7 +6,6 @@ import random
 
 # ANSI colors
 color = (
-
     "\033[31m",  # Red
     "\033[32m",  # GREEN
     "\033[33m",  # yellow
@@ -20,10 +19,18 @@ async def makerandom(idx: int, threshold: int = 8) -> int:
     print(color[idx] + f"Initiated makerandom({idx})." + color[-1])
     i = random.randint(0, 10)  # 产生一个0到10的随机数
     while i <= threshold:  # 如果随机数小于阀值则进入循环否则退出
-        print(color[idx] + f"makerandom({idx}) , {i} < {threshold} too low; retrying." + color[-1])
+        print(
+            color[idx]
+            + f"makerandom({idx}) , {i} < {threshold} too low; retrying."
+            + color[-1]
+        )
         await asyncio.sleep(idx + 1)  # 遇到暂停事件，暂时停止运行当前函数，直到暂停时间结束
         i = random.randint(0, 10)  # 重新产生一个随机数
-    print(color[idx] + f"---> Finished: makerandom({idx}) ,Final value of i:{i}" + color[-1])
+    print(
+        color[idx]
+        + f"---> Finished: makerandom({idx}) ,Final value of i:{i}"
+        + color[-1]
+    )
     return i
 
 

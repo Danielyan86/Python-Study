@@ -1,10 +1,10 @@
 num = int(input())
 if num == 3:  # 判断num的值
-    print('boss')
+    print("boss")
 elif num == 2:
-    print('user')
+    print("user")
 elif num == 1:
-    print('worker')
+    print("worker")
 else:
     print("error")
 

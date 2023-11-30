@@ -2,6 +2,7 @@
 # 它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。
 # 选择排序是不稳定的排序方法。
 
+
 def sort_selection(nums_list):
     for i in range(len(nums_list) - 1):
         min_lable = i  # 假下标为i的首元素为最小值
@@ -13,5 +14,5 @@ def sort_selection(nums_list):
     print(nums_list)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sort_selection([1, 2, 3, 0, -1])

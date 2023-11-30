@@ -5,7 +5,7 @@ def Fibonacci(num):
     fib_list = []
     if num < 1:
         print
-        'Error: enter number should be bigger than 1'
+        "Error: enter number should be bigger than 1"
         return
 
     if num == 1:
@@ -40,7 +40,7 @@ def fib2():
         yield b
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     f = fib(1000)
     import itertools
 

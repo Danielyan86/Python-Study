@@ -6,7 +6,7 @@ class A:
         self.n = n
 
     def __iter__(self):
-        print('__iter__')
+        print("__iter__")
         return self
 
     def __next__(self):
@@ -18,8 +18,7 @@ class A:
             raise StopIteration()
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     # 迭代元素
     a = A(3)
     for i in a:

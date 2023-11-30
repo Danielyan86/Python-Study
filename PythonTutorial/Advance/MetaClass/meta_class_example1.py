@@ -7,7 +7,7 @@ x = Foo()
 print(x)
 
 # 动态创建，和上面等价
-Foo = type('Foo', (), {})
+Foo = type("Foo", (), {})
 x = Foo()
 print(x)
 print(type(x))
